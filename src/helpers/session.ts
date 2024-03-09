@@ -5,12 +5,16 @@ export async function getSession(
 ): Promise<string | null> {
 
     return new Promise<string | null>((resolve, _) => {
-        const body = {
+        const body = JSON.stringify({
             token: sessionReference
-        };
+        });
 
         const request = https.request('https://service.servemy.site/api/sessions', {
-            method: 'POST'
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': body.length
+            }
         }, (response) => {
             let data = '';
 
@@ -19,14 +23,10 @@ export async function getSession(
             });
 
             response.on('end', function () {
-                if (response.statusCode === 201) {
-                    resolve(null);
-                } else {
-                    resolve(data);
-                }
+                resolve(data);
             });
         });
 
-        request.end(JSON.stringify(body));
+        request.end(body);
     });
 }

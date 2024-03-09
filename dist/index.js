@@ -27367,26 +27367,25 @@ exports.getSession = void 0;
 const https = __importStar(__nccwpck_require__(5687));
 async function getSession(sessionReference) {
     return new Promise((resolve, _) => {
-        const body = {
+        const body = JSON.stringify({
             token: sessionReference
-        };
+        });
         const request = https.request('https://service.servemy.site/api/sessions', {
-            method: 'POST'
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': body.length
+            }
         }, (response) => {
             let data = '';
             response.on('data', function (d) {
                 data += d;
             });
             response.on('end', function () {
-                if (response.statusCode === 201) {
-                    resolve(null);
-                }
-                else {
-                    resolve(data);
-                }
+                resolve(data);
             });
         });
-        request.end(JSON.stringify(body));
+        request.end(body);
     });
 }
 exports.getSession = getSession;
