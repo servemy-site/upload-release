@@ -1,20 +1,21 @@
-name: 'Upload Release'
-description: 'An action to upload a code release to Serve My Site.'
+name: 'Upload a Release'
+description: 'Upload a release which will deployed to your project.'
 author: 'Serve My Site'
 
-branding:
-  icon: 'heart'
-  color: 'red'
-
 inputs:
-  text:
-    description: 'Your input description here'
+  session-reference:
+    description: 'The identifier used to obtain a session to your project.'
     required: true
-    default: 'Hello World!'
+  project-reference:
+    description: 'The unique identifier for the project where you would like this release uploaded. You can find this by navigating to your project at https://servemy.site.'
+    required: true
+  path:
+    description: 'A file, directory or wildcard pattern that describes what to upload.'
+    required: true
 
 outputs:
-  text:
-    description: 'Your output description here'
+  release-reference:
+    description: 'A unique identifier for the release that was just uploaded. Empty if the artifact upload failed.'
 
 runs:
   using: node20
