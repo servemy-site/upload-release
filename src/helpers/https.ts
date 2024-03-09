@@ -93,9 +93,9 @@ export async function upload(
         });
 
         for await (const chunk of data){
-            request.write(chunk);
+            request.write(chunk)
         }
 
-        request.end(data);
+        request.end();
     });
 }
