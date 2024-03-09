@@ -27306,6 +27306,73 @@ exports.getFiles = getFiles;
 
 /***/ }),
 
+/***/ 533:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.request = void 0;
+const https = __importStar(__nccwpck_require__(5687));
+const core_1 = __nccwpck_require__(2186);
+async function request(api, method, content) {
+    return new Promise((resolve, reject) => {
+        const body = JSON.stringify(content);
+        const options = {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': body.length
+            }
+        };
+        const url = `https://service.servemy.site/${api}`;
+        (0, core_1.warning)(`Starting request to: [${method}] ${url}`);
+        const request = https.request(url, options, (response) => {
+            let data = '';
+            response.on('data', function (d) {
+                data += d;
+            });
+            response.on('end', function () {
+                (0, core_1.warning)(`Finished request to: [${method}] ${url} - ${response.statusCode} - ${data}`);
+                if (response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300) {
+                    reject(data);
+                }
+                else {
+                    resolve(JSON.parse(data));
+                }
+            });
+        });
+        request.end(body);
+    });
+}
+exports.request = request;
+
+
+/***/ }),
+
 /***/ 5040:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
@@ -27335,57 +27402,16 @@ exports.getInputs = getInputs;
 /***/ }),
 
 /***/ 1297:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getSession = void 0;
-const https = __importStar(__nccwpck_require__(5687));
+const https_1 = __nccwpck_require__(533);
 async function getSession(sessionReference) {
-    return new Promise((resolve, _) => {
-        const body = JSON.stringify({
-            token: sessionReference
-        });
-        const request = https.request('https://service.servemy.site/api/sessions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Length': body.length
-            }
-        }, (response) => {
-            let data = '';
-            response.on('data', function (d) {
-                data += d;
-            });
-            response.on('end', function () {
-                resolve(data);
-            });
-        });
-        request.end(body);
+    return (0, https_1.request)('api/sessions', 'POST', {
+        token: sessionReference
     });
 }
 exports.getSession = getSession;
@@ -27411,8 +27437,11 @@ async function run() {
         (0, core_1.setFailed)(`No files were found with the provided path: ${inputs.searchPath}. No release will be uploaded.`);
         return;
     }
-    // Generate Session
     const session = await (0, session_1.getSession)(inputs.sessionReference);
+    if (session === null) {
+        (0, core_1.setFailed)(`No session could be created with the provided reference: ${inputs.sessionReference}. No release will be uploaded.`);
+        return;
+    }
     // Create Release
     // Upload Release
     (0, core_1.info)(`With the provided session reference, we will use ${session} to upload the release.`);

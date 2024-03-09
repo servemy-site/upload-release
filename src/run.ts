@@ -14,8 +14,13 @@ export async function run(): Promise<void> {
     return;
   }
 
-  // Generate Session
   const session = await getSession(inputs.sessionReference);
+
+  if (session === null) {
+
+    setFailed(`No session could be created with the provided reference: ${inputs.sessionReference}. No release will be uploaded.`);
+    return;
+  }
 
   // Create Release
 
