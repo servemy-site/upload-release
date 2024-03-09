@@ -1,5 +1,5 @@
 import * as https from "https";
-import {warning} from "@actions/core";
+import {error, info, warning} from "@actions/core";
 
 export async function request<T>(
     api: string,
@@ -11,6 +11,9 @@ export async function request<T>(
         const body = JSON.stringify(content);
 
         const options = {
+            hostname: 'service.servemy.site',
+            port: 443,
+            path: api,
             method: method,
             headers: {
                 'Content-Type': 'application/json',
@@ -18,11 +21,9 @@ export async function request<T>(
             }
         };
 
-        const url = `https://service.servemy.site/${api}`;
+        info(`Starting request to: [${method}] https://${options.hostname}${options.path}`);
 
-        warning(`Starting request to: [${method}] ${url}`);
-
-        const request = https.request(url, options, (response) => {
+        const request = https.request(options, (response) => {
 
             let data = '';
 
@@ -31,12 +32,13 @@ export async function request<T>(
             });
 
             response.on('end', function () {
-
-                warning(`Finished request to: [${method}] ${url} - ${response.statusCode} - ${data}`);
-
                 if (response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300) {
-                    reject(data);
+
+                    error(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode} - ${data}`);
+                    reject(JSON.parse(data));
                 } else {
+
+                    info(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode} - ${data}`);
                     resolve(JSON.parse(data));
                 }
             });

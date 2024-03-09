@@ -27342,25 +27342,28 @@ async function request(api, method, content) {
     return new Promise((resolve, reject) => {
         const body = JSON.stringify(content);
         const options = {
+            hostname: 'service.servemy.site',
+            port: 443,
+            path: api,
             method: method,
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Length': body.length
             }
         };
-        const url = `https://service.servemy.site/${api}`;
-        (0, core_1.warning)(`Starting request to: [${method}] ${url}`);
-        const request = https.request(url, options, (response) => {
+        (0, core_1.info)(`Starting request to: [${method}] https://${options.hostname}${options.path}`);
+        const request = https.request(options, (response) => {
             let data = '';
             response.on('data', function (d) {
                 data += d;
             });
             response.on('end', function () {
-                (0, core_1.warning)(`Finished request to: [${method}] ${url} - ${response.statusCode} - ${data}`);
                 if (response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300) {
-                    reject(data);
+                    (0, core_1.error)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode} - ${data}`);
+                    reject(JSON.parse(data));
                 }
                 else {
+                    (0, core_1.info)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode} - ${data}`);
                     resolve(JSON.parse(data));
                 }
             });
@@ -27410,7 +27413,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getSession = void 0;
 const https_1 = __nccwpck_require__(533);
 async function getSession(sessionReference) {
-    return (0, https_1.request)('api/sessions', 'POST', {
+    return (0, https_1.request)('/api/sessions', 'POST', {
         token: sessionReference
     });
 }
