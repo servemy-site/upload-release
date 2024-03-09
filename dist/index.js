@@ -27358,12 +27358,11 @@ async function request(api, method, content) {
                 data += d;
             });
             response.on('end', function () {
+                (0, core_1.info)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
                 if (response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300) {
-                    (0, core_1.error)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode} - ${data}`);
                     reject(JSON.parse(data));
                 }
                 else {
-                    (0, core_1.info)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode} - ${data}`);
                     resolve(JSON.parse(data));
                 }
             });

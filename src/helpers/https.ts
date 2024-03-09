@@ -32,13 +32,11 @@ export async function request<T>(
             });
 
             response.on('end', function () {
-                if (response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300) {
+                info(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
 
-                    error(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode} - ${data}`);
+                if (response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300) {
                     reject(JSON.parse(data));
                 } else {
-
-                    info(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode} - ${data}`);
                     resolve(JSON.parse(data));
                 }
             });
