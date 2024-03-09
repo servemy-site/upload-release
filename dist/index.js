@@ -27453,10 +27453,17 @@ async function request(api, method, content, headers) {
                 (0, core_1.info)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
                 (0, core_1.debug)(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
+                let result;
+                try {
+                    result = JSON.parse(data);
+                }
+                catch (e) {
+                    result = data;
+                }
                 if (failed)
-                    reject(JSON.parse(data));
+                    reject(result);
                 else
-                    resolve(JSON.parse(data));
+                    resolve(result);
             });
         });
         request.end(body);
