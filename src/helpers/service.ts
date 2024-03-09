@@ -20,18 +20,26 @@ export async function getRelease(
     });
 }
 
-export function getUrls(
+export async function getUrls(
     projectReference: string,
     releaseReference: string,
     files: Files,
     sessionReference: string
-): void {
+): Promise<void> {
 
     const spec = getUploadZipSpecification(files.toUpload, files.rootDirectory);
 
     for (let file of spec) {
         info(file.sourcePath ?? '')
         info(file.destinationPath)
+
+        const result = await request<string>(`/api/projects/${projectReference}/releases/${releaseReference}/files`, 'POST', {
+            path: file.destinationPath
+        }, {
+            'X-SMS-SessionToken': sessionReference
+        });
+
+        info(result)
     }
 
 }

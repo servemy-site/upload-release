@@ -27517,11 +27517,17 @@ async function getRelease(projectReference, sessionReference) {
     });
 }
 exports.getRelease = getRelease;
-function getUrls(projectReference, releaseReference, files, sessionReference) {
+async function getUrls(projectReference, releaseReference, files, sessionReference) {
     const spec = (0, files_1.getUploadZipSpecification)(files.toUpload, files.rootDirectory);
     for (let file of spec) {
         (0, core_1.info)(file.sourcePath ?? '');
         (0, core_1.info)(file.destinationPath);
+        const result = await (0, https_1.request)(`/api/projects/${projectReference}/releases/${releaseReference}/files`, 'POST', {
+            path: file.destinationPath
+        }, {
+            'X-SMS-SessionToken': sessionReference
+        });
+        (0, core_1.info)(result);
     }
 }
 exports.getUrls = getUrls;
@@ -27549,7 +27555,7 @@ async function run() {
     }
     const session = await (0, service_1.getSession)(inputs.sessionReference);
     const release = await (0, service_1.getRelease)(inputs.projectReference, session);
-    (0, service_1.getUrls)(inputs.projectReference, release, files, session);
+    await (0, service_1.getUrls)(inputs.projectReference, release, files, session);
     // Upload Release
     (0, core_1.info)(`With the provided session reference, we will use ${session} to upload the release.`);
     (0, core_1.info)(`With the provided session reference, we will upload to ${release} release.`);

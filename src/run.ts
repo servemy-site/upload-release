@@ -16,7 +16,7 @@ export async function run(): Promise<void> {
 
   const session = await getSession(inputs.sessionReference);
   const release = await getRelease(inputs.projectReference, session);
-  getUrls(inputs.projectReference, release, files, session);
+  await getUrls(inputs.projectReference, release, files, session);
 
   // Upload Release
 
