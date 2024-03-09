@@ -92,11 +92,7 @@ export async function upload(
             });
         });
 
-        for await (const chunk of data){
-            request.write(chunk)
-        }
-
-        request.removeHeader('Transfer-Encoding');
+        data.pipe(request);
         request.end();
     });
 }
