@@ -1,7 +1,7 @@
 import { info, setFailed, setOutput}  from "@actions/core";
 import { getInputs } from "./helpers/input";
 import { getFiles } from "./helpers/files";
-import {getSession} from "./helpers/session";
+import {getRelease, getSession} from "./helpers/service";
 
 export async function run(): Promise<void> {
   const inputs = getInputs();
@@ -15,18 +15,12 @@ export async function run(): Promise<void> {
   }
 
   const session = await getSession(inputs.sessionReference);
-
-  if (session === null) {
-
-    setFailed(`No session could be created with the provided reference: ${inputs.sessionReference}. No release will be uploaded.`);
-    return;
-  }
-
-  // Create Release
+  const release = await getRelease(inputs.projectReference, session);
 
   // Upload Release
 
   info(`With the provided session reference, we will use ${session} to upload the release.`);
+  info(`With the provided session reference, we will upload to ${release} release.`);
   info(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
   setOutput('release-reference', 'something here.')
 }

@@ -27338,18 +27338,17 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.request = void 0;
 const https = __importStar(__nccwpck_require__(5687));
 const core_1 = __nccwpck_require__(2186);
-async function request(api, method, content) {
+async function request(api, method, content, headers) {
     return new Promise((resolve, reject) => {
         const body = JSON.stringify(content);
+        headers["Content-Type"] = 'application/json';
+        headers["Content-Length"] = body.length;
         const options = {
             hostname: 'service.servemy.site',
             port: 443,
             path: api,
             method: method,
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Length': body.length
-            }
+            headers: headers
         };
         (0, core_1.info)(`Starting request to: [${method}] https://${options.hostname}${options.path}`);
         const request = https.request(options, (response) => {
@@ -27403,20 +27402,26 @@ exports.getInputs = getInputs;
 
 /***/ }),
 
-/***/ 1297:
+/***/ 8462:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getSession = void 0;
+exports.getRelease = exports.getSession = void 0;
 const https_1 = __nccwpck_require__(533);
 async function getSession(sessionReference) {
     return (0, https_1.request)('/api/sessions', 'POST', {
         token: sessionReference
-    });
+    }, {});
 }
 exports.getSession = getSession;
+async function getRelease(projectReference, sessionReference) {
+    return (0, https_1.request)(`/api/projects/${projectReference}/releases`, 'POST', {}, {
+        'X-SMS-SessionToken': sessionReference
+    });
+}
+exports.getRelease = getRelease;
 
 
 /***/ }),
@@ -27431,7 +27436,7 @@ exports.run = void 0;
 const core_1 = __nccwpck_require__(2186);
 const input_1 = __nccwpck_require__(5040);
 const files_1 = __nccwpck_require__(5115);
-const session_1 = __nccwpck_require__(1297);
+const service_1 = __nccwpck_require__(8462);
 async function run() {
     const inputs = (0, input_1.getInputs)();
     const files = await (0, files_1.getFiles)(inputs.searchPath);
@@ -27439,14 +27444,11 @@ async function run() {
         (0, core_1.setFailed)(`No files were found with the provided path: ${inputs.searchPath}. No release will be uploaded.`);
         return;
     }
-    const session = await (0, session_1.getSession)(inputs.sessionReference);
-    if (session === null) {
-        (0, core_1.setFailed)(`No session could be created with the provided reference: ${inputs.sessionReference}. No release will be uploaded.`);
-        return;
-    }
-    // Create Release
+    const session = await (0, service_1.getSession)(inputs.sessionReference);
+    const release = await (0, service_1.getRelease)(inputs.projectReference, session);
     // Upload Release
     (0, core_1.info)(`With the provided session reference, we will use ${session} to upload the release.`);
+    (0, core_1.info)(`With the provided session reference, we will upload to ${release} release.`);
     (0, core_1.info)(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
     (0, core_1.setOutput)('release-reference', 'something here.');
 }

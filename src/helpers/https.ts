@@ -1,24 +1,27 @@
 import * as https from "https";
 import {debug, error, info, warning} from "@actions/core";
+import {RequestOptions} from "https";
+import {OutgoingHttpHeaders} from "http";
 
 export async function request<T>(
     api: string,
     method: string,
-    content: any
+    content: any,
+    headers: OutgoingHttpHeaders
 ): Promise<T> {
 
     return new Promise<T>((resolve, reject) => {
         const body = JSON.stringify(content);
 
-        const options = {
+        headers["Content-Type"] = 'application/json';
+        headers["Content-Length"] = body.length;
+
+        const options: RequestOptions = {
             hostname: 'service.servemy.site',
             port: 443,
             path: api,
             method: method,
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Length': body.length
-            }
+            headers: headers
         };
 
         info(`Starting request to: [${method}] https://${options.hostname}${options.path}`);
