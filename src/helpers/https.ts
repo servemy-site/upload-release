@@ -65,7 +65,9 @@ export async function upload(
     return new Promise<void>((resolve, reject) => {
         const options: RequestOptions = {
             method: 'PUT',
-            headers: {}
+            headers: {
+                "x-amz-server-side-encryption": "AES256"
+            }
         };
 
         info(`Starting upload to: [PUT] ${url}`);

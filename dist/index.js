@@ -27474,7 +27474,9 @@ async function upload(url, data) {
     return new Promise((resolve, reject) => {
         const options = {
             method: 'PUT',
-            headers: {}
+            headers: {
+                "x-amz-server-side-encryption": "AES256"
+            }
         };
         (0, core_1.info)(`Starting upload to: [PUT] ${url}`);
         const request = https.request(url, options, (response) => {
