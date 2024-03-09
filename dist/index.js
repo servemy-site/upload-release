@@ -27334,6 +27334,66 @@ exports.getInputs = getInputs;
 
 /***/ }),
 
+/***/ 1297:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.getSession = void 0;
+const https = __importStar(__nccwpck_require__(5687));
+async function getSession(sessionReference) {
+    return new Promise((resolve, _) => {
+        const body = {
+            token: sessionReference
+        };
+        const request = https.request('https://service.servemy.site/api/sessions', {
+            method: 'POST'
+        }, (response) => {
+            let data = '';
+            response.on('data', function (d) {
+                data += d;
+            });
+            response.on('end', function () {
+                if (response.statusCode === 201) {
+                    resolve(null);
+                }
+                else {
+                    resolve(data);
+                }
+            });
+        });
+        request.end(JSON.stringify(body));
+    });
+}
+exports.getSession = getSession;
+
+
+/***/ }),
+
 /***/ 7764:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
@@ -27344,6 +27404,7 @@ exports.run = void 0;
 const core_1 = __nccwpck_require__(2186);
 const input_1 = __nccwpck_require__(5040);
 const files_1 = __nccwpck_require__(5115);
+const session_1 = __nccwpck_require__(1297);
 async function run() {
     const inputs = (0, input_1.getInputs)();
     const files = await (0, files_1.getFiles)(inputs.searchPath);
@@ -27351,6 +27412,11 @@ async function run() {
         (0, core_1.setFailed)(`No files were found with the provided path: ${inputs.searchPath}. No release will be uploaded.`);
         return;
     }
+    // Generate Session
+    const session = await (0, session_1.getSession)(inputs.sessionReference);
+    // Create Release
+    // Upload Release
+    (0, core_1.info)(`With the provided session reference, we will use ${session} to upload the release.`);
     (0, core_1.info)(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
     (0, core_1.setOutput)('release-reference', 'something here.');
 }

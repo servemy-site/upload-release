@@ -1,11 +1,12 @@
 import { info, setFailed, setOutput}  from "@actions/core";
 import { getInputs } from "./helpers/input";
 import { getFiles } from "./helpers/files";
+import {getSession} from "./helpers/session";
 
 export async function run(): Promise<void> {
   const inputs = getInputs();
 
-  const files = await getFiles(inputs.searchPath)
+  const files = await getFiles(inputs.searchPath);
 
   if (files.toUpload.length === 0) {
 
@@ -13,6 +14,14 @@ export async function run(): Promise<void> {
     return;
   }
 
+  // Generate Session
+  const session = await getSession(inputs.sessionReference);
+
+  // Create Release
+
+  // Upload Release
+
+  info(`With the provided session reference, we will use ${session} to upload the release.`);
   info(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
   setOutput('release-reference', 'something here.')
 }

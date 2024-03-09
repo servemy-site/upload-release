@@ -22,7 +22,7 @@ jobs:
         id: test
         uses: ./
         with:
-          session-reference: Hello world!
+          session-reference: ${{ secrets.SESSION_REFERENCE }}
           project-reference: Hello world!
           path: ./dist
 
