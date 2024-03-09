@@ -1,0 +1,51 @@
+name: Integrate
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: test
+        uses: ./
+        with:
+          text: Hello world!
+
+      - name: print
+        run: echo "${{ steps.test-action.outputs.text }}"
+
+  check-dist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: install
+        run: npm ci
+
+      - name: build
+        run: npm run bundle
+
+      # This will fail the workflow if the PR wasn't created by Dependabot.
+      - name: compare
+        run: |
+          if [ "$(git diff --ignore-space-at-eol --text dist/ | wc -l)" -gt "0" ]; then
+            echo "Detected uncommitted changes after build. See status below:"
+            git diff --ignore-space-at-eol --text dist/
+            exit 1
+          fi
