@@ -27408,8 +27408,9 @@ exports.getInputs = getInputs;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getRelease = exports.getSession = void 0;
+exports.getUrls = exports.getRelease = exports.getSession = void 0;
 const https_1 = __nccwpck_require__(533);
+const core_1 = __nccwpck_require__(2186);
 async function getSession(sessionReference) {
     return (0, https_1.request)('/api/sessions', 'POST', {
         token: sessionReference
@@ -27422,6 +27423,12 @@ async function getRelease(projectReference, sessionReference) {
     });
 }
 exports.getRelease = getRelease;
+function getUrls(projectReference, releaseReference, files, sessionReference) {
+    for (let file of files.toUpload) {
+        (0, core_1.info)(file);
+    }
+}
+exports.getUrls = getUrls;
 
 
 /***/ }),
@@ -27446,6 +27453,7 @@ async function run() {
     }
     const session = await (0, service_1.getSession)(inputs.sessionReference);
     const release = await (0, service_1.getRelease)(inputs.projectReference, session);
+    (0, service_1.getUrls)(inputs.projectReference, release, files, session);
     // Upload Release
     (0, core_1.info)(`With the provided session reference, we will use ${session} to upload the release.`);
     (0, core_1.info)(`With the provided session reference, we will upload to ${release} release.`);

@@ -1,4 +1,6 @@
 import { request } from "./https";
+import {Files} from "../types/files";
+import {info} from "@actions/core";
 
 export async function getSession(
     sessionReference: string
@@ -15,4 +17,17 @@ export async function getRelease(
     return request(`/api/projects/${projectReference}/releases`, 'POST', {}, {
         'X-SMS-SessionToken': sessionReference
     });
+}
+
+export function getUrls(
+    projectReference: string,
+    releaseReference: string,
+    files: Files,
+    sessionReference: string
+): void {
+
+    for (let file of files.toUpload) {
+        info(file)
+    }
+
 }

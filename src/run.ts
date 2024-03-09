@@ -1,7 +1,7 @@
 import { info, setFailed, setOutput}  from "@actions/core";
 import { getInputs } from "./helpers/input";
 import { getFiles } from "./helpers/files";
-import {getRelease, getSession} from "./helpers/service";
+import {getRelease, getSession, getUrls} from "./helpers/service";
 
 export async function run(): Promise<void> {
   const inputs = getInputs();
@@ -16,6 +16,7 @@ export async function run(): Promise<void> {
 
   const session = await getSession(inputs.sessionReference);
   const release = await getRelease(inputs.projectReference, session);
+  getUrls(inputs.projectReference, release, files, session);
 
   // Upload Release
 
