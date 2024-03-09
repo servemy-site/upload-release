@@ -1,10 +1,11 @@
 import * as glob from '@actions/glob'
 import * as path from 'path'
+import * as fileType from 'file-type'
 import {debug, info} from '@actions/core'
 import {stat,statSync, existsSync} from 'fs'
 import {dirname, normalize, resolve} from 'path'
 import {promisify} from 'util'
-import {Files} from "../types/files";
+import {Files} from "../types/files.js";
 const stats = promisify(stat)
 
 
@@ -103,6 +104,7 @@ export async function getFiles(
             debug(`File:${searchResult} was found using the provided searchPath`)
             searchResults.push(searchResult)
 
+
             // detect any files that would be overwritten because of case insensitivity
             if (set.has(searchResult.toLowerCase())) {
                 info(
@@ -163,12 +165,13 @@ export interface UploadZipSpecification {
      * The destination path in a zip for a file
      */
     destinationPath: string
+    mimeType: string | undefined | null
 }
 
-export function getUploadZipSpecification(
+export async function getUploadZipSpecification(
     filesToZip: string[],
     rootDirectory: string
-): UploadZipSpecification[] {
+): Promise<UploadZipSpecification[]> {
     const specification: UploadZipSpecification[] = []
 
     // Normalize and resolve, this allows for either absolute or relative paths to be used
@@ -205,6 +208,7 @@ export function getUploadZipSpecification(
         if (!existsSync(file)) {
             throw new Error(`File ${file} does not exist`)
         }
+
         if (!statSync(file).isDirectory()) {
             // Normalize and resolve, this allows for either absolute or relative paths to be used
             file = normalize(file)
@@ -218,10 +222,11 @@ export function getUploadZipSpecification(
             // Check for forbidden characters in file paths that may cause ambiguous behavior if downloaded on different file systems
             const uploadPath = file.replace(rootDirectory, '')
             validateFilePath(uploadPath)
-
+            const mimeType = await fileType.fileTypeFromFile(file);
             specification.push({
                 sourcePath: file,
-                destinationPath: uploadPath
+                destinationPath: uploadPath,
+                mimeType: mimeType?.mime.toString()
             })
         } else {
             // Empty directory
@@ -230,7 +235,8 @@ export function getUploadZipSpecification(
 
             specification.push({
                 sourcePath: null,
-                destinationPath: directoryPath
+                destinationPath: directoryPath,
+                mimeType: null
             })
         }
     }
