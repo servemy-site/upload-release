@@ -1,0 +1,21 @@
+name: 'Upload Release'
+description: 'An action to upload a code release to Serve My Site.'
+author: 'Serve My Site'
+
+branding:
+  icon: 'heart'
+  color: 'red'
+
+inputs:
+  text:
+    description: 'Your input description here'
+    required: true
+    default: 'Hello World!'
+
+outputs:
+  text:
+    description: 'Your output description here'
+
+runs:
+  using: node20
+  main: dist/index.js
