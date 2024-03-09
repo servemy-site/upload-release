@@ -27459,6 +27459,9 @@ async function upload(url, data) {
                     resolve();
             });
         });
+        for await (const chunk of data) {
+            request.write(chunk);
+        }
         request.end(data);
     });
 }
