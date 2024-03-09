@@ -27436,7 +27436,7 @@ async function request(api, method, content, headers) {
 }
 exports.request = request;
 async function upload(url, data) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         const options = {
             method: 'PUT',
             headers: {
@@ -27459,7 +27459,8 @@ async function upload(url, data) {
                     resolve();
             });
         });
-        data.pipe(request).end();
+        await data.pipe(request);
+        request.end();
     });
 }
 exports.upload = upload;

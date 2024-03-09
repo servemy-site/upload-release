@@ -63,7 +63,7 @@ export async function upload(
     data: ReadStream
 ): Promise<void> {
 
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<void>(async (resolve, reject) => {
         const options: RequestOptions = {
             method: 'PUT',
             headers: {
@@ -92,6 +92,7 @@ export async function upload(
             });
         });
 
-        data.pipe(request).end();
+        await data.pipe(request);
+        request.end();
     });
 }
