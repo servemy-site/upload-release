@@ -1,8 +1,10 @@
-import './sourcemap-register.cjs';/******/ var __webpack_modules__ = ({
+require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
 /***/ 7351:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -101,6 +103,7 @@ function escapeProperty(s) {
 /***/ 2186:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -443,6 +446,7 @@ Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: funct
 /***/ 717:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 // For internal use, subject to change.
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -507,6 +511,7 @@ exports.prepareKeyValueMessage = prepareKeyValueMessage;
 /***/ 8041:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -590,6 +595,7 @@ exports.OidcClient = OidcClient;
 /***/ 2981:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -654,6 +660,7 @@ exports.toPlatformPath = toPlatformPath;
 /***/ 1327:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -943,6 +950,7 @@ exports.summary = _summary;
 /***/ 5278:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -989,6 +997,7 @@ exports.toCommandProperties = toCommandProperties;
 /***/ 8090:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -1041,6 +1050,7 @@ exports.hashFiles = hashFiles;
 /***/ 1026:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1102,6 +1112,7 @@ exports.getOptions = getOptions;
 /***/ 8298:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1343,6 +1354,7 @@ exports.DefaultGlobber = DefaultGlobber;
 /***/ 2448:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1446,6 +1458,7 @@ exports.hashFiles = hashFiles;
 /***/ 1063:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.MatchKind = void 0;
@@ -1470,6 +1483,7 @@ var MatchKind;
 /***/ 1849:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1674,6 +1688,7 @@ exports.safeTrimTrailingSeparator = safeTrimTrailingSeparator;
 /***/ 6836:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1793,6 +1808,7 @@ exports.Path = Path;
 /***/ 9005:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -1893,6 +1909,7 @@ exports.partialMatch = partialMatch;
 /***/ 4536:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -2154,6 +2171,7 @@ exports.Pattern = Pattern;
 /***/ 9117:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SearchState = void 0;
@@ -3333,6 +3351,7 @@ function regExpEscape (s) {
 /***/ 5526:
 /***/ (function(__unused_webpack_module, exports) {
 
+"use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -3420,6 +3439,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 /***/ 6255:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
+"use strict";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -4082,6 +4102,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 /***/ 9835:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.checkBypass = exports.getProxyUrl = void 0;
@@ -4170,6 +4191,7 @@ function isLoopbackAddress(host) {
 /***/ 9417:
 /***/ ((module) => {
 
+"use strict";
 
 module.exports = balanced;
 function balanced(a, b, str) {
@@ -4256,98 +4278,6 @@ var isArray = Array.isArray || function (xs) {
 
 /***/ }),
 
-/***/ 3092:
-/***/ ((__unused_webpack_module, exports) => {
-
-/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
-exports.i = function (buffer, offset, isLE, mLen, nBytes) {
-  var e, m
-  var eLen = (nBytes * 8) - mLen - 1
-  var eMax = (1 << eLen) - 1
-  var eBias = eMax >> 1
-  var nBits = -7
-  var i = isLE ? (nBytes - 1) : 0
-  var d = isLE ? -1 : 1
-  var s = buffer[offset + i]
-
-  i += d
-
-  e = s & ((1 << (-nBits)) - 1)
-  s >>= (-nBits)
-  nBits += eLen
-  for (; nBits > 0; e = (e * 256) + buffer[offset + i], i += d, nBits -= 8) {}
-
-  m = e & ((1 << (-nBits)) - 1)
-  e >>= (-nBits)
-  nBits += mLen
-  for (; nBits > 0; m = (m * 256) + buffer[offset + i], i += d, nBits -= 8) {}
-
-  if (e === 0) {
-    e = 1 - eBias
-  } else if (e === eMax) {
-    return m ? NaN : ((s ? -1 : 1) * Infinity)
-  } else {
-    m = m + Math.pow(2, mLen)
-    e = e - eBias
-  }
-  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
-}
-
-exports.c = function (buffer, value, offset, isLE, mLen, nBytes) {
-  var e, m, c
-  var eLen = (nBytes * 8) - mLen - 1
-  var eMax = (1 << eLen) - 1
-  var eBias = eMax >> 1
-  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
-  var i = isLE ? 0 : (nBytes - 1)
-  var d = isLE ? 1 : -1
-  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
-
-  value = Math.abs(value)
-
-  if (isNaN(value) || value === Infinity) {
-    m = isNaN(value) ? 1 : 0
-    e = eMax
-  } else {
-    e = Math.floor(Math.log(value) / Math.LN2)
-    if (value * (c = Math.pow(2, -e)) < 1) {
-      e--
-      c *= 2
-    }
-    if (e + eBias >= 1) {
-      value += rt / c
-    } else {
-      value += rt * Math.pow(2, 1 - eBias)
-    }
-    if (value * c >= 2) {
-      e++
-      c /= 2
-    }
-
-    if (e + eBias >= eMax) {
-      m = 0
-      e = eMax
-    } else if (e + eBias >= 1) {
-      m = ((value * c) - 1) * Math.pow(2, mLen)
-      e = e + eBias
-    } else {
-      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
-      e = 0
-    }
-  }
-
-  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
-
-  e = (e << mLen) | m
-  eLen += mLen
-  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
-
-  buffer[offset + i - d] |= s * 128
-}
-
-
-/***/ }),
-
 /***/ 4294:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
@@ -4359,6 +4289,7 @@ module.exports = __nccwpck_require__(4219);
 /***/ 4219:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 var net = __nccwpck_require__(1808);
@@ -4630,6 +4561,7 @@ exports.debug = debug; // for test
 /***/ 1773:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const Client = __nccwpck_require__(3598)
@@ -4804,6 +4736,7 @@ module.exports.mockErrors = mockErrors
 /***/ 7890:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { InvalidArgumentError } = __nccwpck_require__(8045)
@@ -5020,6 +4953,7 @@ module.exports = {
 /***/ 9744:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { AsyncResource } = __nccwpck_require__(852)
@@ -5131,6 +5065,7 @@ module.exports = connect
 /***/ 8752:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const {
@@ -5387,6 +5322,7 @@ module.exports = pipeline
 /***/ 5448:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const Readable = __nccwpck_require__(3858)
@@ -5574,6 +5510,7 @@ module.exports.RequestHandler = RequestHandler
 /***/ 5395:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { finished, PassThrough } = __nccwpck_require__(2781)
@@ -5801,6 +5738,7 @@ module.exports = stream
 /***/ 6923:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { InvalidArgumentError, RequestAbortedError, SocketError } = __nccwpck_require__(8045)
@@ -5913,6 +5851,7 @@ module.exports = upgrade
 /***/ 4059:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 module.exports.request = __nccwpck_require__(5448)
@@ -5927,6 +5866,7 @@ module.exports.connect = __nccwpck_require__(9744)
 /***/ 3858:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 // Ported from https://github.com/nodejs/undici/pull/907
 
 
@@ -6309,6 +6249,7 @@ module.exports = { getResolveErrorBodyCallback }
 /***/ 7931:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const {
@@ -6506,6 +6447,7 @@ module.exports = BalancedPool
 /***/ 6101:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { kConstruct } = __nccwpck_require__(9174)
@@ -7351,6 +7293,7 @@ module.exports = {
 /***/ 7907:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { kConstruct } = __nccwpck_require__(9174)
@@ -7502,6 +7445,7 @@ module.exports = {
 /***/ 9174:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 module.exports = {
@@ -7514,6 +7458,7 @@ module.exports = {
 /***/ 2396:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const assert = __nccwpck_require__(9491)
@@ -7570,6 +7515,7 @@ module.exports = {
 /***/ 3598:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 // @ts-check
 
 
@@ -9860,6 +9806,7 @@ module.exports = Client
 /***/ 6436:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore file: only for Node 12 */
@@ -9915,6 +9862,7 @@ module.exports = function () {
 /***/ 663:
 /***/ ((module) => {
 
+"use strict";
 
 
 // https://wicg.github.io/cookie-store/#cookie-maximum-attribute-value-size
@@ -9934,6 +9882,7 @@ module.exports = {
 /***/ 1724:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { parseSetCookie } = __nccwpck_require__(4408)
@@ -10125,6 +10074,7 @@ module.exports = {
 /***/ 4408:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(663)
@@ -10449,6 +10399,7 @@ module.exports = {
 /***/ 3121:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const assert = __nccwpck_require__(9491)
@@ -10747,6 +10698,7 @@ module.exports = {
 /***/ 2067:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const net = __nccwpck_require__(1808)
@@ -10943,6 +10895,7 @@ module.exports = buildConnector
 /***/ 8045:
 /***/ ((module) => {
 
+"use strict";
 
 
 class UndiciError extends Error {
@@ -11180,6 +11133,7 @@ module.exports = {
 /***/ 2905:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const {
@@ -11756,6 +11710,7 @@ module.exports = {
 /***/ 3983:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const assert = __nccwpck_require__(9491)
@@ -12274,6 +12229,7 @@ module.exports = {
 /***/ 4839:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const Dispatcher = __nccwpck_require__(412)
@@ -12473,6 +12429,7 @@ module.exports = DispatcherBase
 /***/ 412:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const EventEmitter = __nccwpck_require__(2361)
@@ -12499,6 +12456,7 @@ module.exports = Dispatcher
 /***/ 1472:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const Busboy = __nccwpck_require__(727)
@@ -13111,6 +13069,7 @@ module.exports = {
 /***/ 1037:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { MessageChannel, receiveMessageOnPort } = __nccwpck_require__(1267)
@@ -13903,6 +13862,7 @@ module.exports = {
 /***/ 8511:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { Blob, File: NativeFile } = __nccwpck_require__(4300)
@@ -14254,6 +14214,7 @@ module.exports = { File, FileLike, isFileLike }
 /***/ 2015:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { isBlobLike, toUSVString, makeIterator } = __nccwpck_require__(2538)
@@ -14526,6 +14487,7 @@ module.exports = { FormData }
 /***/ 1246:
 /***/ ((module) => {
 
+"use strict";
 
 
 // In case of breaking changes, increase the version
@@ -14573,6 +14535,7 @@ module.exports = {
 /***/ 554:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 // https://github.com/Ethan-Arrowood/undici-fetch
 
 
@@ -15169,6 +15132,7 @@ module.exports = {
 /***/ 4881:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 // https://github.com/Ethan-Arrowood/undici-fetch
 
 
@@ -17324,6 +17288,7 @@ module.exports = {
 /***/ 8359:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 /* globals AbortController */
 
 
@@ -18277,6 +18242,7 @@ module.exports = { Request, makeRequest }
 /***/ 7823:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { Headers, HeadersList, fill } = __nccwpck_require__(554)
@@ -18855,6 +18821,7 @@ module.exports = {
 /***/ 5861:
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = {
@@ -18872,6 +18839,7 @@ module.exports = {
 /***/ 2538:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = __nccwpck_require__(1037)
@@ -19950,6 +19918,7 @@ module.exports = {
 /***/ 1744:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { types } = __nccwpck_require__(3837)
@@ -20603,6 +20572,7 @@ module.exports = {
 /***/ 4854:
 /***/ ((module) => {
 
+"use strict";
 
 
 /**
@@ -20900,6 +20870,7 @@ module.exports = {
 /***/ 1446:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const {
@@ -21251,6 +21222,7 @@ module.exports = {
 /***/ 5504:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { webidl } = __nccwpck_require__(1744)
@@ -21336,6 +21308,7 @@ module.exports = {
 /***/ 9054:
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = {
@@ -21353,6 +21326,7 @@ module.exports = {
 /***/ 7530:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const {
@@ -21752,6 +21726,7 @@ module.exports = {
 /***/ 1892:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 // We include a version number for the Dispatcher API. In case of breaking changes,
@@ -21791,6 +21766,7 @@ module.exports = {
 /***/ 6930:
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = class DecoratorHandler {
@@ -21833,6 +21809,7 @@ module.exports = class DecoratorHandler {
 /***/ 2860:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const util = __nccwpck_require__(3983)
@@ -22399,6 +22376,7 @@ module.exports = RetryHandler
 /***/ 8861:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const RedirectHandler = __nccwpck_require__(2860)
@@ -22427,6 +22405,7 @@ module.exports = createRedirectInterceptor
 /***/ 953:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SPECIAL_HEADERS = exports.HEADER_STATE = exports.MINOR = exports.MAJOR = exports.CONNECTION_TOKEN_CHARS = exports.HEADER_CHARS = exports.TOKEN = exports.STRICT_TOKEN = exports.HEX = exports.URL_CHAR = exports.STRICT_URL_CHAR = exports.USERINFO_CHARS = exports.MARK = exports.ALPHANUM = exports.NUM = exports.HEX_MAP = exports.NUM_MAP = exports.ALPHA = exports.FINISH = exports.H_METHOD_MAP = exports.METHOD_MAP = exports.METHODS_RTSP = exports.METHODS_ICE = exports.METHODS_HTTP = exports.METHODS = exports.LENIENT_FLAGS = exports.FLAGS = exports.TYPE = exports.ERROR = void 0;
@@ -22727,6 +22706,7 @@ module.exports = 'AGFzbQEAAAABMAhgAX8Bf2ADf39/AX9gBH9/f38Bf2AAAGADf39/AGABfwBgAn
 /***/ 1891:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.enumToMap = void 0;
@@ -22748,6 +22728,7 @@ exports.enumToMap = enumToMap;
 /***/ 6771:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { kClients } = __nccwpck_require__(2785)
@@ -22926,6 +22907,7 @@ module.exports = MockAgent
 /***/ 8687:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { promisify } = __nccwpck_require__(3837)
@@ -22992,6 +22974,7 @@ module.exports = MockClient
 /***/ 888:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { UndiciError } = __nccwpck_require__(8045)
@@ -23016,6 +22999,7 @@ module.exports = {
 /***/ 410:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(9323)
@@ -23229,6 +23213,7 @@ module.exports.MockScope = MockScope
 /***/ 6193:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { promisify } = __nccwpck_require__(3837)
@@ -23295,6 +23280,7 @@ module.exports = MockPool
 /***/ 4347:
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = {
@@ -23325,6 +23311,7 @@ module.exports = {
 /***/ 9323:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { MockNotMatchedError } = __nccwpck_require__(888)
@@ -23683,6 +23670,7 @@ module.exports = {
 /***/ 6823:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { Transform } = __nccwpck_require__(2781)
@@ -23730,6 +23718,7 @@ module.exports = class PendingInterceptorsFormatter {
 /***/ 8891:
 /***/ ((module) => {
 
+"use strict";
 
 
 const singulars = {
@@ -23766,6 +23755,7 @@ module.exports = class Pluralizer {
 /***/ 8266:
 /***/ ((module) => {
 
+"use strict";
 /* eslint-disable */
 
 
@@ -23890,6 +23880,7 @@ module.exports = class FixedQueue {
 /***/ 3198:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const DispatcherBase = __nccwpck_require__(4839)
@@ -24132,6 +24123,7 @@ module.exports = PoolStats
 /***/ 4634:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const {
@@ -24233,6 +24225,7 @@ module.exports = Pool
 /***/ 7858:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { kProxy, kClose, kDestroy, kInterceptors } = __nccwpck_require__(2785)
@@ -24429,6 +24422,7 @@ module.exports = ProxyAgent
 /***/ 9459:
 /***/ ((module) => {
 
+"use strict";
 
 
 let fastNow = Date.now()
@@ -24533,6 +24527,7 @@ module.exports = {
 /***/ 5354:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const diagnosticsChannel = __nccwpck_require__(7643)
@@ -24831,6 +24826,7 @@ module.exports = {
 /***/ 9188:
 /***/ ((module) => {
 
+"use strict";
 
 
 // This is a Globally Unique Identifier unique used
@@ -24889,6 +24885,7 @@ module.exports = {
 /***/ 2611:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { webidl } = __nccwpck_require__(1744)
@@ -25199,6 +25196,7 @@ module.exports = {
 /***/ 5444:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { maxUnsigned16Bit } = __nccwpck_require__(9188)
@@ -25279,6 +25277,7 @@ module.exports = {
 /***/ 1688:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { Writable } = __nccwpck_require__(2781)
@@ -25630,6 +25629,7 @@ module.exports = {
 /***/ 7578:
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = {
@@ -25649,6 +25649,7 @@ module.exports = {
 /***/ 5515:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(7578)
@@ -25856,6 +25857,7 @@ module.exports = {
 /***/ 4284:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const { webidl } = __nccwpck_require__(1744)
@@ -26504,6 +26506,7 @@ module.exports = {
 /***/ 5840:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26589,6 +26592,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ 4569:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26618,6 +26622,7 @@ exports["default"] = _default;
 /***/ 5332:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26632,6 +26637,7 @@ exports["default"] = _default;
 /***/ 2746:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26683,6 +26689,7 @@ exports["default"] = _default;
 /***/ 814:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26697,6 +26704,7 @@ exports["default"] = _default;
 /***/ 807:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26727,6 +26735,7 @@ function rng() {
 /***/ 5274:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26756,6 +26765,7 @@ exports["default"] = _default;
 /***/ 8950:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26801,6 +26811,7 @@ exports["default"] = _default;
 /***/ 8628:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26914,6 +26925,7 @@ exports["default"] = _default;
 /***/ 6409:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -26936,6 +26948,7 @@ exports["default"] = _default;
 /***/ 5998:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -27020,6 +27033,7 @@ function _default(name, version, hashfunc) {
 /***/ 5122:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -27063,6 +27077,7 @@ exports["default"] = _default;
 /***/ 9120:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -27085,6 +27100,7 @@ exports["default"] = _default;
 /***/ 6900:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -27108,6 +27124,7 @@ exports["default"] = _default;
 /***/ 1595:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -27132,9 +27149,439 @@ exports["default"] = _default;
 
 /***/ }),
 
+/***/ 5115:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.validateFilePath = exports.getUploadZipSpecification = exports.getFiles = void 0;
+const glob = __importStar(__nccwpck_require__(8090));
+const path = __importStar(__nccwpck_require__(1017));
+const core_1 = __nccwpck_require__(2186);
+const fs_1 = __nccwpck_require__(7147);
+const path_1 = __nccwpck_require__(1017);
+const util_1 = __nccwpck_require__(3837);
+const stats = (0, util_1.promisify)(fs_1.stat);
+function getDefaultGlobOptions() {
+    return {
+        followSymbolicLinks: true,
+        implicitDescendants: true,
+        omitBrokenSymbolicLinks: true
+    };
+}
+/**
+ * If multiple paths are specific, the least common ancestor (LCA) of the search paths is used as
+ * the delimiter to control the directory structure for the artifact. This function returns the LCA
+ * when given an array of search paths
+ *
+ * Example 1: The patterns `/foo/` and `/bar/` returns `/`
+ *
+ * Example 2: The patterns `~/foo/bar/*` and `~/foo/voo/two/*` and `~/foo/mo/` returns `~/foo`
+ */
+function getMultiPathLCA(searchPaths) {
+    if (searchPaths.length < 2) {
+        throw new Error('At least two search paths must be provided');
+    }
+    const commonPaths = new Array();
+    const splitPaths = new Array();
+    let smallestPathLength = Number.MAX_SAFE_INTEGER;
+    // split each of the search paths using the platform specific separator
+    for (const searchPath of searchPaths) {
+        (0, core_1.debug)(`Using search path ${searchPath}`);
+        const splitSearchPath = path.normalize(searchPath).split(path.sep);
+        // keep track of the smallest path length so that we don't accidentally later go out of bounds
+        smallestPathLength = Math.min(smallestPathLength, splitSearchPath.length);
+        splitPaths.push(splitSearchPath);
+    }
+    // on Unix-like file systems, the file separator exists at the beginning of the file path, make sure to preserve it
+    if (searchPaths[0].startsWith(path.sep)) {
+        commonPaths.push(path.sep);
+    }
+    let splitIndex = 0;
+    // function to check if the paths are the same at a specific index
+    function isPathTheSame() {
+        const compare = splitPaths[0][splitIndex];
+        for (let i = 1; i < splitPaths.length; i++) {
+            if (compare !== splitPaths[i][splitIndex]) {
+                // a non-common index has been reached
+                return false;
+            }
+        }
+        return true;
+    }
+    // loop over all the search paths until there is a non-common ancestor or we go out of bounds
+    while (splitIndex < smallestPathLength) {
+        if (!isPathTheSame()) {
+            break;
+        }
+        // if all are the same, add to the end result & increment the index
+        commonPaths.push(splitPaths[0][splitIndex]);
+        splitIndex++;
+    }
+    return path.join(...commonPaths);
+}
+async function getFiles(searchPath, globOptions) {
+    const searchResults = [];
+    const globber = await glob.create(searchPath, globOptions || getDefaultGlobOptions());
+    const rawSearchResults = await globber.glob();
+    /*
+      Files are saved with case insensitivity. Uploading both a.txt and A.txt will files to be overwritten
+      Detect any files that could be overwritten for user awareness
+    */
+    const set = new Set();
+    /*
+      Directories will be rejected if attempted to be uploaded. This includes just empty
+      directories so filter any directories out from the raw search results
+    */
+    for (const searchResult of rawSearchResults) {
+        const fileStats = await stats(searchResult);
+        // isDirectory() returns false for symlinks if using fs.lstat(), make sure to use fs.stat() instead
+        if (!fileStats.isDirectory()) {
+            (0, core_1.debug)(`File:${searchResult} was found using the provided searchPath`);
+            searchResults.push(searchResult);
+            // detect any files that would be overwritten because of case insensitivity
+            if (set.has(searchResult.toLowerCase())) {
+                (0, core_1.info)(`Uploads are case insensitive: ${searchResult} was detected that it will be overwritten by another file with the same path`);
+            }
+            else {
+                set.add(searchResult.toLowerCase());
+            }
+        }
+        else {
+            (0, core_1.debug)(`Removing ${searchResult} from rawSearchResults because it is a directory`);
+        }
+    }
+    // Calculate the root directory for the artifact using the search paths that were utilized
+    const searchPaths = globber.getSearchPaths();
+    if (searchPaths.length > 1) {
+        (0, core_1.info)(`Multiple search paths detected. Calculating the least common ancestor of all paths`);
+        const lcaSearchPath = getMultiPathLCA(searchPaths);
+        (0, core_1.info)(`The least common ancestor is ${lcaSearchPath}. This will be the root directory of the artifact`);
+        return {
+            toUpload: searchResults,
+            rootDirectory: lcaSearchPath
+        };
+    }
+    /*
+      Special case for a single file artifact that is uploaded without a directory or wildcard pattern. The directory structure is
+      not preserved and the root directory will be the single files parent directory
+    */
+    if (searchResults.length === 1 && searchPaths[0] === searchResults[0]) {
+        return {
+            toUpload: searchResults,
+            rootDirectory: (0, path_1.dirname)(searchResults[0])
+        };
+    }
+    return {
+        toUpload: searchResults,
+        rootDirectory: searchPaths[0]
+    };
+}
+exports.getFiles = getFiles;
+function getUploadZipSpecification(filesToZip, rootDirectory) {
+    const specification = [];
+    // Normalize and resolve, this allows for either absolute or relative paths to be used
+    rootDirectory = (0, path_1.normalize)(rootDirectory);
+    rootDirectory = (0, path_1.resolve)(rootDirectory);
+    /*
+       Example
+
+       Input:
+         rootDirectory: '/home/user/files/plz-upload'
+         artifactFiles: [
+           '/home/user/files/plz-upload/file1.txt',
+           '/home/user/files/plz-upload/file2.txt',
+           '/home/user/files/plz-upload/dir/file3.txt'
+         ]
+
+       Output:
+         specifications: [
+           ['/home/user/files/plz-upload/file1.txt', '/file1.txt'],
+           ['/home/user/files/plz-upload/file1.txt', '/file2.txt'],
+           ['/home/user/files/plz-upload/file1.txt', '/dir/file3.txt']
+         ]
+
+        The final zip that is later uploaded will look like this:
+
+        my-artifact.zip
+          - file.txt
+          - file2.txt
+          - dir/
+            - file3.txt
+    */
+    for (let file of filesToZip) {
+        if (!(0, fs_1.existsSync)(file)) {
+            throw new Error(`File ${file} does not exist`);
+        }
+        if (!(0, fs_1.statSync)(file).isDirectory()) {
+            // Normalize and resolve, this allows for either absolute or relative paths to be used
+            file = (0, path_1.normalize)(file);
+            file = (0, path_1.resolve)(file);
+            if (!file.startsWith(rootDirectory)) {
+                throw new Error(`The rootDirectory: ${rootDirectory} is not a parent directory of the file: ${file}`);
+            }
+            // Check for forbidden characters in file paths that may cause ambiguous behavior if downloaded on different file systems
+            const uploadPath = file.replace(rootDirectory, '');
+            validateFilePath(uploadPath);
+            specification.push({
+                sourcePath: file,
+                destinationPath: uploadPath
+            });
+        }
+        else {
+            // Empty directory
+            const directoryPath = file.replace(rootDirectory, '');
+            validateFilePath(directoryPath);
+            specification.push({
+                sourcePath: null,
+                destinationPath: directoryPath
+            });
+        }
+    }
+    return specification;
+}
+exports.getUploadZipSpecification = getUploadZipSpecification;
+/**
+ * Validates file paths to check for any illegal characters that can cause problems on different file systems
+ */
+function validateFilePath(path) {
+    if (!path) {
+        throw new Error(`Provided file path input during validation is empty`);
+    }
+    for (const [invalidCharacterKey, errorMessageForCharacter] of invalidArtifactFilePathCharacters) {
+        if (path.includes(invalidCharacterKey)) {
+            throw new Error(`The path for one of the files in artifact is not valid: ${path}. Contains the following character: ${errorMessageForCharacter}
+          
+Invalid characters include: ${Array.from(invalidArtifactFilePathCharacters.values()).toString()}
+          
+The following characters are not allowed in files that are uploaded due to limitations with certain file systems such as NTFS. To maintain file system agnostic behavior, these characters are intentionally not allowed to prevent potential problems with downloads on different file systems.
+          `);
+        }
+    }
+}
+exports.validateFilePath = validateFilePath;
+const invalidArtifactFilePathCharacters = new Map([
+    ['"', ' Double quote "'],
+    [':', ' Colon :'],
+    ['<', ' Less than <'],
+    ['>', ' Greater than >'],
+    ['|', ' Vertical bar |'],
+    ['*', ' Asterisk *'],
+    ['?', ' Question mark ?'],
+    ['\r', ' Carriage return \\r'],
+    ['\n', ' Line feed \\n']
+]);
+
+
+/***/ }),
+
+/***/ 533:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.request = void 0;
+const https = __importStar(__nccwpck_require__(5687));
+const core_1 = __nccwpck_require__(2186);
+async function request(api, method, content, headers) {
+    return new Promise((resolve, reject) => {
+        const body = JSON.stringify(content);
+        headers["Content-Type"] = 'application/json';
+        headers["Content-Length"] = body.length;
+        const options = {
+            hostname: 'service.servemy.site',
+            port: 443,
+            path: api,
+            method: method,
+            headers: headers
+        };
+        (0, core_1.info)(`Starting request to: [${method}] https://${options.hostname}${options.path}`);
+        const request = https.request(options, (response) => {
+            let data = '';
+            response.on('data', function (d) {
+                data += d;
+            });
+            response.on('end', function () {
+                (0, core_1.info)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
+                (0, core_1.debug)(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
+                const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
+                if (failed)
+                    reject(JSON.parse(data));
+                else
+                    resolve(JSON.parse(data));
+            });
+        });
+        request.end(body);
+    });
+}
+exports.request = request;
+
+
+/***/ }),
+
+/***/ 5040:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.getInputs = void 0;
+const core_1 = __nccwpck_require__(2186);
+const inputs_1 = __nccwpck_require__(4549);
+/**
+ * Helper to get all the inputs for the action
+ */
+function getInputs() {
+    const sessionReference = (0, core_1.getInput)(inputs_1.UploadInputNames.SessionReference, { required: true });
+    const projectReference = (0, core_1.getInput)(inputs_1.UploadInputNames.ProjectReference, { required: true });
+    const path = (0, core_1.getInput)(inputs_1.UploadInputNames.Path, { required: true });
+    const inputs = {
+        sessionReference: sessionReference,
+        projectReference: projectReference,
+        searchPath: path
+    };
+    return inputs;
+}
+exports.getInputs = getInputs;
+
+
+/***/ }),
+
+/***/ 8462:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.getUrls = exports.getRelease = exports.getSession = void 0;
+const https_1 = __nccwpck_require__(533);
+const core_1 = __nccwpck_require__(2186);
+const files_1 = __nccwpck_require__(5115);
+async function getSession(sessionReference) {
+    return (0, https_1.request)('/api/sessions', 'POST', {
+        token: sessionReference
+    }, {});
+}
+exports.getSession = getSession;
+async function getRelease(projectReference, sessionReference) {
+    return (0, https_1.request)(`/api/projects/${projectReference}/releases`, 'POST', {}, {
+        'X-SMS-SessionToken': sessionReference
+    });
+}
+exports.getRelease = getRelease;
+function getUrls(projectReference, releaseReference, files, sessionReference) {
+    const spec = (0, files_1.getUploadZipSpecification)(files.toUpload, files.rootDirectory);
+    for (let file of spec) {
+        (0, core_1.info)(file.sourcePath ?? '');
+        (0, core_1.info)(file.destinationPath);
+    }
+}
+exports.getUrls = getUrls;
+
+
+/***/ }),
+
+/***/ 7764:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.run = void 0;
+const core_1 = __nccwpck_require__(2186);
+const input_1 = __nccwpck_require__(5040);
+const files_1 = __nccwpck_require__(5115);
+const service_1 = __nccwpck_require__(8462);
+async function run() {
+    const inputs = (0, input_1.getInputs)();
+    const files = await (0, files_1.getFiles)(inputs.searchPath);
+    if (files.toUpload.length === 0) {
+        (0, core_1.setFailed)(`No files were found with the provided path: ${inputs.searchPath}. No release will be uploaded.`);
+        return;
+    }
+    const session = await (0, service_1.getSession)(inputs.sessionReference);
+    const release = await (0, service_1.getRelease)(inputs.projectReference, session);
+    (0, service_1.getUrls)(inputs.projectReference, release, files, session);
+    // Upload Release
+    (0, core_1.info)(`With the provided session reference, we will use ${session} to upload the release.`);
+    (0, core_1.info)(`With the provided session reference, we will upload to ${release} release.`);
+    (0, core_1.info)(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
+    (0, core_1.setOutput)('release-reference', 'something here.');
+}
+exports.run = run;
+
+
+/***/ }),
+
+/***/ 4549:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.UploadInputNames = void 0;
+var UploadInputNames;
+(function (UploadInputNames) {
+    UploadInputNames["SessionReference"] = "session-reference";
+    UploadInputNames["ProjectReference"] = "project-reference";
+    UploadInputNames["Path"] = "path";
+})(UploadInputNames || (exports.UploadInputNames = UploadInputNames = {}));
+
+
+/***/ }),
+
 /***/ 9491:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("assert");
 
 /***/ }),
@@ -27142,6 +27589,7 @@ module.exports = require("assert");
 /***/ 852:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("async_hooks");
 
 /***/ }),
@@ -27149,6 +27597,7 @@ module.exports = require("async_hooks");
 /***/ 4300:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("buffer");
 
 /***/ }),
@@ -27156,6 +27605,7 @@ module.exports = require("buffer");
 /***/ 6206:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("console");
 
 /***/ }),
@@ -27163,6 +27613,7 @@ module.exports = require("console");
 /***/ 6113:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("crypto");
 
 /***/ }),
@@ -27170,6 +27621,7 @@ module.exports = require("crypto");
 /***/ 7643:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("diagnostics_channel");
 
 /***/ }),
@@ -27177,6 +27629,7 @@ module.exports = require("diagnostics_channel");
 /***/ 2361:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("events");
 
 /***/ }),
@@ -27184,6 +27637,7 @@ module.exports = require("events");
 /***/ 7147:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("fs");
 
 /***/ }),
@@ -27191,6 +27645,7 @@ module.exports = require("fs");
 /***/ 3685:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("http");
 
 /***/ }),
@@ -27198,6 +27653,7 @@ module.exports = require("http");
 /***/ 5158:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("http2");
 
 /***/ }),
@@ -27205,6 +27661,7 @@ module.exports = require("http2");
 /***/ 5687:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("https");
 
 /***/ }),
@@ -27212,6 +27669,7 @@ module.exports = require("https");
 /***/ 1808:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("net");
 
 /***/ }),
@@ -27219,6 +27677,7 @@ module.exports = require("net");
 /***/ 5673:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("node:events");
 
 /***/ }),
@@ -27226,6 +27685,7 @@ module.exports = require("node:events");
 /***/ 4492:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("node:stream");
 
 /***/ }),
@@ -27233,6 +27693,7 @@ module.exports = require("node:stream");
 /***/ 7261:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("node:util");
 
 /***/ }),
@@ -27240,6 +27701,7 @@ module.exports = require("node:util");
 /***/ 2037:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("os");
 
 /***/ }),
@@ -27247,6 +27709,7 @@ module.exports = require("os");
 /***/ 1017:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("path");
 
 /***/ }),
@@ -27254,6 +27717,7 @@ module.exports = require("path");
 /***/ 4074:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("perf_hooks");
 
 /***/ }),
@@ -27261,6 +27725,7 @@ module.exports = require("perf_hooks");
 /***/ 3477:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("querystring");
 
 /***/ }),
@@ -27268,6 +27733,7 @@ module.exports = require("querystring");
 /***/ 2781:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("stream");
 
 /***/ }),
@@ -27275,6 +27741,7 @@ module.exports = require("stream");
 /***/ 5356:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("stream/web");
 
 /***/ }),
@@ -27282,6 +27749,7 @@ module.exports = require("stream/web");
 /***/ 1576:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("string_decoder");
 
 /***/ }),
@@ -27289,6 +27757,7 @@ module.exports = require("string_decoder");
 /***/ 4404:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("tls");
 
 /***/ }),
@@ -27296,6 +27765,7 @@ module.exports = require("tls");
 /***/ 7310:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("url");
 
 /***/ }),
@@ -27303,6 +27773,7 @@ module.exports = require("url");
 /***/ 3837:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("util");
 
 /***/ }),
@@ -27310,6 +27781,7 @@ module.exports = require("util");
 /***/ 9830:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("util/types");
 
 /***/ }),
@@ -27317,6 +27789,7 @@ module.exports = require("util/types");
 /***/ 1267:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("worker_threads");
 
 /***/ }),
@@ -27324,6 +27797,7 @@ module.exports = require("worker_threads");
 /***/ 9796:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("zlib");
 
 /***/ }),
@@ -27331,6 +27805,7 @@ module.exports = require("zlib");
 /***/ 2960:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const WritableStream = (__nccwpck_require__(4492).Writable)
@@ -27551,6 +28026,7 @@ module.exports = Dicer
 /***/ 2032:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const EventEmitter = (__nccwpck_require__(5673).EventEmitter)
@@ -27658,6 +28134,7 @@ module.exports = HeaderParser
 /***/ 1620:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const inherits = (__nccwpck_require__(7261).inherits)
@@ -27678,6 +28155,7 @@ module.exports = PartStream
 /***/ 1142:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 /**
@@ -27913,6 +28391,7 @@ module.exports = SBMH
 /***/ 727:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const WritableStream = (__nccwpck_require__(4492).Writable)
@@ -28005,6 +28484,7 @@ module.exports.Dicer = Dicer
 /***/ 2183:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 // TODO:
@@ -28318,6 +28798,7 @@ module.exports = Multipart
 /***/ 8306:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 
 
 const Decoder = __nccwpck_require__(7100)
@@ -28515,6 +28996,7 @@ module.exports = UrlEncoded
 /***/ 7100:
 /***/ ((module) => {
 
+"use strict";
 
 
 const RE_PLUS = /\+/g
@@ -28576,6 +29058,7 @@ module.exports = Decoder
 /***/ 8647:
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function basename (path) {
@@ -28597,6 +29080,7 @@ module.exports = function basename (path) {
 /***/ 4619:
 /***/ (function(module) {
 
+"use strict";
 
 
 // Node has always utf-8
@@ -28718,6 +29202,7 @@ module.exports = decodeText
 /***/ 1467:
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function getLimit (limits, name, defaultLimit) {
@@ -28741,6 +29226,7 @@ module.exports = function getLimit (limits, name, defaultLimit) {
 /***/ 1854:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+"use strict";
 /* eslint-disable object-property-newline */
 
 
@@ -28941,3538 +29427,60 @@ module.exports = parseParams
 
 /***/ })
 
-/******/ });
+/******/ 	});
 /************************************************************************/
-/******/ // The module cache
-/******/ var __webpack_module_cache__ = {};
-/******/ 
-/******/ // The require function
-/******/ function __nccwpck_require__(moduleId) {
-/******/ 	// Check if module is in cache
-/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 	if (cachedModule !== undefined) {
-/******/ 		return cachedModule.exports;
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __nccwpck_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
+/******/ 		}
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
 /******/ 	}
-/******/ 	// Create a new module (and put it into the cache)
-/******/ 	var module = __webpack_module_cache__[moduleId] = {
-/******/ 		// no module.id needed
-/******/ 		// no module.loaded needed
-/******/ 		exports: {}
-/******/ 	};
-/******/ 
-/******/ 	// Execute the module function
-/******/ 	var threw = true;
-/******/ 	try {
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
-/******/ 		threw = false;
-/******/ 	} finally {
-/******/ 		if(threw) delete __webpack_module_cache__[moduleId];
-/******/ 	}
-/******/ 
-/******/ 	// Return the exports of the module
-/******/ 	return module.exports;
-/******/ }
-/******/ 
+/******/ 	
 /************************************************************************/
-/******/ /* webpack/runtime/create fake namespace object */
-/******/ (() => {
-/******/ 	var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
-/******/ 	var leafPrototypes;
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 16: return value when it's Promise-like
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__nccwpck_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = this(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if(typeof value === 'object' && value) {
-/******/ 			if((mode & 4) && value.__esModule) return value;
-/******/ 			if((mode & 16) && typeof value.then === 'function') return value;
-/******/ 		}
-/******/ 		var ns = Object.create(null);
-/******/ 		__nccwpck_require__.r(ns);
-/******/ 		var def = {};
-/******/ 		leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
-/******/ 		for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
-/******/ 			Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
-/******/ 		}
-/******/ 		def['default'] = () => (value);
-/******/ 		__nccwpck_require__.d(ns, def);
-/******/ 		return ns;
-/******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/define property getters */
-/******/ (() => {
-/******/ 	// define getter functions for harmony exports
-/******/ 	__nccwpck_require__.d = (exports, definition) => {
-/******/ 		for(var key in definition) {
-/******/ 			if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
-/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 			}
-/******/ 		}
-/******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/hasOwnProperty shorthand */
-/******/ (() => {
-/******/ 	__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/make namespace object */
-/******/ (() => {
-/******/ 	// define __esModule on exports
-/******/ 	__nccwpck_require__.r = (exports) => {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/compat */
-/******/ 
-/******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
-/******/ 
+/******/ 	/* webpack/runtime/compat */
+/******/ 	
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
-
-// EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
-var lib_core = __nccwpck_require__(2186);
-;// CONCATENATED MODULE: ./src/types/inputs.ts
-var UploadInputNames;
-(function (UploadInputNames) {
-    UploadInputNames["SessionReference"] = "session-reference";
-    UploadInputNames["ProjectReference"] = "project-reference";
-    UploadInputNames["Path"] = "path";
-})(UploadInputNames || (UploadInputNames = {}));
-
-;// CONCATENATED MODULE: ./src/helpers/input.ts
-
-
-/**
- * Helper to get all the inputs for the action
- */
-function getInputs() {
-    const sessionReference = (0,lib_core.getInput)(UploadInputNames.SessionReference, { required: true });
-    const projectReference = (0,lib_core.getInput)(UploadInputNames.ProjectReference, { required: true });
-    const path = (0,lib_core.getInput)(UploadInputNames.Path, { required: true });
-    const inputs = {
-        sessionReference: sessionReference,
-        projectReference: projectReference,
-        searchPath: path
-    };
-    return inputs;
-}
-
-// EXTERNAL MODULE: ./node_modules/@actions/glob/lib/glob.js
-var glob = __nccwpck_require__(8090);
-// EXTERNAL MODULE: external "path"
-var external_path_ = __nccwpck_require__(1017);
-;// CONCATENATED MODULE: external "node:fs"
-const external_node_fs_namespaceObject = require("node:fs");
-;// CONCATENATED MODULE: ./node_modules/strtok3/lib/FsPromise.js
-/**
- * Module convert fs functions to promise based functions
- */
-
-const pathExists = external_node_fs_namespaceObject.existsSync;
-const createReadStream = external_node_fs_namespaceObject.createReadStream;
-async function FsPromise_stat(path) {
-    return new Promise((resolve, reject) => {
-        external_node_fs_namespaceObject.stat(path, (err, stats) => {
-            if (err)
-                reject(err);
-            else
-                resolve(stats);
-        });
-    });
-}
-async function FsPromise_close(fd) {
-    return new Promise((resolve, reject) => {
-        external_node_fs_namespaceObject.close(fd, err => {
-            if (err)
-                reject(err);
-            else
-                resolve();
-        });
-    });
-}
-async function FsPromise_open(path, mode) {
-    return new Promise((resolve, reject) => {
-        external_node_fs_namespaceObject.open(path, mode, (err, fd) => {
-            if (err)
-                reject(err);
-            else
-                resolve(fd);
-        });
-    });
-}
-async function read(fd, buffer, offset, length, position) {
-    return new Promise((resolve, reject) => {
-        external_node_fs_namespaceObject.read(fd, buffer, offset, length, position, (err, bytesRead, _buffer) => {
-            if (err)
-                reject(err);
-            else
-                resolve({ bytesRead, buffer: _buffer });
-        });
-    });
-}
-async function writeFile(path, data) {
-    return new Promise((resolve, reject) => {
-        fs.writeFile(path, data, err => {
-            if (err)
-                reject(err);
-            else
-                resolve();
-        });
-    });
-}
-function writeFileSync(path, data) {
-    fs.writeFileSync(path, data);
-}
-async function readFile(path) {
-    return new Promise((resolve, reject) => {
-        fs.readFile(path, (err, buffer) => {
-            if (err)
-                reject(err);
-            else
-                resolve(buffer);
-        });
-    });
-}
-
-;// CONCATENATED MODULE: ./node_modules/peek-readable/lib/EndOfFileStream.js
-const defaultMessages = 'End-Of-Stream';
-/**
- * Thrown on read operation of the end of file or stream has been reached
- */
-class EndOfStreamError extends Error {
-    constructor() {
-        super(defaultMessages);
-    }
-}
-
-;// CONCATENATED MODULE: ./node_modules/peek-readable/lib/Deferred.js
-class Deferred {
-    constructor() {
-        this.resolve = () => null;
-        this.reject = () => null;
-        this.promise = new Promise((resolve, reject) => {
-            this.reject = reject;
-            this.resolve = resolve;
-        });
-    }
-}
-
-;// CONCATENATED MODULE: ./node_modules/peek-readable/lib/StreamReader.js
-
-
-
-const maxStreamReadSize = 1 * 1024 * 1024; // Maximum request length on read-stream operation
-class StreamReader {
-    constructor(s) {
-        this.s = s;
-        /**
-         * Deferred used for postponed read request (as not data is yet available to read)
-         */
-        this.deferred = null;
-        this.endOfStream = false;
-        /**
-         * Store peeked data
-         * @type {Array}
-         */
-        this.peekQueue = [];
-        if (!s.read || !s.once) {
-            throw new Error('Expected an instance of stream.Readable');
-        }
-        this.s.once('end', () => this.reject(new EndOfStreamError()));
-        this.s.once('error', err => this.reject(err));
-        this.s.once('close', () => this.reject(new Error('Stream closed')));
-    }
-    /**
-     * Read ahead (peek) from stream. Subsequent read or peeks will return the same data
-     * @param uint8Array - Uint8Array (or Buffer) to store data read from stream in
-     * @param offset - Offset target
-     * @param length - Number of bytes to read
-     * @returns Number of bytes peeked
-     */
-    async peek(uint8Array, offset, length) {
-        const bytesRead = await this.read(uint8Array, offset, length);
-        this.peekQueue.push(uint8Array.subarray(offset, offset + bytesRead)); // Put read data back to peek buffer
-        return bytesRead;
-    }
-    /**
-     * Read chunk from stream
-     * @param buffer - Target Uint8Array (or Buffer) to store data read from stream in
-     * @param offset - Offset target
-     * @param length - Number of bytes to read
-     * @returns Number of bytes read
-     */
-    async read(buffer, offset, length) {
-        if (length === 0) {
-            return 0;
-        }
-        if (this.peekQueue.length === 0 && this.endOfStream) {
-            throw new EndOfStreamError();
-        }
-        let remaining = length;
-        let bytesRead = 0;
-        // consume peeked data first
-        while (this.peekQueue.length > 0 && remaining > 0) {
-            const peekData = this.peekQueue.pop(); // Front of queue
-            if (!peekData)
-                throw new Error('peekData should be defined');
-            const lenCopy = Math.min(peekData.length, remaining);
-            buffer.set(peekData.subarray(0, lenCopy), offset + bytesRead);
-            bytesRead += lenCopy;
-            remaining -= lenCopy;
-            if (lenCopy < peekData.length) {
-                // remainder back to queue
-                this.peekQueue.push(peekData.subarray(lenCopy));
-            }
-        }
-        // continue reading from stream if required
-        while (remaining > 0 && !this.endOfStream) {
-            const reqLen = Math.min(remaining, maxStreamReadSize);
-            const chunkLen = await this.readFromStream(buffer, offset + bytesRead, reqLen);
-            bytesRead += chunkLen;
-            if (chunkLen < reqLen)
-                break;
-            remaining -= chunkLen;
-        }
-        return bytesRead;
-    }
-    /**
-     * Read chunk from stream
-     * @param buffer Target Uint8Array (or Buffer) to store data read from stream in
-     * @param offset Offset target
-     * @param length Number of bytes to read
-     * @returns Number of bytes read
-     */
-    async readFromStream(buffer, offset, length) {
-        const readBuffer = this.s.read(length);
-        if (readBuffer) {
-            buffer.set(readBuffer, offset);
-            return readBuffer.length;
-        }
-        else {
-            const request = {
-                buffer,
-                offset,
-                length,
-                deferred: new Deferred()
-            };
-            this.deferred = request.deferred;
-            this.s.once('readable', () => {
-                this.readDeferred(request);
-            });
-            return request.deferred.promise;
-        }
-    }
-    /**
-     * Process deferred read request
-     * @param request Deferred read request
-     */
-    readDeferred(request) {
-        const readBuffer = this.s.read(request.length);
-        if (readBuffer) {
-            request.buffer.set(readBuffer, request.offset);
-            request.deferred.resolve(readBuffer.length);
-            this.deferred = null;
-        }
-        else {
-            this.s.once('readable', () => {
-                this.readDeferred(request);
-            });
-        }
-    }
-    reject(err) {
-        this.endOfStream = true;
-        if (this.deferred) {
-            this.deferred.reject(err);
-            this.deferred = null;
-        }
-    }
-}
-
-;// CONCATENATED MODULE: ./node_modules/peek-readable/lib/index.js
-
-
-
-;// CONCATENATED MODULE: external "node:buffer"
-const external_node_buffer_namespaceObject = require("node:buffer");
-;// CONCATENATED MODULE: ./node_modules/strtok3/lib/AbstractTokenizer.js
-
-
-/**
- * Core tokenizer
- */
-class AbstractTokenizer {
-    constructor(fileInfo) {
-        /**
-         * Tokenizer-stream position
-         */
-        this.position = 0;
-        this.numBuffer = new Uint8Array(8);
-        this.fileInfo = fileInfo ? fileInfo : {};
-    }
-    /**
-     * Read a token from the tokenizer-stream
-     * @param token - The token to read
-     * @param position - If provided, the desired position in the tokenizer-stream
-     * @returns Promise with token data
-     */
-    async readToken(token, position = this.position) {
-        const uint8Array = external_node_buffer_namespaceObject.Buffer.alloc(token.len);
-        const len = await this.readBuffer(uint8Array, { position });
-        if (len < token.len)
-            throw new EndOfStreamError();
-        return token.get(uint8Array, 0);
-    }
-    /**
-     * Peek a token from the tokenizer-stream.
-     * @param token - Token to peek from the tokenizer-stream.
-     * @param position - Offset where to begin reading within the file. If position is null, data will be read from the current file position.
-     * @returns Promise with token data
-     */
-    async peekToken(token, position = this.position) {
-        const uint8Array = external_node_buffer_namespaceObject.Buffer.alloc(token.len);
-        const len = await this.peekBuffer(uint8Array, { position });
-        if (len < token.len)
-            throw new EndOfStreamError();
-        return token.get(uint8Array, 0);
-    }
-    /**
-     * Read a numeric token from the stream
-     * @param token - Numeric token
-     * @returns Promise with number
-     */
-    async readNumber(token) {
-        const len = await this.readBuffer(this.numBuffer, { length: token.len });
-        if (len < token.len)
-            throw new EndOfStreamError();
-        return token.get(this.numBuffer, 0);
-    }
-    /**
-     * Read a numeric token from the stream
-     * @param token - Numeric token
-     * @returns Promise with number
-     */
-    async peekNumber(token) {
-        const len = await this.peekBuffer(this.numBuffer, { length: token.len });
-        if (len < token.len)
-            throw new EndOfStreamError();
-        return token.get(this.numBuffer, 0);
-    }
-    /**
-     * Ignore number of bytes, advances the pointer in under tokenizer-stream.
-     * @param length - Number of bytes to ignore
-     * @return resolves the number of bytes ignored, equals length if this available, otherwise the number of bytes available
-     */
-    async ignore(length) {
-        if (this.fileInfo.size !== undefined) {
-            const bytesLeft = this.fileInfo.size - this.position;
-            if (length > bytesLeft) {
-                this.position += bytesLeft;
-                return bytesLeft;
-            }
-        }
-        this.position += length;
-        return length;
-    }
-    async close() {
-        // empty
-    }
-    normalizeOptions(uint8Array, options) {
-        if (options && options.position !== undefined && options.position < this.position) {
-            throw new Error('`options.position` must be equal or greater than `tokenizer.position`');
-        }
-        if (options) {
-            return {
-                mayBeLess: options.mayBeLess === true,
-                offset: options.offset ? options.offset : 0,
-                length: options.length ? options.length : (uint8Array.length - (options.offset ? options.offset : 0)),
-                position: options.position ? options.position : this.position
-            };
-        }
-        return {
-            mayBeLess: false,
-            offset: 0,
-            length: uint8Array.length,
-            position: this.position
-        };
-    }
-}
-
-;// CONCATENATED MODULE: ./node_modules/strtok3/lib/ReadStreamTokenizer.js
-
-
-const maxBufferSize = 256000;
-class ReadStreamTokenizer extends AbstractTokenizer {
-    constructor(stream, fileInfo) {
-        super(fileInfo);
-        this.streamReader = new StreamReader(stream);
-    }
-    /**
-     * Get file information, an HTTP-client may implement this doing a HEAD request
-     * @return Promise with file information
-     */
-    async getFileInfo() {
-        return this.fileInfo;
-    }
-    /**
-     * Read buffer from tokenizer
-     * @param uint8Array - Target Uint8Array to fill with data read from the tokenizer-stream
-     * @param options - Read behaviour options
-     * @returns Promise with number of bytes read
-     */
-    async readBuffer(uint8Array, options) {
-        const normOptions = this.normalizeOptions(uint8Array, options);
-        const skipBytes = normOptions.position - this.position;
-        if (skipBytes > 0) {
-            await this.ignore(skipBytes);
-            return this.readBuffer(uint8Array, options);
-        }
-        else if (skipBytes < 0) {
-            throw new Error('`options.position` must be equal or greater than `tokenizer.position`');
-        }
-        if (normOptions.length === 0) {
-            return 0;
-        }
-        const bytesRead = await this.streamReader.read(uint8Array, normOptions.offset, normOptions.length);
-        this.position += bytesRead;
-        if ((!options || !options.mayBeLess) && bytesRead < normOptions.length) {
-            throw new EndOfStreamError();
-        }
-        return bytesRead;
-    }
-    /**
-     * Peek (read ahead) buffer from tokenizer
-     * @param uint8Array - Uint8Array (or Buffer) to write data to
-     * @param options - Read behaviour options
-     * @returns Promise with number of bytes peeked
-     */
-    async peekBuffer(uint8Array, options) {
-        const normOptions = this.normalizeOptions(uint8Array, options);
-        let bytesRead = 0;
-        if (normOptions.position) {
-            const skipBytes = normOptions.position - this.position;
-            if (skipBytes > 0) {
-                const skipBuffer = new Uint8Array(normOptions.length + skipBytes);
-                bytesRead = await this.peekBuffer(skipBuffer, { mayBeLess: normOptions.mayBeLess });
-                uint8Array.set(skipBuffer.subarray(skipBytes), normOptions.offset);
-                return bytesRead - skipBytes;
-            }
-            else if (skipBytes < 0) {
-                throw new Error('Cannot peek from a negative offset in a stream');
-            }
-        }
-        if (normOptions.length > 0) {
-            try {
-                bytesRead = await this.streamReader.peek(uint8Array, normOptions.offset, normOptions.length);
-            }
-            catch (err) {
-                if (options && options.mayBeLess && err instanceof EndOfStreamError) {
-                    return 0;
-                }
-                throw err;
-            }
-            if ((!normOptions.mayBeLess) && bytesRead < normOptions.length) {
-                throw new EndOfStreamError();
-            }
-        }
-        return bytesRead;
-    }
-    async ignore(length) {
-        // debug(`ignore ${this.position}...${this.position + length - 1}`);
-        const bufSize = Math.min(maxBufferSize, length);
-        const buf = new Uint8Array(bufSize);
-        let totBytesRead = 0;
-        while (totBytesRead < length) {
-            const remaining = length - totBytesRead;
-            const bytesRead = await this.readBuffer(buf, { length: Math.min(bufSize, remaining) });
-            if (bytesRead < 0) {
-                return bytesRead;
-            }
-            totBytesRead += bytesRead;
-        }
-        return totBytesRead;
-    }
-}
-
-;// CONCATENATED MODULE: ./node_modules/strtok3/lib/BufferTokenizer.js
-
-
-class BufferTokenizer extends AbstractTokenizer {
-    /**
-     * Construct BufferTokenizer
-     * @param uint8Array - Uint8Array to tokenize
-     * @param fileInfo - Pass additional file information to the tokenizer
-     */
-    constructor(uint8Array, fileInfo) {
-        super(fileInfo);
-        this.uint8Array = uint8Array;
-        this.fileInfo.size = this.fileInfo.size ? this.fileInfo.size : uint8Array.length;
-    }
-    /**
-     * Read buffer from tokenizer
-     * @param uint8Array - Uint8Array to tokenize
-     * @param options - Read behaviour options
-     * @returns {Promise<number>}
-     */
-    async readBuffer(uint8Array, options) {
-        if (options && options.position) {
-            if (options.position < this.position) {
-                throw new Error('`options.position` must be equal or greater than `tokenizer.position`');
-            }
-            this.position = options.position;
-        }
-        const bytesRead = await this.peekBuffer(uint8Array, options);
-        this.position += bytesRead;
-        return bytesRead;
-    }
-    /**
-     * Peek (read ahead) buffer from tokenizer
-     * @param uint8Array
-     * @param options - Read behaviour options
-     * @returns {Promise<number>}
-     */
-    async peekBuffer(uint8Array, options) {
-        const normOptions = this.normalizeOptions(uint8Array, options);
-        const bytes2read = Math.min(this.uint8Array.length - normOptions.position, normOptions.length);
-        if ((!normOptions.mayBeLess) && bytes2read < normOptions.length) {
-            throw new EndOfStreamError();
-        }
-        else {
-            uint8Array.set(this.uint8Array.subarray(normOptions.position, normOptions.position + bytes2read), normOptions.offset);
-            return bytes2read;
-        }
-    }
-    async close() {
-        // empty
-    }
-}
-
-;// CONCATENATED MODULE: ./node_modules/strtok3/lib/core.js
-
-
-
-/**
- * Construct ReadStreamTokenizer from given Stream.
- * Will set fileSize, if provided given Stream has set the .path property/
- * @param stream - Read from Node.js Stream.Readable
- * @param fileInfo - Pass the file information, like size and MIME-type of the corresponding stream.
- * @returns ReadStreamTokenizer
- */
-function fromStream(stream, fileInfo) {
-    fileInfo = fileInfo ? fileInfo : {};
-    return new ReadStreamTokenizer(stream, fileInfo);
-}
-/**
- * Construct ReadStreamTokenizer from given Buffer.
- * @param uint8Array - Uint8Array to tokenize
- * @param fileInfo - Pass additional file information to the tokenizer
- * @returns BufferTokenizer
- */
-function fromBuffer(uint8Array, fileInfo) {
-    return new BufferTokenizer(uint8Array, fileInfo);
-}
-
-;// CONCATENATED MODULE: ./node_modules/strtok3/lib/FileTokenizer.js
-
-
-
-class FileTokenizer extends AbstractTokenizer {
-    constructor(fd, fileInfo) {
-        super(fileInfo);
-        this.fd = fd;
-    }
-    /**
-     * Read buffer from file
-     * @param uint8Array - Uint8Array to write result to
-     * @param options - Read behaviour options
-     * @returns Promise number of bytes read
-     */
-    async readBuffer(uint8Array, options) {
-        const normOptions = this.normalizeOptions(uint8Array, options);
-        this.position = normOptions.position;
-        const res = await read(this.fd, uint8Array, normOptions.offset, normOptions.length, normOptions.position);
-        this.position += res.bytesRead;
-        if (res.bytesRead < normOptions.length && (!options || !options.mayBeLess)) {
-            throw new EndOfStreamError();
-        }
-        return res.bytesRead;
-    }
-    /**
-     * Peek buffer from file
-     * @param uint8Array - Uint8Array (or Buffer) to write data to
-     * @param options - Read behaviour options
-     * @returns Promise number of bytes read
-     */
-    async peekBuffer(uint8Array, options) {
-        const normOptions = this.normalizeOptions(uint8Array, options);
-        const res = await read(this.fd, uint8Array, normOptions.offset, normOptions.length, normOptions.position);
-        if ((!normOptions.mayBeLess) && res.bytesRead < normOptions.length) {
-            throw new EndOfStreamError();
-        }
-        return res.bytesRead;
-    }
-    async close() {
-        return FsPromise_close(this.fd);
-    }
-}
-async function fromFile(sourceFilePath) {
-    const stat = await FsPromise_stat(sourceFilePath);
-    if (!stat.isFile) {
-        throw new Error(`File not a file: ${sourceFilePath}`);
-    }
-    const fd = await FsPromise_open(sourceFilePath, 'r');
-    return new FileTokenizer(fd, { path: sourceFilePath, size: stat.size });
-}
-
-;// CONCATENATED MODULE: ./node_modules/strtok3/lib/index.js
-
-
-
-
-/**
- * Construct ReadStreamTokenizer from given Stream.
- * Will set fileSize, if provided given Stream has set the .path property.
- * @param stream - Node.js Stream.Readable
- * @param fileInfo - Pass additional file information to the tokenizer
- * @returns Tokenizer
- */
-async function lib_fromStream(stream, fileInfo) {
-    fileInfo = fileInfo ? fileInfo : {};
-    if (stream.path) {
-        const stat = await fs.stat(stream.path);
-        fileInfo.path = stream.path;
-        fileInfo.size = stat.size;
-    }
-    return core.fromStream(stream, fileInfo);
-}
-
-// EXTERNAL MODULE: ./node_modules/ieee754/index.js
-var ieee754 = __nccwpck_require__(3092);
-;// CONCATENATED MODULE: ./node_modules/token-types/lib/index.js
-
-
-// Primitive types
-function dv(array) {
-    return new DataView(array.buffer, array.byteOffset);
-}
-/**
- * 8-bit unsigned integer
- */
-const UINT8 = {
-    len: 1,
-    get(array, offset) {
-        return dv(array).getUint8(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setUint8(offset, value);
-        return offset + 1;
-    }
-};
-/**
- * 16-bit unsigned integer, Little Endian byte order
- */
-const UINT16_LE = {
-    len: 2,
-    get(array, offset) {
-        return dv(array).getUint16(offset, true);
-    },
-    put(array, offset, value) {
-        dv(array).setUint16(offset, value, true);
-        return offset + 2;
-    }
-};
-/**
- * 16-bit unsigned integer, Big Endian byte order
- */
-const UINT16_BE = {
-    len: 2,
-    get(array, offset) {
-        return dv(array).getUint16(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setUint16(offset, value);
-        return offset + 2;
-    }
-};
-/**
- * 24-bit unsigned integer, Little Endian byte order
- */
-const UINT24_LE = {
-    len: 3,
-    get(array, offset) {
-        const dataView = dv(array);
-        return dataView.getUint8(offset) + (dataView.getUint16(offset + 1, true) << 8);
-    },
-    put(array, offset, value) {
-        const dataView = dv(array);
-        dataView.setUint8(offset, value & 0xff);
-        dataView.setUint16(offset + 1, value >> 8, true);
-        return offset + 3;
-    }
-};
-/**
- * 24-bit unsigned integer, Big Endian byte order
- */
-const UINT24_BE = {
-    len: 3,
-    get(array, offset) {
-        const dataView = dv(array);
-        return (dataView.getUint16(offset) << 8) + dataView.getUint8(offset + 2);
-    },
-    put(array, offset, value) {
-        const dataView = dv(array);
-        dataView.setUint16(offset, value >> 8);
-        dataView.setUint8(offset + 2, value & 0xff);
-        return offset + 3;
-    }
-};
-/**
- * 32-bit unsigned integer, Little Endian byte order
- */
-const UINT32_LE = {
-    len: 4,
-    get(array, offset) {
-        return dv(array).getUint32(offset, true);
-    },
-    put(array, offset, value) {
-        dv(array).setUint32(offset, value, true);
-        return offset + 4;
-    }
-};
-/**
- * 32-bit unsigned integer, Big Endian byte order
- */
-const UINT32_BE = {
-    len: 4,
-    get(array, offset) {
-        return dv(array).getUint32(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setUint32(offset, value);
-        return offset + 4;
-    }
-};
-/**
- * 8-bit signed integer
- */
-const INT8 = {
-    len: 1,
-    get(array, offset) {
-        return dv(array).getInt8(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setInt8(offset, value);
-        return offset + 1;
-    }
-};
-/**
- * 16-bit signed integer, Big Endian byte order
- */
-const INT16_BE = {
-    len: 2,
-    get(array, offset) {
-        return dv(array).getInt16(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setInt16(offset, value);
-        return offset + 2;
-    }
-};
-/**
- * 16-bit signed integer, Little Endian byte order
- */
-const INT16_LE = {
-    len: 2,
-    get(array, offset) {
-        return dv(array).getInt16(offset, true);
-    },
-    put(array, offset, value) {
-        dv(array).setInt16(offset, value, true);
-        return offset + 2;
-    }
-};
-/**
- * 24-bit signed integer, Little Endian byte order
- */
-const INT24_LE = {
-    len: 3,
-    get(array, offset) {
-        const unsigned = UINT24_LE.get(array, offset);
-        return unsigned > 0x7fffff ? unsigned - 0x1000000 : unsigned;
-    },
-    put(array, offset, value) {
-        const dataView = dv(array);
-        dataView.setUint8(offset, value & 0xff);
-        dataView.setUint16(offset + 1, value >> 8, true);
-        return offset + 3;
-    }
-};
-/**
- * 24-bit signed integer, Big Endian byte order
- */
-const INT24_BE = {
-    len: 3,
-    get(array, offset) {
-        const unsigned = UINT24_BE.get(array, offset);
-        return unsigned > 0x7fffff ? unsigned - 0x1000000 : unsigned;
-    },
-    put(array, offset, value) {
-        const dataView = dv(array);
-        dataView.setUint16(offset, value >> 8);
-        dataView.setUint8(offset + 2, value & 0xff);
-        return offset + 3;
-    }
-};
-/**
- * 32-bit signed integer, Big Endian byte order
- */
-const INT32_BE = {
-    len: 4,
-    get(array, offset) {
-        return dv(array).getInt32(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setInt32(offset, value);
-        return offset + 4;
-    }
-};
-/**
- * 32-bit signed integer, Big Endian byte order
- */
-const INT32_LE = {
-    len: 4,
-    get(array, offset) {
-        return dv(array).getInt32(offset, true);
-    },
-    put(array, offset, value) {
-        dv(array).setInt32(offset, value, true);
-        return offset + 4;
-    }
-};
-/**
- * 64-bit unsigned integer, Little Endian byte order
- */
-const UINT64_LE = {
-    len: 8,
-    get(array, offset) {
-        return dv(array).getBigUint64(offset, true);
-    },
-    put(array, offset, value) {
-        dv(array).setBigUint64(offset, value, true);
-        return offset + 8;
-    }
-};
-/**
- * 64-bit signed integer, Little Endian byte order
- */
-const INT64_LE = {
-    len: 8,
-    get(array, offset) {
-        return dv(array).getBigInt64(offset, true);
-    },
-    put(array, offset, value) {
-        dv(array).setBigInt64(offset, value, true);
-        return offset + 8;
-    }
-};
-/**
- * 64-bit unsigned integer, Big Endian byte order
- */
-const UINT64_BE = {
-    len: 8,
-    get(array, offset) {
-        return dv(array).getBigUint64(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setBigUint64(offset, value);
-        return offset + 8;
-    }
-};
-/**
- * 64-bit signed integer, Big Endian byte order
- */
-const INT64_BE = {
-    len: 8,
-    get(array, offset) {
-        return dv(array).getBigInt64(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setBigInt64(offset, value);
-        return offset + 8;
-    }
-};
-/**
- * IEEE 754 16-bit (half precision) float, big endian
- */
-const Float16_BE = {
-    len: 2,
-    get(dataView, offset) {
-        return ieee754/* read */.i(dataView, offset, false, 10, this.len);
-    },
-    put(dataView, offset, value) {
-        ieee754/* write */.c(dataView, value, offset, false, 10, this.len);
-        return offset + this.len;
-    }
-};
-/**
- * IEEE 754 16-bit (half precision) float, little endian
- */
-const Float16_LE = {
-    len: 2,
-    get(array, offset) {
-        return ieee754/* read */.i(array, offset, true, 10, this.len);
-    },
-    put(array, offset, value) {
-        ieee754/* write */.c(array, value, offset, true, 10, this.len);
-        return offset + this.len;
-    }
-};
-/**
- * IEEE 754 32-bit (single precision) float, big endian
- */
-const Float32_BE = {
-    len: 4,
-    get(array, offset) {
-        return dv(array).getFloat32(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setFloat32(offset, value);
-        return offset + 4;
-    }
-};
-/**
- * IEEE 754 32-bit (single precision) float, little endian
- */
-const Float32_LE = {
-    len: 4,
-    get(array, offset) {
-        return dv(array).getFloat32(offset, true);
-    },
-    put(array, offset, value) {
-        dv(array).setFloat32(offset, value, true);
-        return offset + 4;
-    }
-};
-/**
- * IEEE 754 64-bit (double precision) float, big endian
- */
-const Float64_BE = {
-    len: 8,
-    get(array, offset) {
-        return dv(array).getFloat64(offset);
-    },
-    put(array, offset, value) {
-        dv(array).setFloat64(offset, value);
-        return offset + 8;
-    }
-};
-/**
- * IEEE 754 64-bit (double precision) float, little endian
- */
-const Float64_LE = {
-    len: 8,
-    get(array, offset) {
-        return dv(array).getFloat64(offset, true);
-    },
-    put(array, offset, value) {
-        dv(array).setFloat64(offset, value, true);
-        return offset + 8;
-    }
-};
-/**
- * IEEE 754 80-bit (extended precision) float, big endian
- */
-const Float80_BE = {
-    len: 10,
-    get(array, offset) {
-        return ieee754/* read */.i(array, offset, false, 63, this.len);
-    },
-    put(array, offset, value) {
-        ieee754/* write */.c(array, value, offset, false, 63, this.len);
-        return offset + this.len;
-    }
-};
-/**
- * IEEE 754 80-bit (extended precision) float, little endian
- */
-const Float80_LE = {
-    len: 10,
-    get(array, offset) {
-        return ieee754/* read */.i(array, offset, true, 63, this.len);
-    },
-    put(array, offset, value) {
-        ieee754/* write */.c(array, value, offset, true, 63, this.len);
-        return offset + this.len;
-    }
-};
-/**
- * Ignore a given number of bytes
- */
-class IgnoreType {
-    /**
-     * @param len number of bytes to ignore
-     */
-    constructor(len) {
-        this.len = len;
-    }
-    // ToDo: don't read, but skip data
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    get(array, off) {
-    }
-}
-class Uint8ArrayType {
-    constructor(len) {
-        this.len = len;
-    }
-    get(array, offset) {
-        return array.subarray(offset, offset + this.len);
-    }
-}
-class BufferType {
-    constructor(len) {
-        this.len = len;
-    }
-    get(uint8Array, off) {
-        return Buffer.from(uint8Array.subarray(off, off + this.len));
-    }
-}
-/**
- * Consume a fixed number of bytes from the stream and return a string with a specified encoding.
- */
-class StringType {
-    constructor(len, encoding) {
-        this.len = len;
-        this.encoding = encoding;
-    }
-    get(uint8Array, offset) {
-        return external_node_buffer_namespaceObject.Buffer.from(uint8Array).toString(this.encoding, offset, offset + this.len);
-    }
-}
-/**
- * ANSI Latin 1 String
- * Using windows-1252 / ISO 8859-1 decoding
- */
-class AnsiStringType {
-    constructor(len) {
-        this.len = len;
-    }
-    static decode(buffer, offset, until) {
-        let str = '';
-        for (let i = offset; i < until; ++i) {
-            str += AnsiStringType.codePointToString(AnsiStringType.singleByteDecoder(buffer[i]));
-        }
-        return str;
-    }
-    static inRange(a, min, max) {
-        return min <= a && a <= max;
-    }
-    static codePointToString(cp) {
-        if (cp <= 0xFFFF) {
-            return String.fromCharCode(cp);
-        }
-        else {
-            cp -= 0x10000;
-            return String.fromCharCode((cp >> 10) + 0xD800, (cp & 0x3FF) + 0xDC00);
-        }
-    }
-    static singleByteDecoder(bite) {
-        if (AnsiStringType.inRange(bite, 0x00, 0x7F)) {
-            return bite;
-        }
-        const codePoint = AnsiStringType.windows1252[bite - 0x80];
-        if (codePoint === null) {
-            throw Error('invaliding encoding');
-        }
-        return codePoint;
-    }
-    get(buffer, offset = 0) {
-        return AnsiStringType.decode(buffer, offset, offset + this.len);
-    }
-}
-AnsiStringType.windows1252 = [8364, 129, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352,
-    8249, 338, 141, 381, 143, 144, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732,
-    8482, 353, 8250, 339, 157, 382, 376, 160, 161, 162, 163, 164, 165, 166, 167, 168,
-    169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184,
-    185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200,
-    201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216,
-    217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232,
-    233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247,
-    248, 249, 250, 251, 252, 253, 254, 255];
-
-;// CONCATENATED MODULE: ./node_modules/file-type/util.js
-function stringToBytes(string) {
-	return [...string].map(character => character.charCodeAt(0)); // eslint-disable-line unicorn/prefer-code-point
-}
-
-/**
-Checks whether the TAR checksum is valid.
-
-@param {Buffer} buffer - The TAR header `[offset ... offset + 512]`.
-@param {number} offset - TAR header offset.
-@returns {boolean} `true` if the TAR checksum is valid, otherwise `false`.
-*/
-function tarHeaderChecksumMatches(buffer, offset = 0) {
-	const readSum = Number.parseInt(buffer.toString('utf8', 148, 154).replace(/\0.*$/, '').trim(), 8); // Read sum in header
-	if (Number.isNaN(readSum)) {
-		return false;
-	}
-
-	let sum = 8 * 0x20; // Initialize signed bit sum
-
-	for (let index = offset; index < offset + 148; index++) {
-		sum += buffer[index];
-	}
-
-	for (let index = offset + 156; index < offset + 512; index++) {
-		sum += buffer[index];
-	}
-
-	return readSum === sum;
-}
-
-/**
-ID3 UINT32 sync-safe tokenizer token.
-28 bits (representing up to 256MB) integer, the msb is 0 to avoid "false syncsignals".
-*/
-const uint32SyncSafeToken = {
-	get: (buffer, offset) => (buffer[offset + 3] & 0x7F) | ((buffer[offset + 2]) << 7) | ((buffer[offset + 1]) << 14) | ((buffer[offset]) << 21),
-	len: 4,
-};
-
-;// CONCATENATED MODULE: ./node_modules/file-type/supported.js
-const extensions = [
-	'jpg',
-	'png',
-	'apng',
-	'gif',
-	'webp',
-	'flif',
-	'xcf',
-	'cr2',
-	'cr3',
-	'orf',
-	'arw',
-	'dng',
-	'nef',
-	'rw2',
-	'raf',
-	'tif',
-	'bmp',
-	'icns',
-	'jxr',
-	'psd',
-	'indd',
-	'zip',
-	'tar',
-	'rar',
-	'gz',
-	'bz2',
-	'7z',
-	'dmg',
-	'mp4',
-	'mid',
-	'mkv',
-	'webm',
-	'mov',
-	'avi',
-	'mpg',
-	'mp2',
-	'mp3',
-	'm4a',
-	'oga',
-	'ogg',
-	'ogv',
-	'opus',
-	'flac',
-	'wav',
-	'spx',
-	'amr',
-	'pdf',
-	'epub',
-	'elf',
-	'macho',
-	'exe',
-	'swf',
-	'rtf',
-	'wasm',
-	'woff',
-	'woff2',
-	'eot',
-	'ttf',
-	'otf',
-	'ico',
-	'flv',
-	'ps',
-	'xz',
-	'sqlite',
-	'nes',
-	'crx',
-	'xpi',
-	'cab',
-	'deb',
-	'ar',
-	'rpm',
-	'Z',
-	'lz',
-	'cfb',
-	'mxf',
-	'mts',
-	'blend',
-	'bpg',
-	'docx',
-	'pptx',
-	'xlsx',
-	'3gp',
-	'3g2',
-	'j2c',
-	'jp2',
-	'jpm',
-	'jpx',
-	'mj2',
-	'aif',
-	'qcp',
-	'odt',
-	'ods',
-	'odp',
-	'xml',
-	'mobi',
-	'heic',
-	'cur',
-	'ktx',
-	'ape',
-	'wv',
-	'dcm',
-	'ics',
-	'glb',
-	'pcap',
-	'dsf',
-	'lnk',
-	'alias',
-	'voc',
-	'ac3',
-	'm4v',
-	'm4p',
-	'm4b',
-	'f4v',
-	'f4p',
-	'f4b',
-	'f4a',
-	'mie',
-	'asf',
-	'ogm',
-	'ogx',
-	'mpc',
-	'arrow',
-	'shp',
-	'aac',
-	'mp1',
-	'it',
-	's3m',
-	'xm',
-	'ai',
-	'skp',
-	'avif',
-	'eps',
-	'lzh',
-	'pgp',
-	'asar',
-	'stl',
-	'chm',
-	'3mf',
-	'zst',
-	'jxl',
-	'vcf',
-	'jls',
-	'pst',
-	'dwg',
-	'parquet',
-	'class',
-	'arj',
-	'cpio',
-	'ace',
-	'avro',
-	'icc',
-	'fbx',
-];
-
-const supported_mimeTypes = [
-	'image/jpeg',
-	'image/png',
-	'image/gif',
-	'image/webp',
-	'image/flif',
-	'image/x-xcf',
-	'image/x-canon-cr2',
-	'image/x-canon-cr3',
-	'image/tiff',
-	'image/bmp',
-	'image/vnd.ms-photo',
-	'image/vnd.adobe.photoshop',
-	'application/x-indesign',
-	'application/epub+zip',
-	'application/x-xpinstall',
-	'application/vnd.oasis.opendocument.text',
-	'application/vnd.oasis.opendocument.spreadsheet',
-	'application/vnd.oasis.opendocument.presentation',
-	'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-	'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-	'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-	'application/zip',
-	'application/x-tar',
-	'application/x-rar-compressed',
-	'application/gzip',
-	'application/x-bzip2',
-	'application/x-7z-compressed',
-	'application/x-apple-diskimage',
-	'application/x-apache-arrow',
-	'video/mp4',
-	'audio/midi',
-	'video/x-matroska',
-	'video/webm',
-	'video/quicktime',
-	'video/vnd.avi',
-	'audio/wav',
-	'audio/qcelp',
-	'audio/x-ms-asf',
-	'video/x-ms-asf',
-	'application/vnd.ms-asf',
-	'video/mpeg',
-	'video/3gpp',
-	'audio/mpeg',
-	'audio/mp4', // RFC 4337
-	'audio/opus',
-	'video/ogg',
-	'audio/ogg',
-	'application/ogg',
-	'audio/x-flac',
-	'audio/ape',
-	'audio/wavpack',
-	'audio/amr',
-	'application/pdf',
-	'application/x-elf',
-	'application/x-mach-binary',
-	'application/x-msdownload',
-	'application/x-shockwave-flash',
-	'application/rtf',
-	'application/wasm',
-	'font/woff',
-	'font/woff2',
-	'application/vnd.ms-fontobject',
-	'font/ttf',
-	'font/otf',
-	'image/x-icon',
-	'video/x-flv',
-	'application/postscript',
-	'application/eps',
-	'application/x-xz',
-	'application/x-sqlite3',
-	'application/x-nintendo-nes-rom',
-	'application/x-google-chrome-extension',
-	'application/vnd.ms-cab-compressed',
-	'application/x-deb',
-	'application/x-unix-archive',
-	'application/x-rpm',
-	'application/x-compress',
-	'application/x-lzip',
-	'application/x-cfb',
-	'application/x-mie',
-	'application/mxf',
-	'video/mp2t',
-	'application/x-blender',
-	'image/bpg',
-	'image/j2c',
-	'image/jp2',
-	'image/jpx',
-	'image/jpm',
-	'image/mj2',
-	'audio/aiff',
-	'application/xml',
-	'application/x-mobipocket-ebook',
-	'image/heif',
-	'image/heif-sequence',
-	'image/heic',
-	'image/heic-sequence',
-	'image/icns',
-	'image/ktx',
-	'application/dicom',
-	'audio/x-musepack',
-	'text/calendar',
-	'text/vcard',
-	'model/gltf-binary',
-	'application/vnd.tcpdump.pcap',
-	'audio/x-dsf', // Non-standard
-	'application/x.ms.shortcut', // Invented by us
-	'application/x.apple.alias', // Invented by us
-	'audio/x-voc',
-	'audio/vnd.dolby.dd-raw',
-	'audio/x-m4a',
-	'image/apng',
-	'image/x-olympus-orf',
-	'image/x-sony-arw',
-	'image/x-adobe-dng',
-	'image/x-nikon-nef',
-	'image/x-panasonic-rw2',
-	'image/x-fujifilm-raf',
-	'video/x-m4v',
-	'video/3gpp2',
-	'application/x-esri-shape',
-	'audio/aac',
-	'audio/x-it',
-	'audio/x-s3m',
-	'audio/x-xm',
-	'video/MP1S',
-	'video/MP2P',
-	'application/vnd.sketchup.skp',
-	'image/avif',
-	'application/x-lzh-compressed',
-	'application/pgp-encrypted',
-	'application/x-asar',
-	'model/stl',
-	'application/vnd.ms-htmlhelp',
-	'model/3mf',
-	'image/jxl',
-	'application/zstd',
-	'image/jls',
-	'application/vnd.ms-outlook',
-	'image/vnd.dwg',
-	'application/x-parquet',
-	'application/java-vm',
-	'application/x-arj',
-	'application/x-cpio',
-	'application/x-ace-compressed',
-	'application/avro',
-	'application/vnd.iccprofile',
-	'application/x.autodesk.fbx', // Invented by us
-];
-
-;// CONCATENATED MODULE: ./node_modules/file-type/core.js
-
-
-
-
-
-
-const minimumBytes = 4100; // A fair amount of file-types are detectable within this range.
-
-async function fileTypeFromStream(stream) {
-	return new FileTypeParser().fromStream(stream);
-}
-
-async function fileTypeFromBuffer(input) {
-	return new FileTypeParser().fromBuffer(input);
-}
-
-async function fileTypeFromBlob(blob) {
-	return new FileTypeParser().fromBlob(blob);
-}
-
-function _check(buffer, headers, options) {
-	options = {
-		offset: 0,
-		...options,
-	};
-
-	for (const [index, header] of headers.entries()) {
-		// If a bitmask is set
-		if (options.mask) {
-			// If header doesn't equal `buf` with bits masked off
-			if (header !== (options.mask[index] & buffer[index + options.offset])) {
-				return false;
-			}
-		} else if (header !== buffer[index + options.offset]) {
-			return false;
-		}
-	}
-
-	return true;
-}
-
-async function fileTypeFromTokenizer(tokenizer) {
-	return new FileTypeParser().fromTokenizer(tokenizer);
-}
-
-class FileTypeParser {
-	constructor(options) {
-		this.detectors = options?.customDetectors;
-
-		this.fromTokenizer = this.fromTokenizer.bind(this);
-		this.fromBuffer = this.fromBuffer.bind(this);
-		this.parse = this.parse.bind(this);
-	}
-
-	async fromTokenizer(tokenizer) {
-		const initialPosition = tokenizer.position;
-
-		for (const detector of this.detectors || []) {
-			const fileType = await detector(tokenizer);
-			if (fileType) {
-				return fileType;
-			}
-
-			if (initialPosition !== tokenizer.position) {
-				return undefined; // Cannot proceed scanning of the tokenizer is at an arbitrary position
-			}
-		}
-
-		return this.parse(tokenizer);
-	}
-
-	async fromBuffer(input) {
-		if (!(input instanceof Uint8Array || input instanceof ArrayBuffer)) {
-			throw new TypeError(`Expected the \`input\` argument to be of type \`Uint8Array\` or \`Buffer\` or \`ArrayBuffer\`, got \`${typeof input}\``);
-		}
-
-		const buffer = input instanceof Uint8Array ? input : new Uint8Array(input);
-
-		if (!(buffer?.length > 1)) {
-			return;
-		}
-
-		return this.fromTokenizer(fromBuffer(buffer));
-	}
-
-	async fromBlob(blob) {
-		const buffer = await blob.arrayBuffer();
-		return this.fromBuffer(new Uint8Array(buffer));
-	}
-
-	async fromStream(stream) {
-		const tokenizer = await fromStream(stream);
-		try {
-			return await this.fromTokenizer(tokenizer);
-		} finally {
-			await tokenizer.close();
-		}
-	}
-
-	async toDetectionStream(readableStream, options = {}) {
-		const {default: stream} = await Promise.resolve(/* import() */).then(__nccwpck_require__.t.bind(__nccwpck_require__, 4492, 19));
-		const {sampleSize = minimumBytes} = options;
-
-		return new Promise((resolve, reject) => {
-			readableStream.on('error', reject);
-
-			readableStream.once('readable', () => {
-				(async () => {
-					try {
-						// Set up output stream
-						const pass = new stream.PassThrough();
-						const outputStream = stream.pipeline ? stream.pipeline(readableStream, pass, () => {}) : readableStream.pipe(pass);
-
-						// Read the input stream and detect the filetype
-						const chunk = readableStream.read(sampleSize) ?? readableStream.read() ?? external_node_buffer_namespaceObject.Buffer.alloc(0);
-						try {
-							pass.fileType = await this.fromBuffer(chunk);
-						} catch (error) {
-							if (error instanceof EndOfStreamError) {
-								pass.fileType = undefined;
-							} else {
-								reject(error);
-							}
-						}
-
-						resolve(outputStream);
-					} catch (error) {
-						reject(error);
-					}
-				})();
-			});
-		});
-	}
-
-	check(header, options) {
-		return _check(this.buffer, header, options);
-	}
-
-	checkString(header, options) {
-		return this.check(stringToBytes(header), options);
-	}
-
-	async parse(tokenizer) {
-		this.buffer = external_node_buffer_namespaceObject.Buffer.alloc(minimumBytes);
-
-		// Keep reading until EOF if the file size is unknown.
-		if (tokenizer.fileInfo.size === undefined) {
-			tokenizer.fileInfo.size = Number.MAX_SAFE_INTEGER;
-		}
-
-		this.tokenizer = tokenizer;
-
-		await tokenizer.peekBuffer(this.buffer, {length: 12, mayBeLess: true});
-
-		// -- 2-byte signatures --
-
-		if (this.check([0x42, 0x4D])) {
-			return {
-				ext: 'bmp',
-				mime: 'image/bmp',
-			};
-		}
-
-		if (this.check([0x0B, 0x77])) {
-			return {
-				ext: 'ac3',
-				mime: 'audio/vnd.dolby.dd-raw',
-			};
-		}
-
-		if (this.check([0x78, 0x01])) {
-			return {
-				ext: 'dmg',
-				mime: 'application/x-apple-diskimage',
-			};
-		}
-
-		if (this.check([0x4D, 0x5A])) {
-			return {
-				ext: 'exe',
-				mime: 'application/x-msdownload',
-			};
-		}
-
-		if (this.check([0x25, 0x21])) {
-			await tokenizer.peekBuffer(this.buffer, {length: 24, mayBeLess: true});
-
-			if (
-				this.checkString('PS-Adobe-', {offset: 2})
-				&& this.checkString(' EPSF-', {offset: 14})
-			) {
-				return {
-					ext: 'eps',
-					mime: 'application/eps',
-				};
-			}
-
-			return {
-				ext: 'ps',
-				mime: 'application/postscript',
-			};
-		}
-
-		if (
-			this.check([0x1F, 0xA0])
-			|| this.check([0x1F, 0x9D])
-		) {
-			return {
-				ext: 'Z',
-				mime: 'application/x-compress',
-			};
-		}
-
-		if (this.check([0xC7, 0x71])) {
-			return {
-				ext: 'cpio',
-				mime: 'application/x-cpio',
-			};
-		}
-
-		if (this.check([0x60, 0xEA])) {
-			return {
-				ext: 'arj',
-				mime: 'application/x-arj',
-			};
-		}
-
-		// -- 3-byte signatures --
-
-		if (this.check([0xEF, 0xBB, 0xBF])) { // UTF-8-BOM
-			// Strip off UTF-8-BOM
-			this.tokenizer.ignore(3);
-			return this.parse(tokenizer);
-		}
-
-		if (this.check([0x47, 0x49, 0x46])) {
-			return {
-				ext: 'gif',
-				mime: 'image/gif',
-			};
-		}
-
-		if (this.check([0x49, 0x49, 0xBC])) {
-			return {
-				ext: 'jxr',
-				mime: 'image/vnd.ms-photo',
-			};
-		}
-
-		if (this.check([0x1F, 0x8B, 0x8])) {
-			return {
-				ext: 'gz',
-				mime: 'application/gzip',
-			};
-		}
-
-		if (this.check([0x42, 0x5A, 0x68])) {
-			return {
-				ext: 'bz2',
-				mime: 'application/x-bzip2',
-			};
-		}
-
-		if (this.checkString('ID3')) {
-			await tokenizer.ignore(6); // Skip ID3 header until the header size
-			const id3HeaderLength = await tokenizer.readToken(uint32SyncSafeToken);
-			if (tokenizer.position + id3HeaderLength > tokenizer.fileInfo.size) {
-				// Guess file type based on ID3 header for backward compatibility
-				return {
-					ext: 'mp3',
-					mime: 'audio/mpeg',
-				};
-			}
-
-			await tokenizer.ignore(id3HeaderLength);
-			return this.fromTokenizer(tokenizer); // Skip ID3 header, recursion
-		}
-
-		// Musepack, SV7
-		if (this.checkString('MP+')) {
-			return {
-				ext: 'mpc',
-				mime: 'audio/x-musepack',
-			};
-		}
-
-		if (
-			(this.buffer[0] === 0x43 || this.buffer[0] === 0x46)
-			&& this.check([0x57, 0x53], {offset: 1})
-		) {
-			return {
-				ext: 'swf',
-				mime: 'application/x-shockwave-flash',
-			};
-		}
-
-		// -- 4-byte signatures --
-
-		// Requires a sample size of 4 bytes
-		if (this.check([0xFF, 0xD8, 0xFF])) {
-			if (this.check([0xF7], {offset: 3})) { // JPG7/SOF55, indicating a ISO/IEC 14495 / JPEG-LS file
-				return {
-					ext: 'jls',
-					mime: 'image/jls',
-				};
-			}
-
-			return {
-				ext: 'jpg',
-				mime: 'image/jpeg',
-			};
-		}
-
-		if (this.check([0x4F, 0x62, 0x6A, 0x01])) {
-			return {
-				ext: 'avro',
-				mime: 'application/avro',
-			};
-		}
-
-		if (this.checkString('FLIF')) {
-			return {
-				ext: 'flif',
-				mime: 'image/flif',
-			};
-		}
-
-		if (this.checkString('8BPS')) {
-			return {
-				ext: 'psd',
-				mime: 'image/vnd.adobe.photoshop',
-			};
-		}
-
-		if (this.checkString('WEBP', {offset: 8})) {
-			return {
-				ext: 'webp',
-				mime: 'image/webp',
-			};
-		}
-
-		// Musepack, SV8
-		if (this.checkString('MPCK')) {
-			return {
-				ext: 'mpc',
-				mime: 'audio/x-musepack',
-			};
-		}
-
-		if (this.checkString('FORM')) {
-			return {
-				ext: 'aif',
-				mime: 'audio/aiff',
-			};
-		}
-
-		if (this.checkString('icns', {offset: 0})) {
-			return {
-				ext: 'icns',
-				mime: 'image/icns',
-			};
-		}
-
-		// Zip-based file formats
-		// Need to be before the `zip` check
-		if (this.check([0x50, 0x4B, 0x3, 0x4])) { // Local file header signature
-			try {
-				while (tokenizer.position + 30 < tokenizer.fileInfo.size) {
-					await tokenizer.readBuffer(this.buffer, {length: 30});
-
-					// https://en.wikipedia.org/wiki/Zip_(file_format)#File_headers
-					const zipHeader = {
-						compressedSize: this.buffer.readUInt32LE(18),
-						uncompressedSize: this.buffer.readUInt32LE(22),
-						filenameLength: this.buffer.readUInt16LE(26),
-						extraFieldLength: this.buffer.readUInt16LE(28),
-					};
-
-					zipHeader.filename = await tokenizer.readToken(new StringType(zipHeader.filenameLength, 'utf-8'));
-					await tokenizer.ignore(zipHeader.extraFieldLength);
-
-					// Assumes signed `.xpi` from addons.mozilla.org
-					if (zipHeader.filename === 'META-INF/mozilla.rsa') {
-						return {
-							ext: 'xpi',
-							mime: 'application/x-xpinstall',
-						};
-					}
-
-					if (zipHeader.filename.endsWith('.rels') || zipHeader.filename.endsWith('.xml')) {
-						const type = zipHeader.filename.split('/')[0];
-						switch (type) {
-							case '_rels':
-								break;
-							case 'word':
-								return {
-									ext: 'docx',
-									mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-								};
-							case 'ppt':
-								return {
-									ext: 'pptx',
-									mime: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-								};
-							case 'xl':
-								return {
-									ext: 'xlsx',
-									mime: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-								};
-							default:
-								break;
-						}
-					}
-
-					if (zipHeader.filename.startsWith('xl/')) {
-						return {
-							ext: 'xlsx',
-							mime: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-						};
-					}
-
-					if (zipHeader.filename.startsWith('3D/') && zipHeader.filename.endsWith('.model')) {
-						return {
-							ext: '3mf',
-							mime: 'model/3mf',
-						};
-					}
-
-					// The docx, xlsx and pptx file types extend the Office Open XML file format:
-					// https://en.wikipedia.org/wiki/Office_Open_XML_file_formats
-					// We look for:
-					// - one entry named '[Content_Types].xml' or '_rels/.rels',
-					// - one entry indicating specific type of file.
-					// MS Office, OpenOffice and LibreOffice may put the parts in different order, so the check should not rely on it.
-					if (zipHeader.filename === 'mimetype' && zipHeader.compressedSize === zipHeader.uncompressedSize) {
-						let mimeType = await tokenizer.readToken(new StringType(zipHeader.compressedSize, 'utf-8'));
-						mimeType = mimeType.trim();
-
-						switch (mimeType) {
-							case 'application/epub+zip':
-								return {
-									ext: 'epub',
-									mime: 'application/epub+zip',
-								};
-							case 'application/vnd.oasis.opendocument.text':
-								return {
-									ext: 'odt',
-									mime: 'application/vnd.oasis.opendocument.text',
-								};
-							case 'application/vnd.oasis.opendocument.spreadsheet':
-								return {
-									ext: 'ods',
-									mime: 'application/vnd.oasis.opendocument.spreadsheet',
-								};
-							case 'application/vnd.oasis.opendocument.presentation':
-								return {
-									ext: 'odp',
-									mime: 'application/vnd.oasis.opendocument.presentation',
-								};
-							default:
-						}
-					}
-
-					// Try to find next header manually when current one is corrupted
-					if (zipHeader.compressedSize === 0) {
-						let nextHeaderIndex = -1;
-
-						while (nextHeaderIndex < 0 && (tokenizer.position < tokenizer.fileInfo.size)) {
-							await tokenizer.peekBuffer(this.buffer, {mayBeLess: true});
-
-							nextHeaderIndex = this.buffer.indexOf('504B0304', 0, 'hex');
-							// Move position to the next header if found, skip the whole buffer otherwise
-							await tokenizer.ignore(nextHeaderIndex >= 0 ? nextHeaderIndex : this.buffer.length);
-						}
-					} else {
-						await tokenizer.ignore(zipHeader.compressedSize);
-					}
-				}
-			} catch (error) {
-				if (!(error instanceof EndOfStreamError)) {
-					throw error;
-				}
-			}
-
-			return {
-				ext: 'zip',
-				mime: 'application/zip',
-			};
-		}
-
-		if (this.checkString('OggS')) {
-			// This is an OGG container
-			await tokenizer.ignore(28);
-			const type = external_node_buffer_namespaceObject.Buffer.alloc(8);
-			await tokenizer.readBuffer(type);
-
-			// Needs to be before `ogg` check
-			if (_check(type, [0x4F, 0x70, 0x75, 0x73, 0x48, 0x65, 0x61, 0x64])) {
-				return {
-					ext: 'opus',
-					mime: 'audio/opus',
-				};
-			}
-
-			// If ' theora' in header.
-			if (_check(type, [0x80, 0x74, 0x68, 0x65, 0x6F, 0x72, 0x61])) {
-				return {
-					ext: 'ogv',
-					mime: 'video/ogg',
-				};
-			}
-
-			// If '\x01video' in header.
-			if (_check(type, [0x01, 0x76, 0x69, 0x64, 0x65, 0x6F, 0x00])) {
-				return {
-					ext: 'ogm',
-					mime: 'video/ogg',
-				};
-			}
-
-			// If ' FLAC' in header  https://xiph.org/flac/faq.html
-			if (_check(type, [0x7F, 0x46, 0x4C, 0x41, 0x43])) {
-				return {
-					ext: 'oga',
-					mime: 'audio/ogg',
-				};
-			}
-
-			// 'Speex  ' in header https://en.wikipedia.org/wiki/Speex
-			if (_check(type, [0x53, 0x70, 0x65, 0x65, 0x78, 0x20, 0x20])) {
-				return {
-					ext: 'spx',
-					mime: 'audio/ogg',
-				};
-			}
-
-			// If '\x01vorbis' in header
-			if (_check(type, [0x01, 0x76, 0x6F, 0x72, 0x62, 0x69, 0x73])) {
-				return {
-					ext: 'ogg',
-					mime: 'audio/ogg',
-				};
-			}
-
-			// Default OGG container https://www.iana.org/assignments/media-types/application/ogg
-			return {
-				ext: 'ogx',
-				mime: 'application/ogg',
-			};
-		}
-
-		if (
-			this.check([0x50, 0x4B])
-			&& (this.buffer[2] === 0x3 || this.buffer[2] === 0x5 || this.buffer[2] === 0x7)
-			&& (this.buffer[3] === 0x4 || this.buffer[3] === 0x6 || this.buffer[3] === 0x8)
-		) {
-			return {
-				ext: 'zip',
-				mime: 'application/zip',
-			};
-		}
-
-		//
-
-		// File Type Box (https://en.wikipedia.org/wiki/ISO_base_media_file_format)
-		// It's not required to be first, but it's recommended to be. Almost all ISO base media files start with `ftyp` box.
-		// `ftyp` box must contain a brand major identifier, which must consist of ISO 8859-1 printable characters.
-		// Here we check for 8859-1 printable characters (for simplicity, it's a mask which also catches one non-printable character).
-		if (
-			this.checkString('ftyp', {offset: 4})
-			&& (this.buffer[8] & 0x60) !== 0x00 // Brand major, first character ASCII?
-		) {
-			// They all can have MIME `video/mp4` except `application/mp4` special-case which is hard to detect.
-			// For some cases, we're specific, everything else falls to `video/mp4` with `mp4` extension.
-			const brandMajor = this.buffer.toString('binary', 8, 12).replace('\0', ' ').trim();
-			switch (brandMajor) {
-				case 'avif':
-				case 'avis':
-					return {ext: 'avif', mime: 'image/avif'};
-				case 'mif1':
-					return {ext: 'heic', mime: 'image/heif'};
-				case 'msf1':
-					return {ext: 'heic', mime: 'image/heif-sequence'};
-				case 'heic':
-				case 'heix':
-					return {ext: 'heic', mime: 'image/heic'};
-				case 'hevc':
-				case 'hevx':
-					return {ext: 'heic', mime: 'image/heic-sequence'};
-				case 'qt':
-					return {ext: 'mov', mime: 'video/quicktime'};
-				case 'M4V':
-				case 'M4VH':
-				case 'M4VP':
-					return {ext: 'm4v', mime: 'video/x-m4v'};
-				case 'M4P':
-					return {ext: 'm4p', mime: 'video/mp4'};
-				case 'M4B':
-					return {ext: 'm4b', mime: 'audio/mp4'};
-				case 'M4A':
-					return {ext: 'm4a', mime: 'audio/x-m4a'};
-				case 'F4V':
-					return {ext: 'f4v', mime: 'video/mp4'};
-				case 'F4P':
-					return {ext: 'f4p', mime: 'video/mp4'};
-				case 'F4A':
-					return {ext: 'f4a', mime: 'audio/mp4'};
-				case 'F4B':
-					return {ext: 'f4b', mime: 'audio/mp4'};
-				case 'crx':
-					return {ext: 'cr3', mime: 'image/x-canon-cr3'};
-				default:
-					if (brandMajor.startsWith('3g')) {
-						if (brandMajor.startsWith('3g2')) {
-							return {ext: '3g2', mime: 'video/3gpp2'};
-						}
-
-						return {ext: '3gp', mime: 'video/3gpp'};
-					}
-
-					return {ext: 'mp4', mime: 'video/mp4'};
-			}
-		}
-
-		if (this.checkString('MThd')) {
-			return {
-				ext: 'mid',
-				mime: 'audio/midi',
-			};
-		}
-
-		if (
-			this.checkString('wOFF')
-			&& (
-				this.check([0x00, 0x01, 0x00, 0x00], {offset: 4})
-				|| this.checkString('OTTO', {offset: 4})
-			)
-		) {
-			return {
-				ext: 'woff',
-				mime: 'font/woff',
-			};
-		}
-
-		if (
-			this.checkString('wOF2')
-			&& (
-				this.check([0x00, 0x01, 0x00, 0x00], {offset: 4})
-				|| this.checkString('OTTO', {offset: 4})
-			)
-		) {
-			return {
-				ext: 'woff2',
-				mime: 'font/woff2',
-			};
-		}
-
-		if (this.check([0xD4, 0xC3, 0xB2, 0xA1]) || this.check([0xA1, 0xB2, 0xC3, 0xD4])) {
-			return {
-				ext: 'pcap',
-				mime: 'application/vnd.tcpdump.pcap',
-			};
-		}
-
-		// Sony DSD Stream File (DSF)
-		if (this.checkString('DSD ')) {
-			return {
-				ext: 'dsf',
-				mime: 'audio/x-dsf', // Non-standard
-			};
-		}
-
-		if (this.checkString('LZIP')) {
-			return {
-				ext: 'lz',
-				mime: 'application/x-lzip',
-			};
-		}
-
-		if (this.checkString('fLaC')) {
-			return {
-				ext: 'flac',
-				mime: 'audio/x-flac',
-			};
-		}
-
-		if (this.check([0x42, 0x50, 0x47, 0xFB])) {
-			return {
-				ext: 'bpg',
-				mime: 'image/bpg',
-			};
-		}
-
-		if (this.checkString('wvpk')) {
-			return {
-				ext: 'wv',
-				mime: 'audio/wavpack',
-			};
-		}
-
-		if (this.checkString('%PDF')) {
-			try {
-				await tokenizer.ignore(1350);
-				const maxBufferSize = 10 * 1024 * 1024;
-				const buffer = external_node_buffer_namespaceObject.Buffer.alloc(Math.min(maxBufferSize, tokenizer.fileInfo.size));
-				await tokenizer.readBuffer(buffer, {mayBeLess: true});
-
-				// Check if this is an Adobe Illustrator file
-				if (buffer.includes(external_node_buffer_namespaceObject.Buffer.from('AIPrivateData'))) {
-					return {
-						ext: 'ai',
-						mime: 'application/postscript',
-					};
-				}
-			} catch (error) {
-				// Swallow end of stream error if file is too small for the Adobe AI check
-				if (!(error instanceof EndOfStreamError)) {
-					throw error;
-				}
-			}
-
-			// Assume this is just a normal PDF
-			return {
-				ext: 'pdf',
-				mime: 'application/pdf',
-			};
-		}
-
-		if (this.check([0x00, 0x61, 0x73, 0x6D])) {
-			return {
-				ext: 'wasm',
-				mime: 'application/wasm',
-			};
-		}
-
-		// TIFF, little-endian type
-		if (this.check([0x49, 0x49])) {
-			const fileType = await this.readTiffHeader(false);
-			if (fileType) {
-				return fileType;
-			}
-		}
-
-		// TIFF, big-endian type
-		if (this.check([0x4D, 0x4D])) {
-			const fileType = await this.readTiffHeader(true);
-			if (fileType) {
-				return fileType;
-			}
-		}
-
-		if (this.checkString('MAC ')) {
-			return {
-				ext: 'ape',
-				mime: 'audio/ape',
-			};
-		}
-
-		// https://github.com/file/file/blob/master/magic/Magdir/matroska
-		if (this.check([0x1A, 0x45, 0xDF, 0xA3])) { // Root element: EBML
-			async function readField() {
-				const msb = await tokenizer.peekNumber(UINT8);
-				let mask = 0x80;
-				let ic = 0; // 0 = A, 1 = B, 2 = C, 3
-				// = D
-
-				while ((msb & mask) === 0 && mask !== 0) {
-					++ic;
-					mask >>= 1;
-				}
-
-				const id = external_node_buffer_namespaceObject.Buffer.alloc(ic + 1);
-				await tokenizer.readBuffer(id);
-				return id;
-			}
-
-			async function readElement() {
-				const id = await readField();
-				const lengthField = await readField();
-				lengthField[0] ^= 0x80 >> (lengthField.length - 1);
-				const nrLength = Math.min(6, lengthField.length); // JavaScript can max read 6 bytes integer
-				return {
-					id: id.readUIntBE(0, id.length),
-					len: lengthField.readUIntBE(lengthField.length - nrLength, nrLength),
-				};
-			}
-
-			async function readChildren(children) {
-				while (children > 0) {
-					const element = await readElement();
-					if (element.id === 0x42_82) {
-						const rawValue = await tokenizer.readToken(new StringType(element.len, 'utf-8'));
-						return rawValue.replaceAll(/\00.*$/g, ''); // Return DocType
-					}
-
-					await tokenizer.ignore(element.len); // ignore payload
-					--children;
-				}
-			}
-
-			const re = await readElement();
-			const docType = await readChildren(re.len);
-
-			switch (docType) {
-				case 'webm':
-					return {
-						ext: 'webm',
-						mime: 'video/webm',
-					};
-
-				case 'matroska':
-					return {
-						ext: 'mkv',
-						mime: 'video/x-matroska',
-					};
-
-				default:
-					return;
-			}
-		}
-
-		// RIFF file format which might be AVI, WAV, QCP, etc
-		if (this.check([0x52, 0x49, 0x46, 0x46])) {
-			if (this.check([0x41, 0x56, 0x49], {offset: 8})) {
-				return {
-					ext: 'avi',
-					mime: 'video/vnd.avi',
-				};
-			}
-
-			if (this.check([0x57, 0x41, 0x56, 0x45], {offset: 8})) {
-				return {
-					ext: 'wav',
-					mime: 'audio/wav',
-				};
-			}
-
-			// QLCM, QCP file
-			if (this.check([0x51, 0x4C, 0x43, 0x4D], {offset: 8})) {
-				return {
-					ext: 'qcp',
-					mime: 'audio/qcelp',
-				};
-			}
-		}
-
-		if (this.checkString('SQLi')) {
-			return {
-				ext: 'sqlite',
-				mime: 'application/x-sqlite3',
-			};
-		}
-
-		if (this.check([0x4E, 0x45, 0x53, 0x1A])) {
-			return {
-				ext: 'nes',
-				mime: 'application/x-nintendo-nes-rom',
-			};
-		}
-
-		if (this.checkString('Cr24')) {
-			return {
-				ext: 'crx',
-				mime: 'application/x-google-chrome-extension',
-			};
-		}
-
-		if (
-			this.checkString('MSCF')
-			|| this.checkString('ISc(')
-		) {
-			return {
-				ext: 'cab',
-				mime: 'application/vnd.ms-cab-compressed',
-			};
-		}
-
-		if (this.check([0xED, 0xAB, 0xEE, 0xDB])) {
-			return {
-				ext: 'rpm',
-				mime: 'application/x-rpm',
-			};
-		}
-
-		if (this.check([0xC5, 0xD0, 0xD3, 0xC6])) {
-			return {
-				ext: 'eps',
-				mime: 'application/eps',
-			};
-		}
-
-		if (this.check([0x28, 0xB5, 0x2F, 0xFD])) {
-			return {
-				ext: 'zst',
-				mime: 'application/zstd',
-			};
-		}
-
-		if (this.check([0x7F, 0x45, 0x4C, 0x46])) {
-			return {
-				ext: 'elf',
-				mime: 'application/x-elf',
-			};
-		}
-
-		if (this.check([0x21, 0x42, 0x44, 0x4E])) {
-			return {
-				ext: 'pst',
-				mime: 'application/vnd.ms-outlook',
-			};
-		}
-
-		if (this.checkString('PAR1')) {
-			return {
-				ext: 'parquet',
-				mime: 'application/x-parquet',
-			};
-		}
-
-		if (this.check([0xCF, 0xFA, 0xED, 0xFE])) {
-			return {
-				ext: 'macho',
-				mime: 'application/x-mach-binary',
-			};
-		}
-
-		// -- 5-byte signatures --
-
-		if (this.check([0x4F, 0x54, 0x54, 0x4F, 0x00])) {
-			return {
-				ext: 'otf',
-				mime: 'font/otf',
-			};
-		}
-
-		if (this.checkString('#!AMR')) {
-			return {
-				ext: 'amr',
-				mime: 'audio/amr',
-			};
-		}
-
-		if (this.checkString('{\\rtf')) {
-			return {
-				ext: 'rtf',
-				mime: 'application/rtf',
-			};
-		}
-
-		if (this.check([0x46, 0x4C, 0x56, 0x01])) {
-			return {
-				ext: 'flv',
-				mime: 'video/x-flv',
-			};
-		}
-
-		if (this.checkString('IMPM')) {
-			return {
-				ext: 'it',
-				mime: 'audio/x-it',
-			};
-		}
-
-		if (
-			this.checkString('-lh0-', {offset: 2})
-			|| this.checkString('-lh1-', {offset: 2})
-			|| this.checkString('-lh2-', {offset: 2})
-			|| this.checkString('-lh3-', {offset: 2})
-			|| this.checkString('-lh4-', {offset: 2})
-			|| this.checkString('-lh5-', {offset: 2})
-			|| this.checkString('-lh6-', {offset: 2})
-			|| this.checkString('-lh7-', {offset: 2})
-			|| this.checkString('-lzs-', {offset: 2})
-			|| this.checkString('-lz4-', {offset: 2})
-			|| this.checkString('-lz5-', {offset: 2})
-			|| this.checkString('-lhd-', {offset: 2})
-		) {
-			return {
-				ext: 'lzh',
-				mime: 'application/x-lzh-compressed',
-			};
-		}
-
-		// MPEG program stream (PS or MPEG-PS)
-		if (this.check([0x00, 0x00, 0x01, 0xBA])) {
-			//  MPEG-PS, MPEG-1 Part 1
-			if (this.check([0x21], {offset: 4, mask: [0xF1]})) {
-				return {
-					ext: 'mpg', // May also be .ps, .mpeg
-					mime: 'video/MP1S',
-				};
-			}
-
-			// MPEG-PS, MPEG-2 Part 1
-			if (this.check([0x44], {offset: 4, mask: [0xC4]})) {
-				return {
-					ext: 'mpg', // May also be .mpg, .m2p, .vob or .sub
-					mime: 'video/MP2P',
-				};
-			}
-		}
-
-		if (this.checkString('ITSF')) {
-			return {
-				ext: 'chm',
-				mime: 'application/vnd.ms-htmlhelp',
-			};
-		}
-
-		if (this.check([0xCA, 0xFE, 0xBA, 0xBE])) {
-			return {
-				ext: 'class',
-				mime: 'application/java-vm',
-			};
-		}
-
-		// -- 6-byte signatures --
-
-		if (this.check([0xFD, 0x37, 0x7A, 0x58, 0x5A, 0x00])) {
-			return {
-				ext: 'xz',
-				mime: 'application/x-xz',
-			};
-		}
-
-		if (this.checkString('<?xml ')) {
-			return {
-				ext: 'xml',
-				mime: 'application/xml',
-			};
-		}
-
-		if (this.check([0x37, 0x7A, 0xBC, 0xAF, 0x27, 0x1C])) {
-			return {
-				ext: '7z',
-				mime: 'application/x-7z-compressed',
-			};
-		}
-
-		if (
-			this.check([0x52, 0x61, 0x72, 0x21, 0x1A, 0x7])
-			&& (this.buffer[6] === 0x0 || this.buffer[6] === 0x1)
-		) {
-			return {
-				ext: 'rar',
-				mime: 'application/x-rar-compressed',
-			};
-		}
-
-		if (this.checkString('solid ')) {
-			return {
-				ext: 'stl',
-				mime: 'model/stl',
-			};
-		}
-
-		if (this.checkString('AC')) {
-			const version = this.buffer.toString('binary', 2, 6);
-			if (version.match('^d*') && version >= 1000 && version <= 1050) {
-				return {
-					ext: 'dwg',
-					mime: 'image/vnd.dwg',
-				};
-			}
-		}
-
-		if (this.checkString('070707')) {
-			return {
-				ext: 'cpio',
-				mime: 'application/x-cpio',
-			};
-		}
-
-		// -- 7-byte signatures --
-
-		if (this.checkString('BLENDER')) {
-			return {
-				ext: 'blend',
-				mime: 'application/x-blender',
-			};
-		}
-
-		if (this.checkString('!<arch>')) {
-			await tokenizer.ignore(8);
-			const string = await tokenizer.readToken(new StringType(13, 'ascii'));
-			if (string === 'debian-binary') {
-				return {
-					ext: 'deb',
-					mime: 'application/x-deb',
-				};
-			}
-
-			return {
-				ext: 'ar',
-				mime: 'application/x-unix-archive',
-			};
-		}
-
-		if (this.checkString('**ACE', {offset: 7})) {
-			await tokenizer.peekBuffer(this.buffer, {length: 14, mayBeLess: true});
-			if (this.checkString('**', {offset: 12})) {
-				return {
-					ext: 'ace',
-					mime: 'application/x-ace-compressed',
-				};
-			}
-		}
-
-		// -- 8-byte signatures --
-
-		if (this.check([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A])) {
-			// APNG format (https://wiki.mozilla.org/APNG_Specification)
-			// 1. Find the first IDAT (image data) chunk (49 44 41 54)
-			// 2. Check if there is an "acTL" chunk before the IDAT one (61 63 54 4C)
-
-			// Offset calculated as follows:
-			// - 8 bytes: PNG signature
-			// - 4 (length) + 4 (chunk type) + 13 (chunk data) + 4 (CRC): IHDR chunk
-
-			await tokenizer.ignore(8); // ignore PNG signature
-
-			async function readChunkHeader() {
-				return {
-					length: await tokenizer.readToken(INT32_BE),
-					type: await tokenizer.readToken(new StringType(4, 'binary')),
-				};
-			}
-
-			do {
-				const chunk = await readChunkHeader();
-				if (chunk.length < 0) {
-					return; // Invalid chunk length
-				}
-
-				switch (chunk.type) {
-					case 'IDAT':
-						return {
-							ext: 'png',
-							mime: 'image/png',
-						};
-					case 'acTL':
-						return {
-							ext: 'apng',
-							mime: 'image/apng',
-						};
-					default:
-						await tokenizer.ignore(chunk.length + 4); // Ignore chunk-data + CRC
-				}
-			} while (tokenizer.position + 8 < tokenizer.fileInfo.size);
-
-			return {
-				ext: 'png',
-				mime: 'image/png',
-			};
-		}
-
-		if (this.check([0x41, 0x52, 0x52, 0x4F, 0x57, 0x31, 0x00, 0x00])) {
-			return {
-				ext: 'arrow',
-				mime: 'application/x-apache-arrow',
-			};
-		}
-
-		if (this.check([0x67, 0x6C, 0x54, 0x46, 0x02, 0x00, 0x00, 0x00])) {
-			return {
-				ext: 'glb',
-				mime: 'model/gltf-binary',
-			};
-		}
-
-		// `mov` format variants
-		if (
-			this.check([0x66, 0x72, 0x65, 0x65], {offset: 4}) // `free`
-			|| this.check([0x6D, 0x64, 0x61, 0x74], {offset: 4}) // `mdat` MJPEG
-			|| this.check([0x6D, 0x6F, 0x6F, 0x76], {offset: 4}) // `moov`
-			|| this.check([0x77, 0x69, 0x64, 0x65], {offset: 4}) // `wide`
-		) {
-			return {
-				ext: 'mov',
-				mime: 'video/quicktime',
-			};
-		}
-
-		// -- 9-byte signatures --
-
-		if (this.check([0x49, 0x49, 0x52, 0x4F, 0x08, 0x00, 0x00, 0x00, 0x18])) {
-			return {
-				ext: 'orf',
-				mime: 'image/x-olympus-orf',
-			};
-		}
-
-		if (this.checkString('gimp xcf ')) {
-			return {
-				ext: 'xcf',
-				mime: 'image/x-xcf',
-			};
-		}
-
-		// -- 12-byte signatures --
-
-		if (this.check([0x49, 0x49, 0x55, 0x00, 0x18, 0x00, 0x00, 0x00, 0x88, 0xE7, 0x74, 0xD8])) {
-			return {
-				ext: 'rw2',
-				mime: 'image/x-panasonic-rw2',
-			};
-		}
-
-		// ASF_Header_Object first 80 bytes
-		if (this.check([0x30, 0x26, 0xB2, 0x75, 0x8E, 0x66, 0xCF, 0x11, 0xA6, 0xD9])) {
-			async function readHeader() {
-				const guid = external_node_buffer_namespaceObject.Buffer.alloc(16);
-				await tokenizer.readBuffer(guid);
-				return {
-					id: guid,
-					size: Number(await tokenizer.readToken(UINT64_LE)),
-				};
-			}
-
-			await tokenizer.ignore(30);
-			// Search for header should be in first 1KB of file.
-			while (tokenizer.position + 24 < tokenizer.fileInfo.size) {
-				const header = await readHeader();
-				let payload = header.size - 24;
-				if (_check(header.id, [0x91, 0x07, 0xDC, 0xB7, 0xB7, 0xA9, 0xCF, 0x11, 0x8E, 0xE6, 0x00, 0xC0, 0x0C, 0x20, 0x53, 0x65])) {
-					// Sync on Stream-Properties-Object (B7DC0791-A9B7-11CF-8EE6-00C00C205365)
-					const typeId = external_node_buffer_namespaceObject.Buffer.alloc(16);
-					payload -= await tokenizer.readBuffer(typeId);
-
-					if (_check(typeId, [0x40, 0x9E, 0x69, 0xF8, 0x4D, 0x5B, 0xCF, 0x11, 0xA8, 0xFD, 0x00, 0x80, 0x5F, 0x5C, 0x44, 0x2B])) {
-						// Found audio:
-						return {
-							ext: 'asf',
-							mime: 'audio/x-ms-asf',
-						};
-					}
-
-					if (_check(typeId, [0xC0, 0xEF, 0x19, 0xBC, 0x4D, 0x5B, 0xCF, 0x11, 0xA8, 0xFD, 0x00, 0x80, 0x5F, 0x5C, 0x44, 0x2B])) {
-						// Found video:
-						return {
-							ext: 'asf',
-							mime: 'video/x-ms-asf',
-						};
-					}
-
-					break;
-				}
-
-				await tokenizer.ignore(payload);
-			}
-
-			// Default to ASF generic extension
-			return {
-				ext: 'asf',
-				mime: 'application/vnd.ms-asf',
-			};
-		}
-
-		if (this.check([0xAB, 0x4B, 0x54, 0x58, 0x20, 0x31, 0x31, 0xBB, 0x0D, 0x0A, 0x1A, 0x0A])) {
-			return {
-				ext: 'ktx',
-				mime: 'image/ktx',
-			};
-		}
-
-		if ((this.check([0x7E, 0x10, 0x04]) || this.check([0x7E, 0x18, 0x04])) && this.check([0x30, 0x4D, 0x49, 0x45], {offset: 4})) {
-			return {
-				ext: 'mie',
-				mime: 'application/x-mie',
-			};
-		}
-
-		if (this.check([0x27, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], {offset: 2})) {
-			return {
-				ext: 'shp',
-				mime: 'application/x-esri-shape',
-			};
-		}
-
-		if (this.check([0xFF, 0x4F, 0xFF, 0x51])) {
-			return {
-				ext: 'j2c',
-				mime: 'image/j2c',
-			};
-		}
-
-		if (this.check([0x00, 0x00, 0x00, 0x0C, 0x6A, 0x50, 0x20, 0x20, 0x0D, 0x0A, 0x87, 0x0A])) {
-			// JPEG-2000 family
-
-			await tokenizer.ignore(20);
-			const type = await tokenizer.readToken(new StringType(4, 'ascii'));
-			switch (type) {
-				case 'jp2 ':
-					return {
-						ext: 'jp2',
-						mime: 'image/jp2',
-					};
-				case 'jpx ':
-					return {
-						ext: 'jpx',
-						mime: 'image/jpx',
-					};
-				case 'jpm ':
-					return {
-						ext: 'jpm',
-						mime: 'image/jpm',
-					};
-				case 'mjp2':
-					return {
-						ext: 'mj2',
-						mime: 'image/mj2',
-					};
-				default:
-					return;
-			}
-		}
-
-		if (
-			this.check([0xFF, 0x0A])
-			|| this.check([0x00, 0x00, 0x00, 0x0C, 0x4A, 0x58, 0x4C, 0x20, 0x0D, 0x0A, 0x87, 0x0A])
-		) {
-			return {
-				ext: 'jxl',
-				mime: 'image/jxl',
-			};
-		}
-
-		if (this.check([0xFE, 0xFF])) { // UTF-16-BOM-LE
-			if (this.check([0, 60, 0, 63, 0, 120, 0, 109, 0, 108], {offset: 2})) {
-				return {
-					ext: 'xml',
-					mime: 'application/xml',
-				};
-			}
-
-			return undefined; // Some unknown text based format
-		}
-
-		// -- Unsafe signatures --
-
-		if (
-			this.check([0x0, 0x0, 0x1, 0xBA])
-			|| this.check([0x0, 0x0, 0x1, 0xB3])
-		) {
-			return {
-				ext: 'mpg',
-				mime: 'video/mpeg',
-			};
-		}
-
-		if (this.check([0x00, 0x01, 0x00, 0x00, 0x00])) {
-			return {
-				ext: 'ttf',
-				mime: 'font/ttf',
-			};
-		}
-
-		if (this.check([0x00, 0x00, 0x01, 0x00])) {
-			return {
-				ext: 'ico',
-				mime: 'image/x-icon',
-			};
-		}
-
-		if (this.check([0x00, 0x00, 0x02, 0x00])) {
-			return {
-				ext: 'cur',
-				mime: 'image/x-icon',
-			};
-		}
-
-		if (this.check([0xD0, 0xCF, 0x11, 0xE0, 0xA1, 0xB1, 0x1A, 0xE1])) {
-			// Detected Microsoft Compound File Binary File (MS-CFB) Format.
-			return {
-				ext: 'cfb',
-				mime: 'application/x-cfb',
-			};
-		}
-
-		// Increase sample size from 12 to 256.
-		await tokenizer.peekBuffer(this.buffer, {length: Math.min(256, tokenizer.fileInfo.size), mayBeLess: true});
-
-		if (this.check([0x61, 0x63, 0x73, 0x70], {offset: 36})) {
-			return {
-				ext: 'icc',
-				mime: 'application/vnd.iccprofile',
-			};
-		}
-
-		// -- 15-byte signatures --
-
-		if (this.checkString('BEGIN:')) {
-			if (this.checkString('VCARD', {offset: 6})) {
-				return {
-					ext: 'vcf',
-					mime: 'text/vcard',
-				};
-			}
-
-			if (this.checkString('VCALENDAR', {offset: 6})) {
-				return {
-					ext: 'ics',
-					mime: 'text/calendar',
-				};
-			}
-		}
-
-		// `raf` is here just to keep all the raw image detectors together.
-		if (this.checkString('FUJIFILMCCD-RAW')) {
-			return {
-				ext: 'raf',
-				mime: 'image/x-fujifilm-raf',
-			};
-		}
-
-		if (this.checkString('Extended Module:')) {
-			return {
-				ext: 'xm',
-				mime: 'audio/x-xm',
-			};
-		}
-
-		if (this.checkString('Creative Voice File')) {
-			return {
-				ext: 'voc',
-				mime: 'audio/x-voc',
-			};
-		}
-
-		if (this.check([0x04, 0x00, 0x00, 0x00]) && this.buffer.length >= 16) { // Rough & quick check Pickle/ASAR
-			const jsonSize = this.buffer.readUInt32LE(12);
-			if (jsonSize > 12 && this.buffer.length >= jsonSize + 16) {
-				try {
-					const header = this.buffer.slice(16, jsonSize + 16).toString();
-					const json = JSON.parse(header);
-					// Check if Pickle is ASAR
-					if (json.files) { // Final check, assuring Pickle/ASAR format
-						return {
-							ext: 'asar',
-							mime: 'application/x-asar',
-						};
-					}
-				} catch {}
-			}
-		}
-
-		if (this.check([0x06, 0x0E, 0x2B, 0x34, 0x02, 0x05, 0x01, 0x01, 0x0D, 0x01, 0x02, 0x01, 0x01, 0x02])) {
-			return {
-				ext: 'mxf',
-				mime: 'application/mxf',
-			};
-		}
-
-		if (this.checkString('SCRM', {offset: 44})) {
-			return {
-				ext: 's3m',
-				mime: 'audio/x-s3m',
-			};
-		}
-
-		// Raw MPEG-2 transport stream (188-byte packets)
-		if (this.check([0x47]) && this.check([0x47], {offset: 188})) {
-			return {
-				ext: 'mts',
-				mime: 'video/mp2t',
-			};
-		}
-
-		// Blu-ray Disc Audio-Video (BDAV) MPEG-2 transport stream has 4-byte TP_extra_header before each 188-byte packet
-		if (this.check([0x47], {offset: 4}) && this.check([0x47], {offset: 196})) {
-			return {
-				ext: 'mts',
-				mime: 'video/mp2t',
-			};
-		}
-
-		if (this.check([0x42, 0x4F, 0x4F, 0x4B, 0x4D, 0x4F, 0x42, 0x49], {offset: 60})) {
-			return {
-				ext: 'mobi',
-				mime: 'application/x-mobipocket-ebook',
-			};
-		}
-
-		if (this.check([0x44, 0x49, 0x43, 0x4D], {offset: 128})) {
-			return {
-				ext: 'dcm',
-				mime: 'application/dicom',
-			};
-		}
-
-		if (this.check([0x4C, 0x00, 0x00, 0x00, 0x01, 0x14, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46])) {
-			return {
-				ext: 'lnk',
-				mime: 'application/x.ms.shortcut', // Invented by us
-			};
-		}
-
-		if (this.check([0x62, 0x6F, 0x6F, 0x6B, 0x00, 0x00, 0x00, 0x00, 0x6D, 0x61, 0x72, 0x6B, 0x00, 0x00, 0x00, 0x00])) {
-			return {
-				ext: 'alias',
-				mime: 'application/x.apple.alias', // Invented by us
-			};
-		}
-
-		if (this.checkString('Kaydara FBX Binary  \u0000')) {
-			return {
-				ext: 'fbx',
-				mime: 'application/x.autodesk.fbx', // Invented by us
-			};
-		}
-
-		if (
-			this.check([0x4C, 0x50], {offset: 34})
-			&& (
-				this.check([0x00, 0x00, 0x01], {offset: 8})
-				|| this.check([0x01, 0x00, 0x02], {offset: 8})
-				|| this.check([0x02, 0x00, 0x02], {offset: 8})
-			)
-		) {
-			return {
-				ext: 'eot',
-				mime: 'application/vnd.ms-fontobject',
-			};
-		}
-
-		if (this.check([0x06, 0x06, 0xED, 0xF5, 0xD8, 0x1D, 0x46, 0xE5, 0xBD, 0x31, 0xEF, 0xE7, 0xFE, 0x74, 0xB7, 0x1D])) {
-			return {
-				ext: 'indd',
-				mime: 'application/x-indesign',
-			};
-		}
-
-		// Increase sample size from 256 to 512
-		await tokenizer.peekBuffer(this.buffer, {length: Math.min(512, tokenizer.fileInfo.size), mayBeLess: true});
-
-		// Requires a buffer size of 512 bytes
-		if (tarHeaderChecksumMatches(this.buffer)) {
-			return {
-				ext: 'tar',
-				mime: 'application/x-tar',
-			};
-		}
-
-		if (this.check([0xFF, 0xFE])) { // UTF-16-BOM-BE
-			if (this.check([60, 0, 63, 0, 120, 0, 109, 0, 108, 0], {offset: 2})) {
-				return {
-					ext: 'xml',
-					mime: 'application/xml',
-				};
-			}
-
-			if (this.check([0xFF, 0x0E, 0x53, 0x00, 0x6B, 0x00, 0x65, 0x00, 0x74, 0x00, 0x63, 0x00, 0x68, 0x00, 0x55, 0x00, 0x70, 0x00, 0x20, 0x00, 0x4D, 0x00, 0x6F, 0x00, 0x64, 0x00, 0x65, 0x00, 0x6C, 0x00], {offset: 2})) {
-				return {
-					ext: 'skp',
-					mime: 'application/vnd.sketchup.skp',
-				};
-			}
-
-			return undefined; // Some text based format
-		}
-
-		if (this.checkString('-----BEGIN PGP MESSAGE-----')) {
-			return {
-				ext: 'pgp',
-				mime: 'application/pgp-encrypted',
-			};
-		}
-
-		// Check MPEG 1 or 2 Layer 3 header, or 'layer 0' for ADTS (MPEG sync-word 0xFFE)
-		if (this.buffer.length >= 2 && this.check([0xFF, 0xE0], {offset: 0, mask: [0xFF, 0xE0]})) {
-			if (this.check([0x10], {offset: 1, mask: [0x16]})) {
-				// Check for (ADTS) MPEG-2
-				if (this.check([0x08], {offset: 1, mask: [0x08]})) {
-					return {
-						ext: 'aac',
-						mime: 'audio/aac',
-					};
-				}
-
-				// Must be (ADTS) MPEG-4
-				return {
-					ext: 'aac',
-					mime: 'audio/aac',
-				};
-			}
-
-			// MPEG 1 or 2 Layer 3 header
-			// Check for MPEG layer 3
-			if (this.check([0x02], {offset: 1, mask: [0x06]})) {
-				return {
-					ext: 'mp3',
-					mime: 'audio/mpeg',
-				};
-			}
-
-			// Check for MPEG layer 2
-			if (this.check([0x04], {offset: 1, mask: [0x06]})) {
-				return {
-					ext: 'mp2',
-					mime: 'audio/mpeg',
-				};
-			}
-
-			// Check for MPEG layer 1
-			if (this.check([0x06], {offset: 1, mask: [0x06]})) {
-				return {
-					ext: 'mp1',
-					mime: 'audio/mpeg',
-				};
-			}
-		}
-	}
-
-	async readTiffTag(bigEndian) {
-		const tagId = await this.tokenizer.readToken(bigEndian ? UINT16_BE : UINT16_LE);
-		this.tokenizer.ignore(10);
-		switch (tagId) {
-			case 50_341:
-				return {
-					ext: 'arw',
-					mime: 'image/x-sony-arw',
-				};
-			case 50_706:
-				return {
-					ext: 'dng',
-					mime: 'image/x-adobe-dng',
-				};
-			default:
-		}
-	}
-
-	async readTiffIFD(bigEndian) {
-		const numberOfTags = await this.tokenizer.readToken(bigEndian ? UINT16_BE : UINT16_LE);
-		for (let n = 0; n < numberOfTags; ++n) {
-			const fileType = await this.readTiffTag(bigEndian);
-			if (fileType) {
-				return fileType;
-			}
-		}
-	}
-
-	async readTiffHeader(bigEndian) {
-		const version = (bigEndian ? UINT16_BE : UINT16_LE).get(this.buffer, 2);
-		const ifdOffset = (bigEndian ? UINT32_BE : UINT32_LE).get(this.buffer, 4);
-
-		if (version === 42) {
-			// TIFF file header
-			if (ifdOffset >= 6) {
-				if (this.checkString('CR', {offset: 8})) {
-					return {
-						ext: 'cr2',
-						mime: 'image/x-canon-cr2',
-					};
-				}
-
-				if (ifdOffset >= 8 && (this.check([0x1C, 0x00, 0xFE, 0x00], {offset: 8}) || this.check([0x1F, 0x00, 0x0B, 0x00], {offset: 8}))) {
-					return {
-						ext: 'nef',
-						mime: 'image/x-nikon-nef',
-					};
-				}
-			}
-
-			await this.tokenizer.ignore(ifdOffset);
-			const fileType = await this.readTiffIFD(bigEndian);
-			return fileType ?? {
-				ext: 'tif',
-				mime: 'image/tiff',
-			};
-		}
-
-		if (version === 43) {	// Big TIFF file header
-			return {
-				ext: 'tif',
-				mime: 'image/tiff',
-			};
-		}
-	}
-}
-
-async function fileTypeStream(readableStream, options = {}) {
-	return new FileTypeParser().toDetectionStream(readableStream, options);
-}
-
-const supportedExtensions = new Set(extensions);
-const supportedMimeTypes = new Set(supported_mimeTypes);
-
-;// CONCATENATED MODULE: ./node_modules/file-type/index.js
-
-
-
-async function fileTypeFromFile(path, fileTypeOptions) {
-	const tokenizer = await fromFile(path);
-	try {
-		const parser = new FileTypeParser(fileTypeOptions);
-		return await parser.fromTokenizer(tokenizer);
-	} finally {
-		await tokenizer.close();
-	}
-}
-
-
-
-// EXTERNAL MODULE: external "fs"
-var external_fs_ = __nccwpck_require__(7147);
-// EXTERNAL MODULE: external "util"
-var external_util_ = __nccwpck_require__(3837);
-;// CONCATENATED MODULE: ./src/helpers/files.ts
-
-
-
-
-
-
-
-const stats = (0,external_util_.promisify)(external_fs_.stat);
-function getDefaultGlobOptions() {
-    return {
-        followSymbolicLinks: true,
-        implicitDescendants: true,
-        omitBrokenSymbolicLinks: true
-    };
-}
-/**
- * If multiple paths are specific, the least common ancestor (LCA) of the search paths is used as
- * the delimiter to control the directory structure for the artifact. This function returns the LCA
- * when given an array of search paths
- *
- * Example 1: The patterns `/foo/` and `/bar/` returns `/`
- *
- * Example 2: The patterns `~/foo/bar/*` and `~/foo/voo/two/*` and `~/foo/mo/` returns `~/foo`
- */
-function getMultiPathLCA(searchPaths) {
-    if (searchPaths.length < 2) {
-        throw new Error('At least two search paths must be provided');
-    }
-    const commonPaths = new Array();
-    const splitPaths = new Array();
-    let smallestPathLength = Number.MAX_SAFE_INTEGER;
-    // split each of the search paths using the platform specific separator
-    for (const searchPath of searchPaths) {
-        (0,lib_core.debug)(`Using search path ${searchPath}`);
-        const splitSearchPath = external_path_.normalize(searchPath).split(external_path_.sep);
-        // keep track of the smallest path length so that we don't accidentally later go out of bounds
-        smallestPathLength = Math.min(smallestPathLength, splitSearchPath.length);
-        splitPaths.push(splitSearchPath);
-    }
-    // on Unix-like file systems, the file separator exists at the beginning of the file path, make sure to preserve it
-    if (searchPaths[0].startsWith(external_path_.sep)) {
-        commonPaths.push(external_path_.sep);
-    }
-    let splitIndex = 0;
-    // function to check if the paths are the same at a specific index
-    function isPathTheSame() {
-        const compare = splitPaths[0][splitIndex];
-        for (let i = 1; i < splitPaths.length; i++) {
-            if (compare !== splitPaths[i][splitIndex]) {
-                // a non-common index has been reached
-                return false;
-            }
-        }
-        return true;
-    }
-    // loop over all the search paths until there is a non-common ancestor or we go out of bounds
-    while (splitIndex < smallestPathLength) {
-        if (!isPathTheSame()) {
-            break;
-        }
-        // if all are the same, add to the end result & increment the index
-        commonPaths.push(splitPaths[0][splitIndex]);
-        splitIndex++;
-    }
-    return external_path_.join(...commonPaths);
-}
-async function getFiles(searchPath, globOptions) {
-    const searchResults = [];
-    const globber = await glob.create(searchPath, globOptions || getDefaultGlobOptions());
-    const rawSearchResults = await globber.glob();
-    /*
-      Files are saved with case insensitivity. Uploading both a.txt and A.txt will files to be overwritten
-      Detect any files that could be overwritten for user awareness
-    */
-    const set = new Set();
-    /*
-      Directories will be rejected if attempted to be uploaded. This includes just empty
-      directories so filter any directories out from the raw search results
-    */
-    for (const searchResult of rawSearchResults) {
-        const fileStats = await stats(searchResult);
-        // isDirectory() returns false for symlinks if using fs.lstat(), make sure to use fs.stat() instead
-        if (!fileStats.isDirectory()) {
-            (0,lib_core.debug)(`File:${searchResult} was found using the provided searchPath`);
-            searchResults.push(searchResult);
-            // detect any files that would be overwritten because of case insensitivity
-            if (set.has(searchResult.toLowerCase())) {
-                (0,lib_core.info)(`Uploads are case insensitive: ${searchResult} was detected that it will be overwritten by another file with the same path`);
-            }
-            else {
-                set.add(searchResult.toLowerCase());
-            }
-        }
-        else {
-            (0,lib_core.debug)(`Removing ${searchResult} from rawSearchResults because it is a directory`);
-        }
-    }
-    // Calculate the root directory for the artifact using the search paths that were utilized
-    const searchPaths = globber.getSearchPaths();
-    if (searchPaths.length > 1) {
-        (0,lib_core.info)(`Multiple search paths detected. Calculating the least common ancestor of all paths`);
-        const lcaSearchPath = getMultiPathLCA(searchPaths);
-        (0,lib_core.info)(`The least common ancestor is ${lcaSearchPath}. This will be the root directory of the artifact`);
-        return {
-            toUpload: searchResults,
-            rootDirectory: lcaSearchPath
-        };
-    }
-    /*
-      Special case for a single file artifact that is uploaded without a directory or wildcard pattern. The directory structure is
-      not preserved and the root directory will be the single files parent directory
-    */
-    if (searchResults.length === 1 && searchPaths[0] === searchResults[0]) {
-        return {
-            toUpload: searchResults,
-            rootDirectory: (0,external_path_.dirname)(searchResults[0])
-        };
-    }
-    return {
-        toUpload: searchResults,
-        rootDirectory: searchPaths[0]
-    };
-}
-async function getUploadZipSpecification(filesToZip, rootDirectory) {
-    const specification = [];
-    // Normalize and resolve, this allows for either absolute or relative paths to be used
-    rootDirectory = (0,external_path_.normalize)(rootDirectory);
-    rootDirectory = (0,external_path_.resolve)(rootDirectory);
-    /*
-       Example
-
-       Input:
-         rootDirectory: '/home/user/files/plz-upload'
-         artifactFiles: [
-           '/home/user/files/plz-upload/file1.txt',
-           '/home/user/files/plz-upload/file2.txt',
-           '/home/user/files/plz-upload/dir/file3.txt'
-         ]
-
-       Output:
-         specifications: [
-           ['/home/user/files/plz-upload/file1.txt', '/file1.txt'],
-           ['/home/user/files/plz-upload/file1.txt', '/file2.txt'],
-           ['/home/user/files/plz-upload/file1.txt', '/dir/file3.txt']
-         ]
-
-        The final zip that is later uploaded will look like this:
-
-        my-artifact.zip
-          - file.txt
-          - file2.txt
-          - dir/
-            - file3.txt
-    */
-    for (let file of filesToZip) {
-        if (!(0,external_fs_.existsSync)(file)) {
-            throw new Error(`File ${file} does not exist`);
-        }
-        if (!(0,external_fs_.statSync)(file).isDirectory()) {
-            // Normalize and resolve, this allows for either absolute or relative paths to be used
-            file = (0,external_path_.normalize)(file);
-            file = (0,external_path_.resolve)(file);
-            if (!file.startsWith(rootDirectory)) {
-                throw new Error(`The rootDirectory: ${rootDirectory} is not a parent directory of the file: ${file}`);
-            }
-            // Check for forbidden characters in file paths that may cause ambiguous behavior if downloaded on different file systems
-            const uploadPath = file.replace(rootDirectory, '');
-            validateFilePath(uploadPath);
-            const mimeType = await fileTypeFromFile(file);
-            specification.push({
-                sourcePath: file,
-                destinationPath: uploadPath,
-                mimeType: mimeType?.mime.toString()
-            });
-        }
-        else {
-            // Empty directory
-            const directoryPath = file.replace(rootDirectory, '');
-            validateFilePath(directoryPath);
-            specification.push({
-                sourcePath: null,
-                destinationPath: directoryPath,
-                mimeType: null
-            });
-        }
-    }
-    return specification;
-}
-/**
- * Validates file paths to check for any illegal characters that can cause problems on different file systems
- */
-function validateFilePath(path) {
-    if (!path) {
-        throw new Error(`Provided file path input during validation is empty`);
-    }
-    for (const [invalidCharacterKey, errorMessageForCharacter] of invalidArtifactFilePathCharacters) {
-        if (path.includes(invalidCharacterKey)) {
-            throw new Error(`The path for one of the files in artifact is not valid: ${path}. Contains the following character: ${errorMessageForCharacter}
-          
-Invalid characters include: ${Array.from(invalidArtifactFilePathCharacters.values()).toString()}
-          
-The following characters are not allowed in files that are uploaded due to limitations with certain file systems such as NTFS. To maintain file system agnostic behavior, these characters are intentionally not allowed to prevent potential problems with downloads on different file systems.
-          `);
-        }
-    }
-}
-const invalidArtifactFilePathCharacters = new Map([
-    ['"', ' Double quote "'],
-    [':', ' Colon :'],
-    ['<', ' Less than <'],
-    ['>', ' Greater than >'],
-    ['|', ' Vertical bar |'],
-    ['*', ' Asterisk *'],
-    ['?', ' Question mark ?'],
-    ['\r', ' Carriage return \\r'],
-    ['\n', ' Line feed \\n']
-]);
-
-// EXTERNAL MODULE: external "https"
-var external_https_ = __nccwpck_require__(5687);
-;// CONCATENATED MODULE: ./src/helpers/https.ts
-
-
-async function request(api, method, content, headers) {
-    return new Promise((resolve, reject) => {
-        const body = JSON.stringify(content);
-        headers["Content-Type"] = 'application/json';
-        headers["Content-Length"] = body.length;
-        const options = {
-            hostname: 'service.servemy.site',
-            port: 443,
-            path: api,
-            method: method,
-            headers: headers
-        };
-        (0,lib_core.info)(`Starting request to: [${method}] https://${options.hostname}${options.path}`);
-        const request = external_https_.request(options, (response) => {
-            let data = '';
-            response.on('data', function (d) {
-                data += d;
-            });
-            response.on('end', function () {
-                (0,lib_core.info)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
-                (0,lib_core.debug)(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
-                const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
-                if (failed)
-                    reject(JSON.parse(data));
-                else
-                    resolve(JSON.parse(data));
-            });
-        });
-        request.end(body);
-    });
-}
-
-;// CONCATENATED MODULE: ./src/helpers/service.ts
-
-
-
-async function getSession(sessionReference) {
-    return request('/api/sessions', 'POST', {
-        token: sessionReference
-    }, {});
-}
-async function getRelease(projectReference, sessionReference) {
-    return request(`/api/projects/${projectReference}/releases`, 'POST', {}, {
-        'X-SMS-SessionToken': sessionReference
-    });
-}
-async function getUrls(projectReference, releaseReference, files, sessionReference) {
-    const spec = await getUploadZipSpecification(files.toUpload, files.rootDirectory);
-    for (let file of spec) {
-        (0,lib_core.info)(file.sourcePath ?? '');
-        (0,lib_core.info)(file.mimeType ?? '');
-        (0,lib_core.info)(file.destinationPath);
-    }
-}
-
-;// CONCATENATED MODULE: ./src/run.ts
-
-
-
-
-async function run() {
-    const inputs = getInputs();
-    const files = await getFiles(inputs.searchPath);
-    if (files.toUpload.length === 0) {
-        (0,lib_core.setFailed)(`No files were found with the provided path: ${inputs.searchPath}. No release will be uploaded.`);
-        return;
-    }
-    const session = await getSession(inputs.sessionReference);
-    const release = await getRelease(inputs.projectReference, session);
-    await getUrls(inputs.projectReference, release, files, session);
-    // Upload Release
-    (0,lib_core.info)(`With the provided session reference, we will use ${session} to upload the release.`);
-    (0,lib_core.info)(`With the provided session reference, we will upload to ${release} release.`);
-    (0,lib_core.info)(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
-    (0,lib_core.setOutput)('release-reference', 'something here.');
-}
-
-;// CONCATENATED MODULE: ./src/index.ts
-
-
-run().catch(error => {
-    (0,lib_core.setFailed)(error.message);
+"use strict";
+var exports = __webpack_exports__;
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const core_1 = __nccwpck_require__(2186);
+const run_1 = __nccwpck_require__(7764);
+(0, run_1.run)().catch(error => {
+    (0, core_1.setFailed)(error.message);
 });
 
 })();
 
-
+module.exports = __webpack_exports__;
+/******/ })()
+;
 //# sourceMappingURL=index.js.map

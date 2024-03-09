@@ -1,7 +1,7 @@
-import { request } from "./https.js";
-import {Files} from "../types/files.js";
+import { request } from "./https";
+import {Files} from "../types/files";
 import {info} from "@actions/core";
-import {getUploadZipSpecification} from "./files.js";
+import {getUploadZipSpecification} from "./files";
 
 export async function getSession(
     sessionReference: string
@@ -20,21 +20,18 @@ export async function getRelease(
     });
 }
 
-export async function getUrls(
+export function getUrls(
     projectReference: string,
     releaseReference: string,
     files: Files,
     sessionReference: string
-): Promise<void> {
+): void {
 
-    const spec = await getUploadZipSpecification(files.toUpload, files.rootDirectory);
+    const spec = getUploadZipSpecification(files.toUpload, files.rootDirectory);
 
     for (let file of spec) {
         info(file.sourcePath ?? '')
-        info(file.mimeType ?? '')
         info(file.destinationPath)
-
-
     }
 
 }

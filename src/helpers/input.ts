@@ -1,5 +1,5 @@
 import { getInput } from '@actions/core'
-import { UploadInputNames, UploadInputs } from "../types/inputs.js";
+import { UploadInputNames, UploadInputs } from "../types/inputs";
 
 /**
  * Helper to get all the inputs for the action
