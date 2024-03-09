@@ -64,11 +64,11 @@ export async function upload(
 
     return new Promise<void>((resolve, reject) => {
         const options: RequestOptions = {
-            method: 'POST',
+            method: 'PUT',
             headers: {}
         };
 
-        info(`Starting upload to: [POST] ${url}`);
+        info(`Starting upload to: [PUT] ${url}`);
 
         const request = https.request(url, options, (response) => {
 
@@ -79,8 +79,8 @@ export async function upload(
             });
 
             response.on('end', function () {
-                info(`Finished request to: [POST] ${url}} - ${response.statusCode}`);
-                info(`Parsed request to: [POST] ${url} - ${data}`);
+                info(`Finished request to: [PUT] ${url}} - ${response.statusCode}`);
+                info(`Parsed request to: [PUT] ${url} - ${data}`);
 
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
 

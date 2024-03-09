@@ -27473,18 +27473,18 @@ exports.request = request;
 async function upload(url, data) {
     return new Promise((resolve, reject) => {
         const options = {
-            method: 'POST',
+            method: 'PUT',
             headers: {}
         };
-        (0, core_1.info)(`Starting upload to: [POST] ${url}`);
+        (0, core_1.info)(`Starting upload to: [PUT] ${url}`);
         const request = https.request(url, options, (response) => {
             let data = '';
             response.on('data', function (d) {
                 data += d;
             });
             response.on('end', function () {
-                (0, core_1.info)(`Finished request to: [POST] ${url}} - ${response.statusCode}`);
-                (0, core_1.info)(`Parsed request to: [POST] ${url} - ${data}`);
+                (0, core_1.info)(`Finished request to: [PUT] ${url}} - ${response.statusCode}`);
+                (0, core_1.info)(`Parsed request to: [PUT] ${url} - ${data}`);
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
                 if (failed)
                     reject();
