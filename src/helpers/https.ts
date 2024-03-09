@@ -1,5 +1,5 @@
 import * as https from "https";
-import {error, info, warning} from "@actions/core";
+import {debug, error, info, warning} from "@actions/core";
 
 export async function request<T>(
     api: string,
@@ -33,12 +33,12 @@ export async function request<T>(
 
             response.on('end', function () {
                 info(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
+                debug(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
 
-                if (response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300) {
-                    reject(JSON.parse(data));
-                } else {
-                    resolve(JSON.parse(data));
-                }
+                const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
+
+                if (failed) reject(JSON.parse(data));
+                else resolve(JSON.parse(data));
             });
         });
 

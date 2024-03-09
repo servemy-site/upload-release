@@ -27359,12 +27359,12 @@ async function request(api, method, content) {
             });
             response.on('end', function () {
                 (0, core_1.info)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
-                if (response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300) {
+                (0, core_1.debug)(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
+                const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
+                if (failed)
                     reject(JSON.parse(data));
-                }
-                else {
+                else
                     resolve(JSON.parse(data));
-                }
             });
         });
         request.end(body);
