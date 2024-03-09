@@ -1,6 +1,7 @@
 import { request } from "./https";
 import {Files} from "../types/files";
 import {info} from "@actions/core";
+import {getUploadZipSpecification} from "./files";
 
 export async function getSession(
     sessionReference: string
@@ -26,9 +27,11 @@ export function getUrls(
     sessionReference: string
 ): void {
 
-    info(files.rootDirectory)
-    for (let file of files.toUpload) {
-        info(file)
+    const spec = getUploadZipSpecification(files.toUpload, files.rootDirectory);
+
+    for (let file of spec) {
+        info(file.sourcePath ?? '')
+        info(file.destinationPath)
     }
 
 }

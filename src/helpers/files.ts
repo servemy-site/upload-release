@@ -1,8 +1,8 @@
 import * as glob from '@actions/glob'
 import * as path from 'path'
 import {debug, info} from '@actions/core'
-import {stat} from 'fs'
-import {dirname} from 'path'
+import {stat,statSync, existsSync} from 'fs'
+import {dirname, normalize, resolve} from 'path'
 import {promisify} from 'util'
 import {Files} from "../types/files";
 const stats = promisify(stat)
@@ -152,3 +152,128 @@ export async function getFiles(
         rootDirectory: searchPaths[0]
     }
 }
+
+export interface UploadZipSpecification {
+    /**
+     * An absolute source path that points to a file that will be added to a zip. Null if creating a new directory
+     */
+    sourcePath: string | null
+
+    /**
+     * The destination path in a zip for a file
+     */
+    destinationPath: string
+}
+
+export function getUploadZipSpecification(
+    filesToZip: string[],
+    rootDirectory: string
+): UploadZipSpecification[] {
+    const specification: UploadZipSpecification[] = []
+
+    // Normalize and resolve, this allows for either absolute or relative paths to be used
+    rootDirectory = normalize(rootDirectory)
+    rootDirectory = resolve(rootDirectory)
+
+    /*
+       Example
+
+       Input:
+         rootDirectory: '/home/user/files/plz-upload'
+         artifactFiles: [
+           '/home/user/files/plz-upload/file1.txt',
+           '/home/user/files/plz-upload/file2.txt',
+           '/home/user/files/plz-upload/dir/file3.txt'
+         ]
+
+       Output:
+         specifications: [
+           ['/home/user/files/plz-upload/file1.txt', '/file1.txt'],
+           ['/home/user/files/plz-upload/file1.txt', '/file2.txt'],
+           ['/home/user/files/plz-upload/file1.txt', '/dir/file3.txt']
+         ]
+
+        The final zip that is later uploaded will look like this:
+
+        my-artifact.zip
+          - file.txt
+          - file2.txt
+          - dir/
+            - file3.txt
+    */
+    for (let file of filesToZip) {
+        if (!existsSync(file)) {
+            throw new Error(`File ${file} does not exist`)
+        }
+        if (!statSync(file).isDirectory()) {
+            // Normalize and resolve, this allows for either absolute or relative paths to be used
+            file = normalize(file)
+            file = resolve(file)
+            if (!file.startsWith(rootDirectory)) {
+                throw new Error(
+                    `The rootDirectory: ${rootDirectory} is not a parent directory of the file: ${file}`
+                )
+            }
+
+            // Check for forbidden characters in file paths that may cause ambiguous behavior if downloaded on different file systems
+            const uploadPath = file.replace(rootDirectory, '')
+            validateFilePath(uploadPath)
+
+            specification.push({
+                sourcePath: file,
+                destinationPath: uploadPath
+            })
+        } else {
+            // Empty directory
+            const directoryPath = file.replace(rootDirectory, '')
+            validateFilePath(directoryPath)
+
+            specification.push({
+                sourcePath: null,
+                destinationPath: directoryPath
+            })
+        }
+    }
+    return specification
+}
+
+
+/**
+ * Validates file paths to check for any illegal characters that can cause problems on different file systems
+ */
+export function validateFilePath(path: string): void {
+    if (!path) {
+        throw new Error(`Provided file path input during validation is empty`)
+    }
+
+    for (const [
+        invalidCharacterKey,
+        errorMessageForCharacter
+    ] of invalidArtifactFilePathCharacters) {
+        if (path.includes(invalidCharacterKey)) {
+            throw new Error(
+                `The path for one of the files in artifact is not valid: ${path}. Contains the following character: ${errorMessageForCharacter}
+          
+Invalid characters include: ${Array.from(
+                    invalidArtifactFilePathCharacters.values()
+                ).toString()}
+          
+The following characters are not allowed in files that are uploaded due to limitations with certain file systems such as NTFS. To maintain file system agnostic behavior, these characters are intentionally not allowed to prevent potential problems with downloads on different file systems.
+          `
+            )
+        }
+    }
+}
+
+
+const invalidArtifactFilePathCharacters = new Map<string, string>([
+    ['"', ' Double quote "'],
+    [':', ' Colon :'],
+    ['<', ' Less than <'],
+    ['>', ' Greater than >'],
+    ['|', ' Vertical bar |'],
+    ['*', ' Asterisk *'],
+    ['?', ' Question mark ?'],
+    ['\r', ' Carriage return \\r'],
+    ['\n', ' Line feed \\n']
+])

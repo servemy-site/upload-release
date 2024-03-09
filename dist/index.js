@@ -27178,7 +27178,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getFiles = void 0;
+exports.validateFilePath = exports.getUploadZipSpecification = exports.getFiles = void 0;
 const glob = __importStar(__nccwpck_require__(8090));
 const path = __importStar(__nccwpck_require__(1017));
 const core_1 = __nccwpck_require__(2186);
@@ -27302,6 +27302,99 @@ async function getFiles(searchPath, globOptions) {
     };
 }
 exports.getFiles = getFiles;
+function getUploadZipSpecification(filesToZip, rootDirectory) {
+    const specification = [];
+    // Normalize and resolve, this allows for either absolute or relative paths to be used
+    rootDirectory = (0, path_1.normalize)(rootDirectory);
+    rootDirectory = (0, path_1.resolve)(rootDirectory);
+    /*
+       Example
+
+       Input:
+         rootDirectory: '/home/user/files/plz-upload'
+         artifactFiles: [
+           '/home/user/files/plz-upload/file1.txt',
+           '/home/user/files/plz-upload/file2.txt',
+           '/home/user/files/plz-upload/dir/file3.txt'
+         ]
+
+       Output:
+         specifications: [
+           ['/home/user/files/plz-upload/file1.txt', '/file1.txt'],
+           ['/home/user/files/plz-upload/file1.txt', '/file2.txt'],
+           ['/home/user/files/plz-upload/file1.txt', '/dir/file3.txt']
+         ]
+
+        The final zip that is later uploaded will look like this:
+
+        my-artifact.zip
+          - file.txt
+          - file2.txt
+          - dir/
+            - file3.txt
+    */
+    for (let file of filesToZip) {
+        if (!(0, fs_1.existsSync)(file)) {
+            throw new Error(`File ${file} does not exist`);
+        }
+        if (!(0, fs_1.statSync)(file).isDirectory()) {
+            // Normalize and resolve, this allows for either absolute or relative paths to be used
+            file = (0, path_1.normalize)(file);
+            file = (0, path_1.resolve)(file);
+            if (!file.startsWith(rootDirectory)) {
+                throw new Error(`The rootDirectory: ${rootDirectory} is not a parent directory of the file: ${file}`);
+            }
+            // Check for forbidden characters in file paths that may cause ambiguous behavior if downloaded on different file systems
+            const uploadPath = file.replace(rootDirectory, '');
+            validateFilePath(uploadPath);
+            specification.push({
+                sourcePath: file,
+                destinationPath: uploadPath
+            });
+        }
+        else {
+            // Empty directory
+            const directoryPath = file.replace(rootDirectory, '');
+            validateFilePath(directoryPath);
+            specification.push({
+                sourcePath: null,
+                destinationPath: directoryPath
+            });
+        }
+    }
+    return specification;
+}
+exports.getUploadZipSpecification = getUploadZipSpecification;
+/**
+ * Validates file paths to check for any illegal characters that can cause problems on different file systems
+ */
+function validateFilePath(path) {
+    if (!path) {
+        throw new Error(`Provided file path input during validation is empty`);
+    }
+    for (const [invalidCharacterKey, errorMessageForCharacter] of invalidArtifactFilePathCharacters) {
+        if (path.includes(invalidCharacterKey)) {
+            throw new Error(`The path for one of the files in artifact is not valid: ${path}. Contains the following character: ${errorMessageForCharacter}
+          
+Invalid characters include: ${Array.from(invalidArtifactFilePathCharacters.values()).toString()}
+          
+The following characters are not allowed in files that are uploaded due to limitations with certain file systems such as NTFS. To maintain file system agnostic behavior, these characters are intentionally not allowed to prevent potential problems with downloads on different file systems.
+          `);
+        }
+    }
+}
+exports.validateFilePath = validateFilePath;
+const invalidArtifactFilePathCharacters = new Map([
+    ['"', ' Double quote "'],
+    [':', ' Colon :'],
+    ['<', ' Less than <'],
+    ['>', ' Greater than >'],
+    ['|', ' Vertical bar |'],
+    ['*', ' Asterisk *'],
+    ['?', ' Question mark ?'],
+    ['\r', ' Carriage return \\r'],
+    ['\n', ' Line feed \\n']
+]);
 
 
 /***/ }),
@@ -27411,6 +27504,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getUrls = exports.getRelease = exports.getSession = void 0;
 const https_1 = __nccwpck_require__(533);
 const core_1 = __nccwpck_require__(2186);
+const files_1 = __nccwpck_require__(5115);
 async function getSession(sessionReference) {
     return (0, https_1.request)('/api/sessions', 'POST', {
         token: sessionReference
@@ -27424,9 +27518,10 @@ async function getRelease(projectReference, sessionReference) {
 }
 exports.getRelease = getRelease;
 function getUrls(projectReference, releaseReference, files, sessionReference) {
-    (0, core_1.info)(files.rootDirectory);
-    for (let file of files.toUpload) {
-        (0, core_1.info)(file);
+    const spec = (0, files_1.getUploadZipSpecification)(files.toUpload, files.rootDirectory);
+    for (let file of spec) {
+        (0, core_1.info)(file.sourcePath ?? '');
+        (0, core_1.info)(file.destinationPath);
     }
 }
 exports.getUrls = getUrls;
