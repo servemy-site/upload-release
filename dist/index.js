@@ -27424,6 +27424,7 @@ async function getRelease(projectReference, sessionReference) {
 }
 exports.getRelease = getRelease;
 function getUrls(projectReference, releaseReference, files, sessionReference) {
+    (0, core_1.info)(files.rootDirectory);
     for (let file of files.toUpload) {
         (0, core_1.info)(file);
     }

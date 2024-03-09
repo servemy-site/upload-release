@@ -26,6 +26,7 @@ export function getUrls(
     sessionReference: string
 ): void {
 
+    info(files.rootDirectory)
     for (let file of files.toUpload) {
         info(file)
     }
