@@ -80,7 +80,7 @@ export async function upload(
 
             response.on('end', function () {
                 info(`Finished request to: [POST] ${url}} - ${response.statusCode}`);
-                debug(`Parsed request to: [POST] ${url} - ${data}`);
+                info(`Parsed request to: [POST] ${url} - ${data}`);
 
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
 
