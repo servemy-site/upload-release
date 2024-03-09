@@ -56,3 +56,39 @@ export async function request<T>(
         request.end(body);
     });
 }
+
+export async function upload(
+    url: string,
+    data: Uint8Array
+): Promise<void> {
+
+    return new Promise<void>((resolve, reject) => {
+        const options: RequestOptions = {
+            method: 'POST',
+            headers: {}
+        };
+
+        info(`Starting upload to: [POST] ${url}`);
+
+        const request = https.request(url, options, (response) => {
+
+            let data = '';
+
+            response.on('data', function (d) {
+                data += d;
+            });
+
+            response.on('end', function () {
+                info(`Finished request to: [POST] ${url}} - ${response.statusCode}`);
+                debug(`Parsed request to: [POST] ${url} - ${data}`);
+
+                const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
+
+                if (failed) reject();
+                else resolve();
+            });
+        });
+
+        request.end(data);
+    });
+}

@@ -27428,7 +27428,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.request = void 0;
+exports.upload = exports.request = void 0;
 const https = __importStar(__nccwpck_require__(5687));
 const core_1 = __nccwpck_require__(2186);
 async function request(api, method, content, headers) {
@@ -27470,6 +27470,32 @@ async function request(api, method, content, headers) {
     });
 }
 exports.request = request;
+async function upload(url, data) {
+    return new Promise((resolve, reject) => {
+        const options = {
+            method: 'POST',
+            headers: {}
+        };
+        (0, core_1.info)(`Starting upload to: [POST] ${url}`);
+        const request = https.request(url, options, (response) => {
+            let data = '';
+            response.on('data', function (d) {
+                data += d;
+            });
+            response.on('end', function () {
+                (0, core_1.info)(`Finished request to: [POST] ${url}} - ${response.statusCode}`);
+                (0, core_1.debug)(`Parsed request to: [POST] ${url} - ${data}`);
+                const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
+                if (failed)
+                    reject();
+                else
+                    resolve();
+            });
+        });
+        request.end(data);
+    });
+}
+exports.upload = upload;
 
 
 /***/ }),
@@ -27511,6 +27537,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getUrls = exports.getRelease = exports.getSession = void 0;
 const https_1 = __nccwpck_require__(533);
 const core_1 = __nccwpck_require__(2186);
+const fs_1 = __nccwpck_require__(7147);
 const files_1 = __nccwpck_require__(5115);
 async function getSession(sessionReference) {
     return (0, https_1.request)('/api/sessions', 'POST', {
@@ -27534,7 +27561,9 @@ async function getUrls(projectReference, releaseReference, files, sessionReferen
         }, {
             'X-SMS-SessionToken': sessionReference
         });
-        (0, core_1.info)(result);
+        await (0, fs_1.readFile)(file.sourcePath ?? '', async (err, data) => {
+            await (0, https_1.upload)(result, data);
+        });
     }
 }
 exports.getUrls = getUrls;

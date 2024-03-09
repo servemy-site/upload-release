@@ -1,6 +1,7 @@
-import { request } from "./https";
+import {request, upload} from "./https";
 import {Files} from "../types/files";
 import {info} from "@actions/core";
+import {readFile} from 'fs'
 import {getUploadZipSpecification} from "./files";
 
 export async function getSession(
@@ -39,7 +40,9 @@ export async function getUrls(
             'X-SMS-SessionToken': sessionReference
         });
 
-        info(result)
+        await readFile(file.sourcePath ?? '', async (err, data) => {
+            await upload(result, data);
+        })
     }
 
 }
