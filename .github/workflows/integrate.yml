@@ -22,10 +22,12 @@ jobs:
         id: test
         uses: ./
         with:
-          text: Hello world!
+          session-reference: Hello world!
+          project-reference: Hello world!
+          path: ./dist
 
       - name: print
-        run: echo "${{ steps.test.outputs.text }}"
+        run: echo "${{ steps.test.outputs.release-reference }}"
 
   check-dist:
     runs-on: ubuntu-latest
@@ -40,7 +42,7 @@ jobs:
         run: npm ci
 
       - name: build
-        run: npm run bundle
+        run: npm run package
 
       - name: compare
         run: |
