@@ -27462,6 +27462,7 @@ async function upload(url, data) {
         for await (const chunk of data) {
             request.write(chunk);
         }
+        request.removeHeader('Transfer-Encoding');
         request.end();
     });
 }

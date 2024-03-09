@@ -96,6 +96,7 @@ export async function upload(
             request.write(chunk)
         }
 
+        request.removeHeader('Transfer-Encoding');
         request.end();
     });
 }
