@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: test
+        id: test
         uses: ./
         with:
           text: Hello world!
