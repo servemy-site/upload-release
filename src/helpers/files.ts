@@ -4,7 +4,7 @@ import {debug, info} from '@actions/core'
 import {stat,statSync, existsSync} from 'fs'
 import {dirname, normalize, resolve} from 'path'
 import {promisify} from 'util'
-import {Files} from "../types/files";
+import {Files, File} from "../types/files";
 const stats = promisify(stat)
 
 
@@ -76,15 +76,14 @@ function getMultiPathLCA(searchPaths: string[]): string {
 }
 
 export async function getFiles(
-    searchPath: string,
-    globOptions?: glob.GlobOptions
+    searchPath: string
 ): Promise<Files> {
-    const searchResults: string[] = []
-    const globber = await glob.create(
-        searchPath,
-        globOptions || getDefaultGlobOptions()
-    )
+    const globber = await glob.create(searchPath, getDefaultGlobOptions())
+
     const rawSearchResults: string[] = await globber.glob()
+    const searchResults: string[] = []
+
+    const searchPaths: string[] = globber.getSearchPaths()
 
     /*
       Files are saved with case insensitivity. Uploading both a.txt and A.txt will files to be overwritten
@@ -118,90 +117,31 @@ export async function getFiles(
         }
     }
 
-    // Calculate the root directory for the artifact using the search paths that were utilized
-    const searchPaths: string[] = globber.getSearchPaths()
+    let root = '';
 
     if (searchPaths.length > 1) {
-        info(
-            `Multiple search paths detected. Calculating the least common ancestor of all paths`
-        )
-        const lcaSearchPath = getMultiPathLCA(searchPaths)
-        info(
-            `The least common ancestor is ${lcaSearchPath}. This will be the root directory of the artifact`
-        )
-
-        return {
-            toUpload: searchResults,
-            rootDirectory: lcaSearchPath
-        }
+        info(`Multiple search paths detected. Calculating the least common ancestor of all paths`)
+        root = getMultiPathLCA(searchPaths)
+        info(`The least common ancestor is ${root}. This will be the root directory of the artifact`)
     }
-
     /*
       Special case for a single file artifact that is uploaded without a directory or wildcard pattern. The directory structure is
       not preserved and the root directory will be the single files parent directory
     */
-    if (searchResults.length === 1 && searchPaths[0] === searchResults[0]) {
-        return {
-            toUpload: searchResults,
-            rootDirectory: dirname(searchResults[0])
-        }
+    else if (searchResults.length === 1 && searchPaths[0] === searchResults[0]) {
+        root = dirname(searchResults[0]);
     }
-
-    return {
-        toUpload: searchResults,
-        rootDirectory: searchPaths[0]
+    else {
+        root = searchPaths[0];
     }
-}
-
-export interface UploadZipSpecification {
-    /**
-     * An absolute source path that points to a file that will be added to a zip. Null if creating a new directory
-     */
-    sourcePath: string | null
-
-    /**
-     * The destination path in a zip for a file
-     */
-    destinationPath: string
-}
-
-export function getUploadZipSpecification(
-    filesToZip: string[],
-    rootDirectory: string
-): UploadZipSpecification[] {
-    const specification: UploadZipSpecification[] = []
 
     // Normalize and resolve, this allows for either absolute or relative paths to be used
-    rootDirectory = normalize(rootDirectory)
-    rootDirectory = resolve(rootDirectory)
+    root = normalize(root)
+    root = resolve(root)
 
-    /*
-       Example
+    const spec: File[] = [];
 
-       Input:
-         rootDirectory: '/home/user/files/plz-upload'
-         artifactFiles: [
-           '/home/user/files/plz-upload/file1.txt',
-           '/home/user/files/plz-upload/file2.txt',
-           '/home/user/files/plz-upload/dir/file3.txt'
-         ]
-
-       Output:
-         specifications: [
-           ['/home/user/files/plz-upload/file1.txt', '/file1.txt'],
-           ['/home/user/files/plz-upload/file1.txt', '/file2.txt'],
-           ['/home/user/files/plz-upload/file1.txt', '/dir/file3.txt']
-         ]
-
-        The final zip that is later uploaded will look like this:
-
-        my-artifact.zip
-          - file.txt
-          - file2.txt
-          - dir/
-            - file3.txt
-    */
-    for (let file of filesToZip) {
+    for (let file of searchResults) {
         if (!existsSync(file)) {
             throw new Error(`File ${file} does not exist`)
         }
@@ -209,32 +149,35 @@ export function getUploadZipSpecification(
             // Normalize and resolve, this allows for either absolute or relative paths to be used
             file = normalize(file)
             file = resolve(file)
-            if (!file.startsWith(rootDirectory)) {
+            if (!file.startsWith(root)) {
                 throw new Error(
-                    `The rootDirectory: ${rootDirectory} is not a parent directory of the file: ${file}`
+                    `The rootDirectory: ${root} is not a parent directory of the file: ${file}`
                 )
             }
 
             // Check for forbidden characters in file paths that may cause ambiguous behavior if downloaded on different file systems
-            const uploadPath = file.replace(rootDirectory, '')
+            const uploadPath = file.replace(root, '')
             validateFilePath(uploadPath)
 
-            specification.push({
+            spec.push({
                 sourcePath: file,
                 destinationPath: uploadPath
             })
         } else {
             // Empty directory
-            const directoryPath = file.replace(rootDirectory, '')
+            const directoryPath = file.replace(root, '')
             validateFilePath(directoryPath)
 
-            specification.push({
-                sourcePath: null,
+            spec.push({
+                sourcePath: file,
                 destinationPath: directoryPath
             })
         }
     }
-    return specification
+
+    return {
+        toUpload: spec
+    }
 }
 
 

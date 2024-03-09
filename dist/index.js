@@ -27178,7 +27178,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.validateFilePath = exports.getUploadZipSpecification = exports.getFiles = void 0;
+exports.validateFilePath = exports.getFiles = void 0;
 const glob = __importStar(__nccwpck_require__(8090));
 const path = __importStar(__nccwpck_require__(1017));
 const core_1 = __nccwpck_require__(2186);
@@ -27244,10 +27244,11 @@ function getMultiPathLCA(searchPaths) {
     }
     return path.join(...commonPaths);
 }
-async function getFiles(searchPath, globOptions) {
-    const searchResults = [];
-    const globber = await glob.create(searchPath, globOptions || getDefaultGlobOptions());
+async function getFiles(searchPath) {
+    const globber = await glob.create(searchPath, getDefaultGlobOptions());
     const rawSearchResults = await globber.glob();
+    const searchResults = [];
+    const searchPaths = globber.getSearchPaths();
     /*
       Files are saved with case insensitivity. Uploading both a.txt and A.txt will files to be overwritten
       Detect any files that could be overwritten for user awareness
@@ -27275,65 +27276,27 @@ async function getFiles(searchPath, globOptions) {
             (0, core_1.debug)(`Removing ${searchResult} from rawSearchResults because it is a directory`);
         }
     }
-    // Calculate the root directory for the artifact using the search paths that were utilized
-    const searchPaths = globber.getSearchPaths();
+    let root = '';
     if (searchPaths.length > 1) {
         (0, core_1.info)(`Multiple search paths detected. Calculating the least common ancestor of all paths`);
-        const lcaSearchPath = getMultiPathLCA(searchPaths);
-        (0, core_1.info)(`The least common ancestor is ${lcaSearchPath}. This will be the root directory of the artifact`);
-        return {
-            toUpload: searchResults,
-            rootDirectory: lcaSearchPath
-        };
+        root = getMultiPathLCA(searchPaths);
+        (0, core_1.info)(`The least common ancestor is ${root}. This will be the root directory of the artifact`);
     }
     /*
       Special case for a single file artifact that is uploaded without a directory or wildcard pattern. The directory structure is
       not preserved and the root directory will be the single files parent directory
     */
-    if (searchResults.length === 1 && searchPaths[0] === searchResults[0]) {
-        return {
-            toUpload: searchResults,
-            rootDirectory: (0, path_1.dirname)(searchResults[0])
-        };
+    else if (searchResults.length === 1 && searchPaths[0] === searchResults[0]) {
+        root = (0, path_1.dirname)(searchResults[0]);
     }
-    return {
-        toUpload: searchResults,
-        rootDirectory: searchPaths[0]
-    };
-}
-exports.getFiles = getFiles;
-function getUploadZipSpecification(filesToZip, rootDirectory) {
-    const specification = [];
+    else {
+        root = searchPaths[0];
+    }
     // Normalize and resolve, this allows for either absolute or relative paths to be used
-    rootDirectory = (0, path_1.normalize)(rootDirectory);
-    rootDirectory = (0, path_1.resolve)(rootDirectory);
-    /*
-       Example
-
-       Input:
-         rootDirectory: '/home/user/files/plz-upload'
-         artifactFiles: [
-           '/home/user/files/plz-upload/file1.txt',
-           '/home/user/files/plz-upload/file2.txt',
-           '/home/user/files/plz-upload/dir/file3.txt'
-         ]
-
-       Output:
-         specifications: [
-           ['/home/user/files/plz-upload/file1.txt', '/file1.txt'],
-           ['/home/user/files/plz-upload/file1.txt', '/file2.txt'],
-           ['/home/user/files/plz-upload/file1.txt', '/dir/file3.txt']
-         ]
-
-        The final zip that is later uploaded will look like this:
-
-        my-artifact.zip
-          - file.txt
-          - file2.txt
-          - dir/
-            - file3.txt
-    */
-    for (let file of filesToZip) {
+    root = (0, path_1.normalize)(root);
+    root = (0, path_1.resolve)(root);
+    const spec = [];
+    for (let file of searchResults) {
         if (!(0, fs_1.existsSync)(file)) {
             throw new Error(`File ${file} does not exist`);
         }
@@ -27341,30 +27304,32 @@ function getUploadZipSpecification(filesToZip, rootDirectory) {
             // Normalize and resolve, this allows for either absolute or relative paths to be used
             file = (0, path_1.normalize)(file);
             file = (0, path_1.resolve)(file);
-            if (!file.startsWith(rootDirectory)) {
-                throw new Error(`The rootDirectory: ${rootDirectory} is not a parent directory of the file: ${file}`);
+            if (!file.startsWith(root)) {
+                throw new Error(`The rootDirectory: ${root} is not a parent directory of the file: ${file}`);
             }
             // Check for forbidden characters in file paths that may cause ambiguous behavior if downloaded on different file systems
-            const uploadPath = file.replace(rootDirectory, '');
+            const uploadPath = file.replace(root, '');
             validateFilePath(uploadPath);
-            specification.push({
+            spec.push({
                 sourcePath: file,
                 destinationPath: uploadPath
             });
         }
         else {
             // Empty directory
-            const directoryPath = file.replace(rootDirectory, '');
+            const directoryPath = file.replace(root, '');
             validateFilePath(directoryPath);
-            specification.push({
-                sourcePath: null,
+            spec.push({
+                sourcePath: file,
                 destinationPath: directoryPath
             });
         }
     }
-    return specification;
+    return {
+        toUpload: spec
+    };
 }
-exports.getUploadZipSpecification = getUploadZipSpecification;
+exports.getFiles = getFiles;
 /**
  * Validates file paths to check for any illegal characters that can cause problems on different file systems
  */
@@ -27494,7 +27459,8 @@ async function upload(url, data) {
                     resolve();
             });
         });
-        request.end(data);
+        data.pipe(request);
+        request.end();
     });
 }
 exports.upload = upload;
@@ -27536,39 +27502,33 @@ exports.getInputs = getInputs;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getUrls = exports.getRelease = exports.getSession = void 0;
+exports.uploadFiles = exports.createRelease = exports.createSession = void 0;
 const https_1 = __nccwpck_require__(533);
-const core_1 = __nccwpck_require__(2186);
 const fs_1 = __nccwpck_require__(7147);
-const files_1 = __nccwpck_require__(5115);
-async function getSession(sessionReference) {
+async function createSession(sessionReference) {
     return (0, https_1.request)('/api/sessions', 'POST', {
         token: sessionReference
     }, {});
 }
-exports.getSession = getSession;
-async function getRelease(projectReference, sessionReference) {
+exports.createSession = createSession;
+async function createRelease(projectReference, sessionReference) {
     return (0, https_1.request)(`/api/projects/${projectReference}/releases`, 'POST', {}, {
         'X-SMS-SessionToken': sessionReference
     });
 }
-exports.getRelease = getRelease;
-async function getUrls(projectReference, releaseReference, files, sessionReference) {
-    const spec = (0, files_1.getUploadZipSpecification)(files.toUpload, files.rootDirectory);
-    for (let file of spec) {
-        (0, core_1.info)(file.sourcePath ?? '');
-        (0, core_1.info)(file.destinationPath);
+exports.createRelease = createRelease;
+async function uploadFiles(projectReference, releaseReference, files, sessionReference) {
+    for (let file of files.toUpload) {
         const result = await (0, https_1.request)(`/api/projects/${projectReference}/releases/${releaseReference}/files`, 'POST', {
             path: file.destinationPath
         }, {
             'X-SMS-SessionToken': sessionReference
         });
-        await (0, fs_1.readFile)(file.sourcePath ?? '', async (err, data) => {
-            await (0, https_1.upload)(result, data);
-        });
+        const content = (0, fs_1.createReadStream)(file.sourcePath);
+        await (0, https_1.upload)(result, content);
     }
 }
-exports.getUrls = getUrls;
+exports.uploadFiles = uploadFiles;
 
 
 /***/ }),
@@ -27591,14 +27551,13 @@ async function run() {
         (0, core_1.setFailed)(`No files were found with the provided path: ${inputs.searchPath}. No release will be uploaded.`);
         return;
     }
-    const session = await (0, service_1.getSession)(inputs.sessionReference);
-    const release = await (0, service_1.getRelease)(inputs.projectReference, session);
-    await (0, service_1.getUrls)(inputs.projectReference, release, files, session);
-    // Upload Release
+    const session = await (0, service_1.createSession)(inputs.sessionReference);
+    const release = await (0, service_1.createRelease)(inputs.projectReference, session);
+    await (0, service_1.uploadFiles)(inputs.projectReference, release, files, session);
     (0, core_1.info)(`With the provided session reference, we will use ${session} to upload the release.`);
     (0, core_1.info)(`With the provided session reference, we will upload to ${release} release.`);
     (0, core_1.info)(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
-    (0, core_1.setOutput)('release-reference', 'something here.');
+    (0, core_1.setOutput)('release-reference', release);
 }
 exports.run = run;
 

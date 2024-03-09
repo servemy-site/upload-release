@@ -1,4 +1,8 @@
 export interface Files {
-    toUpload: string[]
-    rootDirectory: string
+    toUpload: File[]
+}
+
+export interface File {
+    sourcePath: string
+    destinationPath: string
 }

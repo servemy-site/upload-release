@@ -1,10 +1,8 @@
 import {request, upload} from "./https";
 import {Files} from "../types/files";
-import {info} from "@actions/core";
-import {readFile} from 'fs'
-import {getUploadZipSpecification} from "./files";
+import {readFile, createReadStream} from 'fs'
 
-export async function getSession(
+export async function createSession(
     sessionReference: string
 ): Promise<string> {
     return request('/api/sessions', 'POST', {
@@ -12,7 +10,7 @@ export async function getSession(
     }, {});
 }
 
-export async function getRelease(
+export async function createRelease(
     projectReference: string,
     sessionReference: string
 ): Promise<string> {
@@ -21,28 +19,21 @@ export async function getRelease(
     });
 }
 
-export async function getUrls(
+export async function uploadFiles(
     projectReference: string,
     releaseReference: string,
     files: Files,
     sessionReference: string
 ): Promise<void> {
 
-    const spec = getUploadZipSpecification(files.toUpload, files.rootDirectory);
-
-    for (let file of spec) {
-        info(file.sourcePath ?? '')
-        info(file.destinationPath)
-
+    for (let file of files.toUpload) {
         const result = await request<string>(`/api/projects/${projectReference}/releases/${releaseReference}/files`, 'POST', {
             path: file.destinationPath
         }, {
             'X-SMS-SessionToken': sessionReference
         });
 
-        await readFile(file.sourcePath ?? '', async (err, data) => {
-            await upload(result, data);
-        })
+        const content = createReadStream(file.sourcePath);
+        await upload(result, content);
     }
-
 }

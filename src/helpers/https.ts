@@ -2,6 +2,7 @@ import * as https from "https";
 import {debug, error, info, warning} from "@actions/core";
 import {RequestOptions} from "https";
 import {OutgoingHttpHeaders} from "http";
+import {ReadStream} from "fs";
 
 export async function request<T>(
     api: string,
@@ -59,7 +60,7 @@ export async function request<T>(
 
 export async function upload(
     url: string,
-    data: Uint8Array
+    data: ReadStream
 ): Promise<void> {
 
     return new Promise<void>((resolve, reject) => {
@@ -91,6 +92,7 @@ export async function upload(
             });
         });
 
-        request.end(data);
+        data.pipe(request);
+        request.end();
     });
 }
