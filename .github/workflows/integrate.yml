@@ -24,7 +24,7 @@ jobs:
           text: Hello world!
 
       - name: print
-        run: echo "${{ steps.test-action.outputs.text }}"
+        run: echo "${{ steps.test.outputs.text }}"
 
   check-dist:
     runs-on: ubuntu-latest
@@ -41,7 +41,6 @@ jobs:
       - name: build
         run: npm run bundle
 
-      # This will fail the workflow if the PR wasn't created by Dependabot.
       - name: compare
         run: |
           if [ "$(git diff --ignore-space-at-eol --text dist/ | wc -l)" -gt "0" ]; then
