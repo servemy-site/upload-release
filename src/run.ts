@@ -1,4 +1,4 @@
-import * as core from '@actions/core'
+import { info, setFailed, setOutput}  from "@actions/core";
 import { getInputs } from "./helpers/input";
 import { getFiles } from "./helpers/files";
 
@@ -9,11 +9,10 @@ export async function run(): Promise<void> {
 
   if (files.toUpload.length === 0) {
 
-    core.setFailed(`No files were found with the provided path: ${inputs.searchPath}. No release will be uploaded.`);
+    setFailed(`No files were found with the provided path: ${inputs.searchPath}. No release will be uploaded.`);
     return;
   }
 
-  core.info(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
-
-  core.setOutput('release-reference', 'something here.')
+  info(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
+  setOutput('release-reference', 'something here.')
 }

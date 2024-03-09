@@ -1,13 +1,13 @@
-import * as core from '@actions/core'
-import {UploadInputNames, UploadInputs} from "../types/inputs";
+import { getInput } from '@actions/core'
+import { UploadInputNames, UploadInputs } from "../types/inputs";
 
 /**
  * Helper to get all the inputs for the action
  */
 export function getInputs(): UploadInputs {
-    const sessionReference = core.getInput(UploadInputNames.SessionReference, { required: true })
-    const projectReference = core.getInput(UploadInputNames.ProjectReference, { required: true })
-    const path = core.getInput(UploadInputNames.Path, { required: true })
+    const sessionReference = getInput(UploadInputNames.SessionReference, { required: true })
+    const projectReference = getInput(UploadInputNames.ProjectReference, { required: true })
+    const path = getInput(UploadInputNames.Path, { required: true })
 
     const inputs = {
         sessionReference: sessionReference,
