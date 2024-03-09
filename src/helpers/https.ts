@@ -40,8 +40,16 @@ export async function request<T>(
 
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
 
-                if (failed) reject(JSON.parse(data));
-                else resolve(JSON.parse(data));
+                let result: T;
+
+                try {
+                    result = JSON.parse(data) as T;
+                } catch(e) {
+                    result = data as T;
+                }
+
+                if (failed) reject(result);
+                else resolve(result);
             });
         });
 
