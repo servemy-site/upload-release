@@ -92,7 +92,6 @@ export async function upload(
             });
         });
 
-        data.pipe(request);
-        request.end();
+        data.pipe(request).end();
     });
 }

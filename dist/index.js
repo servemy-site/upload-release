@@ -27459,8 +27459,7 @@ async function upload(url, data) {
                     resolve();
             });
         });
-        data.pipe(request);
-        request.end();
+        data.pipe(request).end();
     });
 }
 exports.upload = upload;
