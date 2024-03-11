@@ -91,8 +91,14 @@ export async function upload(
                 else resolve();
             });
         });
+        const buffers = [];
 
-        data.pipe(request);
-        request.end();
+        for await (const chunk of data) {
+            buffers.push(chunk);
+        }
+
+        const finalBuffer = Buffer.concat(buffers);
+
+        request.end(finalBuffer);
     });
 }
