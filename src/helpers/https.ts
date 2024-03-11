@@ -91,14 +91,13 @@ export async function upload(
                 else resolve();
             });
         });
+
         const buffers = [];
 
         for await (const chunk of data) {
             buffers.push(chunk);
         }
 
-        const finalBuffer = Buffer.concat(buffers);
-
-        request.end(finalBuffer);
+        request.end(Buffer.concat(buffers));
     });
 }

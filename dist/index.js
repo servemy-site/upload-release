@@ -27463,8 +27463,7 @@ async function upload(url, data) {
         for await (const chunk of data) {
             buffers.push(chunk);
         }
-        const finalBuffer = Buffer.concat(buffers);
-        request.end(finalBuffer);
+        request.end(Buffer.concat(buffers));
     });
 }
 exports.upload = upload;
