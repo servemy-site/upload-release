@@ -23,7 +23,7 @@ jobs:
         uses: ./
         with:
           session-reference: ${{ secrets.SESSION_REFERENCE }}
-          project-reference: eff62435-8b4b-4f67-af5b-c79148f35152
+          project-reference: d13afe76-4512-452e-8c8d-cf905d7c919e
           path: ./dist
 
       - name: print
