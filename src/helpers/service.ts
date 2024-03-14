@@ -2,6 +2,7 @@ import {request, upload} from "./https";
 import {Files} from "../types/files";
 import {readFile, createReadStream} from 'fs'
 import {info} from "@actions/core";
+import mime from 'mime';
 
 declare function require(name:string): any;
 
@@ -38,8 +39,6 @@ export async function uploadFiles(
     files: Files,
     sessionReference: string
 ): Promise<void> {
-
-    const mime = require('mime');
 
     for (let file of files.toUpload) {
         const type = mime.getType(file.sourcePath);
