@@ -1,7 +1,8 @@
 export enum UploadInputNames {
     SessionReference = 'session-reference',
     ProjectReference = 'project-reference',
-    Path = 'path'
+    Path = 'path',
+    Activate = 'activate',
 }
 
 export interface UploadInputs {
@@ -19,4 +20,9 @@ export interface UploadInputs {
      * The search path used to describe what to upload as part of the artifact
      */
     searchPath: string
+
+    /**
+     * A flag indicating if the release should be activated once it has been created.
+     */
+    activate: boolean
 }

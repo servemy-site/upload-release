@@ -1,7 +1,7 @@
 import { info, setFailed, setOutput}  from "@actions/core";
 import { getInputs } from "./helpers/input";
 import { getFiles } from "./helpers/files";
-import {createRelease, createSession, uploadFiles} from "./helpers/service";
+import {activateRelease, createRelease, createSession, uploadFiles} from "./helpers/service";
 
 export async function run(): Promise<void> {
   const inputs = getInputs();
@@ -17,6 +17,10 @@ export async function run(): Promise<void> {
   const session = await createSession(inputs.sessionReference);
   const release = await createRelease(inputs.projectReference, session);
   await uploadFiles(inputs.projectReference, release, files, session);
+
+  if (inputs.activate) {
+    await activateRelease(inputs.projectReference, release, session);
+  }
 
   info(`With the provided session reference, we will use ${session} to upload the release.`);
   info(`With the provided session reference, we will upload to ${release} release.`);

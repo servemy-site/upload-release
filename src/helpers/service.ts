@@ -19,6 +19,16 @@ export async function createRelease(
     });
 }
 
+export async function activateRelease(
+    projectReference: string,
+    releaseReference: string,
+    sessionReference: string
+): Promise<string> {
+    return request(`/api/projects/${projectReference}/releases/${releaseReference}/active`, 'PATCH', {}, {
+        'X-SMS-SessionToken': sessionReference
+    });
+}
+
 export async function uploadFiles(
     projectReference: string,
     releaseReference: string,

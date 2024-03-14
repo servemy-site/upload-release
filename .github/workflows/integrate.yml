@@ -25,6 +25,7 @@ jobs:
           session-reference: ${{ secrets.SESSION_REFERENCE }}
           project-reference: d13afe76-4512-452e-8c8d-cf905d7c919e
           path: ./dist
+          activate: true
 
       - name: print
         run: echo "${{ steps.test.outputs.release-reference }}"

@@ -12,6 +12,9 @@ inputs:
   path:
     description: 'A file, directory or wildcard pattern that describes what to upload.'
     required: true
+  activate:
+    description: 'A flag indicating if the release should be activated once it has been created.'
+    required: false
 
 outputs:
   release-reference:
