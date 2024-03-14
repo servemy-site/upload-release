@@ -3,6 +3,8 @@ import {Files} from "../types/files";
 import {readFile, createReadStream} from 'fs'
 import {info} from "@actions/core";
 
+declare function require(name:string): any;
+
 export async function createSession(
     sessionReference: string
 ): Promise<string> {
@@ -30,15 +32,14 @@ export async function activateRelease(
     });
 }
 
-declare function require(name:string): any;
-const mime = require('mime');
-
 export async function uploadFiles(
     projectReference: string,
     releaseReference: string,
     files: Files,
     sessionReference: string
 ): Promise<void> {
+
+    const mime = require('mime');
 
     for (let file of files.toUpload) {
         const type = mime.getType(file.sourcePath);

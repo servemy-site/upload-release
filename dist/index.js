@@ -27530,8 +27530,8 @@ async function activateRelease(projectReference, releaseReference, sessionRefere
     });
 }
 exports.activateRelease = activateRelease;
-const mime = __nccwpck_require__(1402);
 async function uploadFiles(projectReference, releaseReference, files, sessionReference) {
+    const mime = __nccwpck_require__(1402);
     for (let file of files.toUpload) {
         const type = mime.getType(file.sourcePath);
         (0, core_1.info)(`File type for '${file.sourcePath}' is ${type}`);
