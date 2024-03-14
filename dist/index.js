@@ -27487,10 +27487,12 @@ function getInputs() {
     const sessionReference = (0, core_1.getInput)(inputs_1.UploadInputNames.SessionReference, { required: true });
     const projectReference = (0, core_1.getInput)(inputs_1.UploadInputNames.ProjectReference, { required: true });
     const path = (0, core_1.getInput)(inputs_1.UploadInputNames.Path, { required: true });
+    const activate = (0, core_1.getBooleanInput)(inputs_1.UploadInputNames.Activate, { required: false });
     const inputs = {
         sessionReference: sessionReference,
         projectReference: projectReference,
-        searchPath: path
+        searchPath: path,
+        activate: activate
     };
     return inputs;
 }
@@ -27505,7 +27507,7 @@ exports.getInputs = getInputs;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.uploadFiles = exports.createRelease = exports.createSession = void 0;
+exports.uploadFiles = exports.activateRelease = exports.createRelease = exports.createSession = void 0;
 const https_1 = __nccwpck_require__(533);
 const fs_1 = __nccwpck_require__(7147);
 async function createSession(sessionReference) {
@@ -27520,6 +27522,12 @@ async function createRelease(projectReference, sessionReference) {
     });
 }
 exports.createRelease = createRelease;
+async function activateRelease(projectReference, releaseReference, sessionReference) {
+    return (0, https_1.request)(`/api/projects/${projectReference}/releases/${releaseReference}/active`, 'PATCH', {}, {
+        'X-SMS-SessionToken': sessionReference
+    });
+}
+exports.activateRelease = activateRelease;
 async function uploadFiles(projectReference, releaseReference, files, sessionReference) {
     for (let file of files.toUpload) {
         const result = await (0, https_1.request)(`/api/projects/${projectReference}/releases/${releaseReference}/files`, 'POST', {
@@ -27557,6 +27565,9 @@ async function run() {
     const session = await (0, service_1.createSession)(inputs.sessionReference);
     const release = await (0, service_1.createRelease)(inputs.projectReference, session);
     await (0, service_1.uploadFiles)(inputs.projectReference, release, files, session);
+    if (inputs.activate) {
+        await (0, service_1.activateRelease)(inputs.projectReference, release, session);
+    }
     (0, core_1.info)(`With the provided session reference, we will use ${session} to upload the release.`);
     (0, core_1.info)(`With the provided session reference, we will upload to ${release} release.`);
     (0, core_1.info)(`With the provided path, there will be ${files.toUpload.length} file(s) uploaded.`);
@@ -27579,6 +27590,7 @@ var UploadInputNames;
     UploadInputNames["SessionReference"] = "session-reference";
     UploadInputNames["ProjectReference"] = "project-reference";
     UploadInputNames["Path"] = "path";
+    UploadInputNames["Activate"] = "activate";
 })(UploadInputNames || (exports.UploadInputNames = UploadInputNames = {}));
 
 
