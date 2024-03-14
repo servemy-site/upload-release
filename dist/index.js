@@ -29317,12 +29317,13 @@ async function request(api, method, content, headers) {
         request.end(body);
     });
 }
-async function upload(url, data) {
+async function upload(url, data, type) {
     return new Promise(async (resolve, reject) => {
         const options = {
             method: 'PUT',
             headers: {
-                "x-amz-server-side-encryption": "AES256"
+                "x-amz-server-side-encryption": "AES256",
+                "content-type": type ?? 'binary/octet-stream' // Default in S3.
             }
         };
         (0,core.info)(`Starting upload to: [PUT] ${url}`);
@@ -29332,8 +29333,8 @@ async function upload(url, data) {
                 data += d;
             });
             response.on('end', function () {
-                (0,core.info)(`Finished request to: [PUT] ${url}} - ${response.statusCode}`);
-                (0,core.info)(`Parsed request to: [PUT] ${url} - ${data}`);
+                (0,core.info)(`Finished upload to: [PUT] ${url}} - ${response.statusCode}`);
+                (0,core.debug)(`Parsed upload to: [PUT] ${url} - ${data}`);
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
                 if (failed)
                     reject();
@@ -29456,7 +29457,6 @@ _Mime_extensionToType = new WeakMap(), _Mime_typeToExtension = new WeakMap(), _M
 
 
 
-
 async function createSession(sessionReference) {
     return request('/api/sessions', 'POST', {
         token: sessionReference
@@ -29475,14 +29475,14 @@ async function activateRelease(projectReference, releaseReference, sessionRefere
 async function uploadFiles(projectReference, releaseReference, files, sessionReference) {
     for (let file of files.toUpload) {
         const type = src.getType(file.sourcePath);
-        (0,core.info)(`File type for '${file.sourcePath}' is ${type}`);
         const result = await request(`/api/projects/${projectReference}/releases/${releaseReference}/files`, 'POST', {
-            path: file.destinationPath
+            path: file.destinationPath,
+            contentType: type
         }, {
             'X-SMS-SessionToken': sessionReference
         });
         const content = (0,external_fs_.createReadStream)(file.sourcePath);
-        await upload(result, content);
+        await upload(result, content, type);
     }
 }
 

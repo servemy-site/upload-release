@@ -60,14 +60,15 @@ export async function request<T>(
 
 export async function upload(
     url: string,
-    data: ReadStream
-): Promise<void> {
+    data: ReadStream,
+    type: string | null): Promise<void> {
 
     return new Promise<void>(async (resolve, reject) => {
         const options: RequestOptions = {
             method: 'PUT',
             headers: {
-                "x-amz-server-side-encryption": "AES256"
+                "x-amz-server-side-encryption": "AES256",
+                "content-type": type ?? 'binary/octet-stream' // Default in S3.
             }
         };
 
@@ -82,8 +83,8 @@ export async function upload(
             });
 
             response.on('end', function () {
-                info(`Finished request to: [PUT] ${url}} - ${response.statusCode}`);
-                info(`Parsed request to: [PUT] ${url} - ${data}`);
+                info(`Finished upload to: [PUT] ${url}} - ${response.statusCode}`);
+                debug(`Parsed upload to: [PUT] ${url} - ${data}`);
 
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
 

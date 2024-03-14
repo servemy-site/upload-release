@@ -1,6 +1,6 @@
 import {request, upload} from "./https";
 import {Files} from "../types/files";
-import {readFile, createReadStream} from 'fs'
+import {createReadStream} from 'fs'
 import {info} from "@actions/core";
 import mime from 'mime';
 
@@ -43,15 +43,14 @@ export async function uploadFiles(
     for (let file of files.toUpload) {
         const type = mime.getType(file.sourcePath);
 
-        info(`File type for '${file.sourcePath}' is ${type}`)
-
         const result = await request<string>(`/api/projects/${projectReference}/releases/${releaseReference}/files`, 'POST', {
-            path: file.destinationPath
+            path: file.destinationPath,
+            contentType: type
         }, {
             'X-SMS-SessionToken': sessionReference
         });
 
         const content = createReadStream(file.sourcePath);
-        await upload(result, content);
+        await upload(result, content, type);
     }
 }
