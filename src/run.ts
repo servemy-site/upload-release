@@ -1,12 +1,15 @@
 import { info, setFailed, setOutput}  from "@actions/core";
+import * as github from "@actions/github";
 import { getInputs } from "./helpers/input";
 import { getFiles } from "./helpers/files";
-import {activateRelease, createRelease, createSession, uploadFiles} from "./helpers/service";
+import { activateRelease, createRelease, createSession, uploadFiles } from "./helpers/service";
 
 export async function run(): Promise<void> {
   const inputs = getInputs();
 
   const files = await getFiles(inputs.searchPath);
+
+  info(JSON.stringify(github.context))
 
   if (files.toUpload.length === 0) {
 
