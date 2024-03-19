@@ -1,7 +1,7 @@
 import {request, upload} from "./https";
 import {Files} from "../types/files";
 import {createReadStream} from 'fs'
-import {info} from "@actions/core";
+import {context} from "@actions/github";
 import mime from 'mime';
 
 declare function require(name:string): any;
@@ -18,7 +18,14 @@ export async function createRelease(
     projectReference: string,
     sessionReference: string
 ): Promise<string> {
-    return request(`/api/projects/${projectReference}/releases`, 'POST', {}, {
+    return request(`/api/projects/${projectReference}/releases`, 'POST', {
+        source: {
+            service: 'GitHub',
+            link: {
+                value: `${context.payload.repository?.url}/actions/runs/${context.runId}`
+            }
+        }
+    }, {
         'X-SMS-SessionToken': sessionReference
     });
 }
