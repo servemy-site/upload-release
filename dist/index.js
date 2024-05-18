@@ -33570,7 +33570,7 @@ async function request(api, method, content, headers) {
             });
             response.on('end', function () {
                 (0,core.info)(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
-                (0,core.debug)(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
+                (0,core.info)(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
                 let result;
                 try {
@@ -33605,7 +33605,7 @@ async function upload(url, data, type) {
             });
             response.on('end', function () {
                 (0,core.info)(`Finished upload to: [PUT] ${url}} - ${response.statusCode}`);
-                (0,core.debug)(`Parsed upload to: [PUT] ${url} - ${data}`);
+                (0,core.info)(`Parsed upload to: [PUT] ${url} - ${data}`);
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
                 if (failed)
                     reject();
