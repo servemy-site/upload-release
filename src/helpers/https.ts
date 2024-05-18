@@ -37,7 +37,7 @@ export async function request<T>(
 
             response.on('end', function () {
                 info(`Finished request to: [${method}] https://${options.hostname}${options.path} - ${response.statusCode}`);
-                debug(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
+                info(`Parsed request to: [${method}] https://${options.hostname}${options.path} - ${data}`);
 
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
 
@@ -84,7 +84,7 @@ export async function upload(
 
             response.on('end', function () {
                 info(`Finished upload to: [PUT] ${url}} - ${response.statusCode}`);
-                debug(`Parsed upload to: [PUT] ${url} - ${data}`);
+                info(`Parsed upload to: [PUT] ${url} - ${data}`);
 
                 const failed = response.statusCode == undefined || response.statusCode < 200 || response.statusCode >= 300;
 
