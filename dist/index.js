@@ -33588,15 +33588,13 @@ async function request(api, method, content, headers) {
         request.end(body);
     });
 }
-async function upload(url, projectReference, releaseReference, data, type) {
+async function upload(url, data, type) {
     return new Promise(async (resolve, reject) => {
         const options = {
             method: 'PUT',
             headers: {
                 "x-amz-server-side-encryption": "AES256",
-                "X-SMS-ProjectReference": projectReference,
-                "X-SMS-ReleaseReference": releaseReference,
-                "Content-Type": type ?? 'binary/octet-stream' // Default in S3.
+                "content-type": type ?? 'binary/octet-stream' // Default in S3.
             }
         };
         (0,core.info)(`Starting upload to: [PUT] ${url}`);
@@ -33765,7 +33763,7 @@ async function uploadFiles(projectReference, releaseReference, files, sessionRef
             'X-SMS-SessionToken': sessionReference
         });
         const content = (0,external_fs_.createReadStream)(file.sourcePath);
-        await upload(result, projectReference, releaseReference, content, type);
+        await upload(result, content, type);
     }
 }
 
