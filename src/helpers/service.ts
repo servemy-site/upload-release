@@ -58,6 +58,6 @@ export async function uploadFiles(
         });
 
         const content = createReadStream(file.sourcePath);
-        await upload(result, projectReference, releaseReference, content, type);
+        await upload(result, content, type);
     }
 }

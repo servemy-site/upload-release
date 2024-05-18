@@ -60,8 +60,6 @@ export async function request<T>(
 
 export async function upload(
     url: string,
-    projectReference: string,
-    releaseReference: string,
     data: ReadStream,
     type: string | null): Promise<void> {
 
@@ -70,9 +68,7 @@ export async function upload(
             method: 'PUT',
             headers: {
                 "x-amz-server-side-encryption": "AES256",
-                "X-SMS-ProjectReference": projectReference,
-                "X-SMS-ReleaseReference": releaseReference,
-                "Content-Type": type ?? 'binary/octet-stream' // Default in S3.
+                "content-type": type ?? 'binary/octet-stream' // Default in S3.
             }
         };
 
