@@ -1,6 +1,8 @@
 name: 'Upload a Release'
 description: 'Upload a release which will deployed to your project.'
 author: 'Serve My Site'
+icon: 'upload'
+color: 'blue'
 
 inputs:
   session-reference:
